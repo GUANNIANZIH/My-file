@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 放背景圖 */
+        body{
+            background: url(../images/park0301.jpg);
+        }
+        
+
+        /* 圖片定位 */
+        .map{
+            /* 讓 div 的寬高跟圖片一致?? 檢查地圖的寬高 452x631*/
+            width: 452px;
+            height: 631px;
+            background-color: red;
+            /* 調整一樣大後在 m:a */
+            margin: auto;
+            /* 父元素定位 */
+            position: relative;
+        }
+        /* 做圖片中文圖像"陽明山國家公園"上，建立矩形影像地圖 + 設定超連結 到動作要求(七) */
+        .area1{
+            /* inline 轉型用 absolute 就可以 */
+            width: 130px;
+            height: 27px;
+            /* 顏色用來 f12 定位用 */
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            /* position absolute 直接轉型為 block */
+            position: absolute;
+            top: 49px;
+            right: 108px;
+            border-radius: 15px;
+        }
+        /* 圖片中文字圖像「雪霸國家公園」上方之黃色紅邊區域，建立影像地圖 + 設定超連結到動作要求(八) */
+        .area2{
+            width: 50px;
+            height: 45px;
+            /* 顏色用來 f12 定位用 */
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            position: absolute;
+            top: 180px;
+            right: 130px;
+            border-radius: 50%;
+        }
+
+        /*下方資料來源 div*/
+        .info{
+            color: #FF00FF;
+            text-align: right;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- 用定位做 -->
+    <div class="map">
+        <img src="../images/national_park.jpg">
+        <a class="area1" href="../park/yangmingshan.html"></a>
+        <a class="area2" href="../park/sheipa.html"></a>
+    </div>
+    <div class="info">資料來源:：內政部營建署『臺灣的國家公園』網站</div>
+</body>
+</html>

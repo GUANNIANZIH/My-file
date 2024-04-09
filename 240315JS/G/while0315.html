@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //思考: 下者為以使用者不知打幾次會成功，變成設定幾次(條件)，再結束?
+        //淤考: while跟for的思考路徑不同
+
+        //直到使用者打123才停止
+1
+
+        // 用while 模仿 for動作
+        // let i = 0;
+        // while (i <= 10) {
+        //     document.write(i);
+        //     i++;
+        // }
+
+        //紀錄輸入了幾次、練習變數跟著迴圈一起跑的觀念
+        //也有變數跟著for一起跑，獨立於之外
+        //空跟有的差別 ，打123不會跳東西
+
+        let input = ''  
+        let count = 0
+        while (input !== '123') {
+            input = prompt('123')
+            count++
+        }
+        document.write(`你輸入了${count}次`)
+        // //記得document.write放的位置
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //由內往外找、都沒有就是undfine
+        //區域:一個{}是獨立一區，js先在區域找a，找不到往外找
+        //區域內找不到就找區域外，假設區域內1，區域外2，到到區域內1、找不到就是2
+        let a = 1
+        if (true) {
+            let a = 2
+            console.log(a)  //2
+        }
+        console.log(a)  //1
+
+        let b = 1
+        if (true) {
+            b = 2
+            console.log(b) //2
+        }
+        console.log(b) //2
+
+
+    </script>
+</body>
+
+</html>

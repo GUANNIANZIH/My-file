@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* <!-- class:
+        1.以點. 為開頭
+        2.只能用英文、數字、與 - 和 _ 命名
+        (js沒辦法用-dash來命名會出現錯誤)
+        3.以字元開頭，不能用數字開頭
+        如: .1color 不能
+            .text-color 可以
+            .text_color 可以
+        4.可以用中文、但不建議
+        5.有區分大小寫--> */
+        .color {
+            color: blueviolet;
+        }
+
+        .text {
+            font-size: 50px;
+        }
+
+        li {
+            color: green;
+        }
+
+        .active {
+            color: red;
+        }
+
+        /* 前面加 .點會變class */
+        .font {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        /* id標籤 - 用# */
+        #header {
+            color: lightcoral;
+        }
+
+        /* 同class命名方式改# */
+        #main {
+            color: lightgreen;
+        }
+
+        #sidbar {
+            color: lightblue;
+        }
+
+        #footer {
+            color: deeppink;
+        }
+
+        /* ctrl+s */
+        #header,
+        #main,
+        #sidebar,
+        #footer {
+            font-size: 1.5rem;
+            /* 調整大小的單位 */
+        }
+
+        /* 只要是nav後面的p都會被選到 */
+        /* 半形空白為後代選擇器，選擇到兒子(子代)與孫子(後代)們 */
+        nav p {
+            color: blue;
+        }
+
+        /* nav>p 子代選擇器: 只選擇到一層p，沒有選到再後面那個p */
+        nav>p {
+            color: red;
+        }
+
+        /* 全域選擇器(通用選擇器)，全部元素都選(除了偽元素::before、::after) */
+        * {
+            font-style: italic;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>CSS 選擇器</h1>
+    <p>CSS 有非常多選擇器，幫助握們在撰寫時，選擇到目標</p>
+    <h1 class="color text box position "> class 選擇器</h1>
+    <!-- class可以一直累加、注意上下寫法 -->
+    <!-- class非常頻繁使用，可以規劃使用樣式的邏輯、可以用做命名一類的選擇器，可以重複操作-->
+    <!-- class具有重複使用的特性，使用率最高，會在Bootstrap上使用到 -->
+    <h2>使用場景</h2>
+    <h3>1.相同元素但需要不同外觀時</h3>
+    <ui>
+        <li> Lorem ipsum dolor sit amet. </li>
+        <li> Lorem ipsum dolor sit amet. </li>
+        <li class="active"> Lorem ipsum dolor sit amet. </li>
+        <li> Lorem ipsum dolor sit amet. </li>
+        <li> Lorem ipsum dolor sit amet. </li>
+    </ui>
+
+    <!-- review -->
+    <h3>2.重複使用時</h3>
+    <!-- 加入a -->
+    <p>Lorem, ipsum.</p><a href="#" class="font">Lorem ipsum</a>Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptatem nostrum vel odit repellendus, culpa praesentium in non minima debitis amet omnis
+    quidem. Magni velit incidunt quas dignissimos repellendus quae. Quis?
+    <em class="font">Lorem, ipsum.</em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eum officia, a
+    temporibus mollitia fugiat voluptatem dicta odio! Blanditiis unde vel aut modi excepturi molestias iusto voluptates
+    mollitia culpa praesentium.
+    <!-- em斜體 -->
+
+    <h1> id選擇器 </h1>
+    <!-- class變成id屬性 -->
+    <!-- id常用來當不同區塊命名的分類， -->
+    <ul>
+        <li>一份文件裡面，只可以獨一無二的id名稱，像身分證</li>
+        <li>id常被作網頁區塊名稱或是 JavaScript、jQuery操縱元素的選擇器</li>
+        <li>id最顛、最快速、最直接的選擇方式</li>
+    </ul>
+    <div id="header"> header 區塊</div>
+    <div id="main"> main 區塊</div>
+    <div id="sidebar"> sidebar 區塊</div>
+    <div id="footer"> footer 區塊</div>
+
+    <hr>
+    <!-- nav的用途? 提供導航連結的區域 -->
+    <!-- nav裡面有p標籤跟div裡面有p -->
+    <!-- nav後面的p是後代、再後面一個div裡面的p也是他的孫子 -->
+    <h1>後代、子代選擇器</h1>
+    <nav>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </nav>
+
+
+
+
+
+
+</body>
+
+</html>

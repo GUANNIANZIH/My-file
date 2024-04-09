@@ -1,0 +1,328 @@
+body {
+	font-family: 'Noto Sans TC', sans-serif;
+}
+/* 抓到瀏覽器的高度 = 100vh */
+html,
+body {
+	height: 100%;
+}
+/* body{
+    height: 100vh;
+} */
+
+/* 三個滿版 */
+.h-100 {
+	height: 100%;
+}
+
+/* 建立一個寬度一致且水平置中的容器，讓各區塊寬度一致: 切版前先觀察有哪些東西需要先注意 */
+/* 習慣做分類動作、預處理器 - 功能設計、寫樣式再組織起來 */
+/* 導覽列------------------------------------------------------ */
+.container {
+	width: 75%;
+	margin: auto;
+
+	/* 各一邊 */
+	/* margin-left: auto;
+    margin-right: auto;
+    
+    margin: 0,auto; */
+}
+
+#header {
+	width: 75%;
+	height: 60%;
+	/* 固定定位: 版面上固定不動的區塊 */
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	/* 這邊要下 z-index */
+	z-index: 1;
+	/* background: #aaa; */
+	/* 濾鏡可以用兩組，中間不逗點， filter 對文字、圖片有陰影 */
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)));
+	/* box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow 對整個 box 有陰影*/
+}
+
+#header .menu {
+	/* background: yellow; */
+	top: 25px;
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	background: url(../street_fighter_素材/images/nav-bg-full.jpg) repeat-x center;
+
+	font-size: 0;
+	/* background: #aaa; */
+	/* 原本 menu 壓住 logo ，讓 logo 上去 */
+	z-index: -1;
+}
+#header .menu li {
+	/* 怎麼讓 inline-block 父層置中 */
+	display: inline-block;
+	font-size: 1rem;
+	padding: 1rem 0;
+}
+
+/* 找第三個小孩要空間 nth-child(3) */
+#header .menu li:nth-child(3) {
+	margin-right: 15%;
+}
+
+#header .menu a {
+	color: white;
+	text-decoration: none;
+	/*  */
+	display: block;
+	padding: 0.5rem 1.5rem;
+	transition: 0.5s;
+	/* background: red; */
+}
+
+#header .menu a:hover {
+	background: rgba(255, 60, 0, 0.3);
+}
+
+/* 把左右補起來 */
+#header .menu::before {
+	content: ' ';
+	width: 12px;
+	height: 60px;
+	background: url(../street_fighter_素材/images/nav-bg-left.png) no-repeat left top/cover;
+	position: absolute;
+	left: -10px;
+}
+
+#header .menu::after {
+	content: ' ';
+	width: 12px;
+	height: 60px;
+	background: url(../street_fighter_素材/images/nav-bg-right.png) no-repeat right top/cover;
+	position: absolute;
+	right: -10px;
+}
+
+/* logo */
+#header .logo {
+	/* 寬度縮小 15% */
+	width: 15%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	/* 用 background 對位置 */
+	/* background: red; */
+}
+
+/* 處理 logo 寬高跑掉問題 */
+#header .logo img {
+	width: 100%;
+}
+
+/* section01 回首頁------------------------------------------------------ */
+/* 先放照片底圖對位置  center/cover? */
+#section01 {
+	background: url(../street_fighter_素材/images/section01-bg.jpg) no-repeat center/cover;
+	position: relative;
+}
+#section01 .main-news {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/* 回首頁的黃色文字設定 */
+#section01 .main-news h1 {
+	font-size: 2.5rem;
+	font-style: italic;
+	color: yellow;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 1);
+}
+
+/* section02 遊戲介紹------------------------------------------------------ */
+#section02 {
+	background: url(../street_fighter_素材/images/section02-bg.jpg) no-repeat center/cover;
+}
+#section02 .container {
+	height: 100%;
+	position: relative;
+	/* 對定位用 */
+	/* background: red; */
+}
+/* 列 */
+#section02 .row {
+	/* font-size: 0 處理下面幽靈空白 */
+	font-size: 0;
+	/* background: gray; */
+
+	/* 特殊需求: 水平垂直置中 */
+	/* 絕對定位: 寬度會被緊縮成內容寬度，用 width: 100% 跟 container 同寬; */
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	/* 逗號很重要! */
+	transform: translate(-50%, -50%);
+}
+/* 欄 */
+#section02 .col {
+	width: 50%;
+	/* padding、border 包含在這裏面 */
+	box-sizing: border-box;
+	padding: 5rem 1rem;
+	/* 注意幽靈空白-在上面用 font-size: 0 處理 */
+	display: inline-block;
+	color: white;
+	font-size: 1rem;
+}
+#section02 h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+#section02 p {
+	line-height: 1.5;
+	text-align: 2rem;
+	letter-spacing: 1px;
+	margin-bottom: 1rem;
+}
+#section02 iframe {
+	width: 100%;
+	height: 300px;
+	border: 5px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* section03 角色列表------------------------------------------------------ */
+#section03 {
+	background: linear-gradient(45deg, #222 40%, #aaa 40%);
+}
+
+#section03 .col:nth-child(1) {
+	height: 65%;
+	/* background: lightgoldenrodyellow; */
+}
+#section03 .col:nth-child(2) {
+	height: 35%;
+	/* background: lightblue; */
+}
+
+/* 人物資料 */
+/* 這裡用的是 > 只選到 role 後面單層 <div> 選擇器， 有時候可以用(space)、(>)*/
+#section03 .role_info > div {
+	height: 100%;
+	/* 先用 display: none 讓人物消失 */
+	display: none;
+}
+
+#section03 .role_info .role {
+	/* 盒模型觀念 - 包含 padding、border*/
+	box-sizing: border-box;
+	width: 50%;
+	height: 100%;
+	padding: 5rem 1.5rem 0;
+	/* 浮動特性 */
+	float: left;
+}
+#section03 .role_info .info {
+	/* 盒模型觀念 - 包含 padding、border*/
+	box-sizing: border-box;
+	width: 50%;
+	height: 100%;
+	padding: 8rem 1rem 5rem;
+	/* 浮動特性 */
+	float: right;
+}
+/* 先讓第一個角色出現後，確認可以調換順序，再把 input 的 display:none */
+#section03 .role_info input {
+	display: none;
+}
+
+/* 只讓第一個角色出現  */
+#section03 .role_info input:checked + div {
+	display: block;
+}
+
+#section03 .role_info img {
+	width: 100%;
+	height: 100%;
+}
+/* 改變角色資訊內字體 h1  */
+#section03 .info h1 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+/* 改變角色資訊內字體 p  */
+#section03 .info p {
+	padding: 0.5rem 0;
+	line-height: 1.2;
+}
+/* 第四個角色以後圖片變暗、滑鼠回復到 auto */
+#section03 .role_list label:nth-child(4) ~ label {
+	/* 明亮度改變剩一半 */
+	filter: brightness(0.5);
+	/* 改變為原本預設 */
+	cursor: auto;
+}
+/* *+*貓頭鷹選擇器: 全部元素的隔壁全部元素(一個 div 裡面全選作第一個開始動作) */
+
+/* 角色選單 */
+#section03 .role_list {
+	font-size: 0;
+	/* background: lightpink; */
+	text-align: center;
+}
+/*  label一排要幾個?  100/14 = 7 */
+#section03 .role_list label {
+	width: 7%;
+	display: inline-block;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+	transition: 0.3s;
+}
+#section03 .role_list img {
+	width: 100%;
+}
+#section03 .role_list label:hover {
+	filter: drop-shadow(0 0 5px rgb(255, 0, 0)) drop-shadow(0 0 5px rgb(255, 0, 1));
+}
+/* footer ---------------------------------------------------------------- */
+#footer {
+	background: black;
+	color: white;
+	padding: 2rem 0;
+}
+#footer .row {
+	/* 背景用回來 */
+	overflow: hidden;
+}
+#footer .col {
+	width: 25%;
+	float: left;
+}
+#footer .card {
+	box-sizing: border-box;
+	padding: 1rem;
+}
+/* font awesome 可以用文字屬性來修改 */
+#footer .card > i {
+	font-size: 1.8rem;
+	padding: 3px;
+	color: white;
+}
+#footer h1 {
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+#footer li {
+	line-height: 1.4;
+	padding-left: 1.5rem;
+}
+#footer .card h3 {
+	margin: 1rem 0;
+}
+#footer .copyright {
+	text-align: center;
+	padding: 2rem 0 0;
+}

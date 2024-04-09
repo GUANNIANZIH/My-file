@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //習慣愈con去看值
+        // ++遞增
+        //a++ 等於 a=a+1
+        let a = 10
+        a++ //10+1
+        console.log(a)  // 11
+        ++a //1+11
+        console.log(a) //12
+        //單純一個變數++前後一樣(同--)
+
+        //可以同時let好幾個，並用,逗號去區隔，可單或兩行
+        let x = 0, y = 10
+        x = y++
+        //先執行x=y!!! 再執行y++
+        //先執行變數??再運算??
+        //看等號後面接啥?順序問題?
+        console.log(x, y) //等於10,11
+
+        let xx = 0, yy = 10
+        //++yy   (0,11) 
+        //xx=yy  (11,11)
+        //!!!看等號後面接甚麼
+        xx = ++yy
+        console.log(xx, yy) //11,11
+
+
+
+
+
+    </script>
+</body>
+
+</html>

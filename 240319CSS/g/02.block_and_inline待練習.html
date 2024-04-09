@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 注意body、hr..其他前面不用點(.)不是class */
+        body{
+            margin: 0;
+        }
+        /* hr也可以設定很多 */
+        hr{
+            width: 100%;
+        }
+
+
+        /* ul . 如果有空格的話會變成後代元素，在選擇上要小心 */
+        /* 用class跟ul.menu都可以選 = 用.menu代替 */
+        /* ul.menu{
+            background: lightskyblue;
+            /* 練習!!!! */
+            /* display: inline;
+        } */ 
+
+        .menu{
+            /* 原本的特性消除 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /* 黑科技?吃掉? */
+            /* 可以繼承? */
+            /* 做fz為了消除幽靈空白 */
+            /* fz為字體大小 */
+            font-size: 1.5;
+            /* border-radius: 0.5; li會吃到 */
+            border: 5px solid #333;
+            /* 對父元素做置中?? */
+            text-align: center;
+
+        }
+        .menu li{
+            /* inline(針對排版、可以針對width、height操作)、block(流動排版特性) */
+            background: lightgreen;
+            /* inline外在行為 */
+            /* block轉成 inline-block，為了流向排版(橫向) */
+            display: inline-block;
+            /* 航向排版用inline-block */
+            width: 100px;
+        }
+
+        .menu a{
+            /*  */
+            background: gray;
+            color:aliceblue;
+            /* padding: 10px; 把a轉型成block */
+            /* !!! inline轉成block可以佔據父元素的空間 !!! */
+            display: block;
+            padding: 1rem;
+            /* 消除幽靈空白後，字體要在變回來 */
+            font-size: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        /* 偽類hover */
+        .menu a:hover{
+            /* background是hover的底色 */
+            background: lightcoral;
+            /* color是hover的文字顏色 */
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- 標籤可以視為盒子box，但盒子有很多類型 -->
+    <h1>區塊盒與行內盒</h1>
+
+    <h3>以下兩行的差異??????</h3>
+    <!-- div是區塊元素的經典代表、span則是行內元素，兩者的差異? -->
+    <!-- 使用標籤時要知道是屬於哪一個類型的盒子(區塊元素、行內元素) -->
+    <div style="background: lightcoral;">Lorem ipsum dolor sit amet.</div>
+    <span style="background: lightgoldenrodyellow;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: lightcoral;">Lorem ipsum dolor sit amet.</span>
+
+    <hr>
+    <h3>使用標籤時要知道是屬於哪一個類型的盒子(區塊元素、行內元素)</h3>
+
+
+
+    
+    <h2>區塊元素</h2>
+    <p>例子: div、h1~h6、p、ul、li、table....(都是區塊，本身帶有margin，div不會帶有matgin)</p>
+    <!-- div styl e由左至右，佔據父元素(body)(怎麼看父元素:看放在誰那，如:body) -->
+    <!-- div style 如果沒有設定寬度會佔據整個父元素，後面寬度還是屬於自己的，後面還是會換行 -->
+    <ul>
+        <li>預設情況，沒有設定寬度，會佔據父元素的空間</li>
+        <li>會前、後換行，無法與其他元素並排</li>
+        <li>可以正常使用 "盒模型屬性" 寬度 width、height、margin、padding...，其中margin對其他元素有實質空間推移特性</li>
+        <li>使用行內盒時，不可以被vertical-align屬性影響 (文件垂直對齊時) </li>
+    </ul>
+
+    <!-- 區塊本身帶有margin(例如:body...)，可以用style消掉margin -->
+    <div style="background: lightcoral;">Lorem ipsum dolor.</div>
+    <div style="background: lightcoral;">Lorem ipsum dolor sit amet.</div>
+    <div style="background: lightcoral; width: 300px;">即使設定寬度，看起來可以使後方元素並排，但依舊佔據父元素寬度，還是會換行，不會跟其他元素並排</div>
+    <div style="background: lightcoral; width: 500px;">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</div>
+    <hr>
+
+
+
+    <h2>行內元素</h2>
+    <p>例如: span(根據需求)、a(會自帶藍色底線..)、em(斜體)、strong(粗體)、label.....</p>
+    <ol>
+        <li>行內盒: 只能擁有屬於自己的內容空間，前後不會斷行，會自動往後遞補、排不完在換行</li>
+        <li>前後不會斷行，本身內容寬度多少就有多少</li>
+        <li>使用行內盒時，寬與高的設定對行內並不會有作用(如下，例句一)</li>
+        <li>使用行內盒時，可以被vertical-align屬性影響 (文件垂直對齊時) </li>
+        <li> span會自動幽靈空白(間距)， 在轉型inline block會影響到排版 </li>
+
+    </ol>
+    
+    <span style="background: lightseagreen; width: 1000px; height: 1000px;"> 例句一 Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</span>
+    <span style="background: lightseagreen;"> 例句二 Lorem ipsum dolor sit amet.</span>
+    <span style="background: lightseagreen;"> 例句三 Lorem ipsum dolor sit amet.</span>
+    <span style="background: lightseagreen;"> 例句四 Lorem ipsum dolor sit amet.</span>
+    <span style="background: lightseagreen;"> 例句五 Lorem ipsum dolor sit amet.</span>
+    <hr>
+
+
+
+
+    <h2>橫向選單: 使用display設定其他類型的盒子，這稱為轉型，例如: display:inline-block</h2>
+    <p>使用 display:inline-block 製作橫向選單</p>
+    <p>inline-block 排版外在行為具有inline特性，內在行為具有block特性，因此可以正常使用盒模型</p>
+    <!-- 快打鍵: ul.menu>li*5>a  -->
+    <!-- ul、li區塊、 -->
+
+    <ul class="menu">
+        <li><a href="">12345</a></li>
+        <li><a href="">1234</a></li>
+        <li><a href="">123</a></li>
+        <li><a href="">12</a></li>
+        <li><a href="">1</a></li>
+    </ul>    
+
+
+</body>
+</html>

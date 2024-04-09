@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 作業
+        // 製作一個星座判斷器，進入網頁時出現三個輸入視窗prompt，
+        // 分別是姓名
+        // 出生月份
+        // 出生日期
+        // 輸入完成後跳出訊息，格式為 OOO 你好，你的星座是 OOO 座
+
+        const name = prompt('請輸入姓名')
+        const moth = prompt('請輸入出生月份')
+        const day = prompt('請輸入出生日期')
+        if ((moth == 12 && day >= 21) || (moth == 1 && day <= 20)) {
+            document.write(`${name}你好，你的星座是 摩羯座`)
+        }
+        if ((moth == 1 && day >= 21) || (moth == 2 && day <= 19)) {
+            document.write(`${name}你好，你的星座是 水瓶座`)
+        }
+        if ((moth == 2 && day >= 20) || (moth == 3 && day <= 20)) {
+            document.write(`${name}你好，你的星座是 雙魚座`)
+        }
+        if ((moth == 3 && day >= 21) || (moth == 4 && day <= 19)) {
+            document.write(`${name}你好，你的星座是 牡羊座`)
+        }
+        if ((moth == 4 && day >= 20) || (moth == 5 && day <= 20)) {
+            document.write(`${name}你好，你的星座是 金牛座`)
+        }
+        if ((moth == 5 && day >= 21) || (moth == 6 && day <= 21)) {
+            document.write(`${name}你好，你的星座是 雙子座`)
+        }
+        if ((moth == 6 && day >= 22) || (moth == 7 && day <= 22)) {
+            document.write(`${name}你好，你的星座是 巨蟹座`)
+        }
+        if ((moth == 7 && day >= 23) || (moth == 8 && day <= 22)) {
+            document.write(`${name}你好，你的星座是 獅子座`)
+        }
+        if ((moth == 8 && day >= 23) || (moth == 9 && day <= 22)) {
+            document.write(`${name}你好，你的星座是 處女座`)
+        }
+        if ((moth == 9 && day >= 23) || (moth == 10 && day <= 23)) {
+            document.write(`${name}你好，你的星座是 天秤座`)
+        }
+        if ((moth == 10 && day >= 24) || (moth == 11 && day <= 21)) {
+            document.write(`${name}你好，你的星座是 天蠍座`)
+        }
+        if ((moth == 11 && day >= 22) || (moth == 12 && day <= 20)) {
+            document.write(`${name}你好，你的星座是 射手座`)
+        }
+
+
+
+
+        // 摩羯座日期 Capricorn：12月21日 ~ 1月20日
+
+        // 水瓶座 日期Aquarius：1月21日 ~ 2月19日
+
+        // 雙魚座 日期Pisces：2月20日 ~ 3月20日
+
+        // 牡羊座日期 Aries：3月21日~4月19日
+
+        // 金牛座日期 Taurus：4月20日~5月20日
+
+        // 雙子座 日期Gemini：5月21日~6月21日
+
+        // 巨蟹座日期 Cancer：6月22日~7月22日
+
+        // 獅子座日期 Leo：7月23日~8月22日
+
+        // 處女座日期 Virgo：8月23日~9月22日
+
+        // 天秤座日期 Libra：9月23日~10月23日
+
+        // 天蠍座 日期Scorpio：10月24日~11月21日
+
+        // 射手座日期 Sagittarius：11月22日～12月20日
+
+
+    </script>
+</body>
+
+</html>

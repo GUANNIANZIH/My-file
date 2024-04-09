@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const name = prompt('請輸入姓名')
+        const month = prompt('請輸入出生月份', 1)
+        const data = prompt('請輸入出生日期', 10)
+
+        if ((month === '3' && data >= 21) || (month === '4' && data <= 19)) {
+            document.write(name + '你好，你的星座是牡羊座')
+        }
+        else if ((month === '4' && data >= 20) || (month === '5' && data <= 20)) {
+            document.write(name + '你好，你的星座是金牛座')
+        }
+        else if ((month === '5' && data >= 21) || (month === '6' && data <= 21)) {
+            document.write(name + '你好，你的星座是雙子座')
+        }
+        else if ((month === '6' && data >= 22) || (month === '7' && data <= 22)) {
+            document.write(name + '你好，你的星座是巨蟹座')
+        }
+        else if ((month === '7' && data >= 23) || (month === '8' && data <= 22)) {
+            document.write(name + '你好，你的星座是獅子座')
+        }
+        else if ((month === '8' && data >= 23) || (month === '9' && data <= 22)) {
+            document.write(name + '你好，你的星座是處女座')
+        }
+        else if ((month === '9' && data >= 23) || (month === '10' && data <= 23)) {
+            document.write(name + '你好，你的星座是天秤座')
+        }
+        else if ((month === '10' && data >= 24) || (month === '11' && data <= 21)) {
+            document.write(name + '你好，你的星座是天蠍座')
+        }
+        else if ((month === '11' && data >= 22) || (month === '12' && data <= 20)) {
+            document.write(name + '你好，你的星座是射手座')
+        }
+        else if ((month === '12' && data >= 21) || (month === '1' && data <= 20)) {
+            document.write(name + '你好，你的星座是摩羯座')
+        }
+        else if ((month === '1' && data >= 21) || (month === '2' && data <= 19)) {
+            document.write(name + '你好，你的星座是水瓶座')
+        }
+        else if ((month === '2' && data >= 20) || (month === '3' && data <= 20)) {
+            document.write(name + '你好，你的星座是雙魚座')
+        }
+
+    </script>
+
+</body>
+
+</html>

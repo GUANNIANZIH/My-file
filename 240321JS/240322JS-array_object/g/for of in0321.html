@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(_of _)習慣寫"單數"到"複數"
+        // for of(值 或是 陣列)(較高使用機會): 有幾個值就跑幾次，只能對陣列[]使用，無法對物件{}使用
+        const numbers = [1,2,3,4]
+        // for (值 of 陣列) 第一次1、第二次2....
+        for (const number of numbers){
+            document.write(number +'<br>')
+        }
+
+        document.write('<hr>')
+        // 第二個 for (索引in 陣列或物件)
+        // 看物件的˙key
+        // for in 索引的資料型態是string-直接加一字彙跑掉，要記得先轉數字、放在中括號裡面取值沒關係
+        for(const i in numbers){  //這裡是numbers
+            //  ${i+1}文字
+            document.write(`第 ${i+1}個 - 索引 ${i} - ${numbers[i]}<br>`)
+        }
+
+        document.write('<hr>')
+        // 物件
+        const obj = { a:1, b:2,c:3 }
+        for (const key in obj){   //在裡面找資料
+            document.write(`${key}: ${obj[key]}<br>`)
+        }
+        document.write('<hr>')
+
+
+        // number全部乘以100
+        const numbers2 = [1,2,3,4]
+        for (let number of numbers2){ //不能在const 改let
+            number *= 100  //for of 不會改到值(出來還是1、2、3、4)，所以要用索引去改值
+        }
+        console.log(numbers2)
+        
+
+        for (const i in numbers2) {
+        numbers2[i] *= 100
+        }
+        console.log(numbers2)
+
+    </script>
+</body>
+</html>

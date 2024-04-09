@@ -1,0 +1,312 @@
+
+/* 一、整體文件設定:-------------------------------------------------------------- */
+/* 把剛剛的 google font 貼入外部樣式表 */
+body{
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 設定 html、body - 抓到瀏覽器的高度 */
+html,
+body{
+    height: 100%;
+}
+
+/* 水平置中寬度一緻的容器，使各區域寬度一致 */
+/* .container{
+    width: 80%;
+    margin: auto;
+    color: aliceblue;
+    border: 1px solid gray;
+} */
+
+/* 設定一個 height:100% 繼承高度? */
+/* .h-100{
+    height: 100%;
+} */
+
+
+/* header 導覽列-------------------------------------------------------------- */
+.container-header{
+    background-color: white;
+    /* background-color: lightseagreen; */
+    height: 75px;
+    width: 100%;
+    padding: 12px 24px; 
+    position: fixed;
+    z-index: 4;
+}
+
+/* header 裡面的所有 div 轉成 inline-block */
+#header .container-header div{
+    display: inline-block;
+    padding: 8px;
+}
+.icon:hover{
+    cursor: pointer;
+}
+.hamburger {
+    scale: 0.9;
+    /* background-color: aqua; */
+    position: absolute;
+    top: 18%;
+    left: 12px;
+    scale: 0.8;
+}
+.yt-icon{
+    scale: 0.9;
+    /* background-color: blueviolet; */
+    position: absolute;
+    top: 18%;
+    left: 48px;
+    scale: 0.8;
+}
+/* search-bar */
+input{
+    appearance: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    position: absolute;
+    left: 620px;
+    width: 680px;
+    height: 46px;
+    border: lightgrey solid 0.6px  
+}
+.outside{
+    display: inline-block;
+    position: absolute;
+    left: 600px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: lightgrey solid 0.6px    
+}
+.outside2{
+    display: inline-block;
+    position: absolute;
+    right: 820px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: lightgrey solid 0.6px    
+}
+
+.search-bar label:hover{
+    cursor:auto ;
+}
+
+/* 各種 icon */
+.microphone{
+    position: absolute;
+    top: 18%;
+    left: 1360px;
+    scale: 0.75;
+    background-color: lightgray;
+    border-radius: 100%;
+}
+.video-upload{
+    position: absolute;
+    top: 18%;
+    left: 1900px;
+    scale: 0.7;   
+}
+.bell{
+    position: absolute;
+    top: 14%;
+    left: 1960px;
+    scale: 0.7;
+}
+.user-name{
+    position: absolute;
+    top: 8%;
+    left: 2030px;
+    scale: 0.7;
+}
+
+
+
+/* sidebar 側邊選單-------------------------------------------------------------- */
+.container-sidebar{
+    background-color: #ffffff;
+    /* background-color: lightcoral; */
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    top: 91px;   
+    z-index: 1;
+    padding: 8px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+
+/* 3個box */
+.box1,
+.box2,
+.box3{
+padding: 16px;
+/* 側邊攔box 陰影: box-shadow(x,y,blur,color) */
+box-shadow: 0rem 0.1rem 0rem rgba(0, 0, 0, 0.2);
+}
+/* side-bar 三個box */
+.menu .box1 div{
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    justify-items: center;
+}
+.menu .box2 div{
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    justify-items: center;
+}
+.menu .box3 div{
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    justify-items: center;
+}
+.menu li{
+    line-height: 1.4;
+    /* 前面空白 */
+    padding-left: 0rem;
+}
+
+.menu li a{
+    text-decoration: none;
+    align-items: center;
+    color: black;
+    scroll-behavior:initial;
+}
+
+
+.menu li:hover{
+    cursor: pointer;
+    background-color:rgba(184, 182, 182, 0.3);
+    border-radius: 15px;
+}
+.menu li img{
+    scale: 0.8;
+}
+
+
+
+
+
+
+
+
+/* classifiable bar 分類列------------------------------------------------------ */
+.container-classification{
+    background-color: white;
+    /* background-color: lightgreen; */
+    width: 100%;
+    height: 3%;
+    position: fixed;
+    top: 91px;
+    left: 256px;
+    z-index: 3;
+    padding: 36px;
+    align-items: center;
+}
+.container-classification label{
+    background-color: rgb(230, 230, 230);
+    padding: 6px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    color: black;
+}
+.container-classification input{
+    display: none;
+}
+.container-classification label:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.container-classification label:first-child{
+    cursor: pointer;
+    background-color: black;
+    color: aliceblue;
+}
+
+
+
+/* content-video 欄位---------------------------------------------- */
+#content-video{
+    width: 100%;
+    height: 100%;
+    /* background-color: plum; */
+    position: relative;
+    left: 0px;
+    top: 180px; 
+}
+
+.container-video{
+    background-color: white;
+    /* background-color: lightgreen; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0px;
+    left: 14%;
+    top: 0%;
+}
+.container-video .card{
+    /* background-color: blueviolet; */
+    float: left;
+    padding: 12px 00px;
+}
+.container-video .card .cover{
+    /* background-color: blue; */
+    padding: 24px;
+    width: 340px;
+    height: 280px;
+    float: left;
+}
+.container-video .card .cover:hover{
+    cursor: pointer;
+}
+.container-video .card .cover>img{
+    display: inline-block;
+    width: 340px;
+    top: 0px;
+    left: 0px;
+}
+.container-video .card .cover>img:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: brightness(0.5);
+    border-radius: 6%;
+}
+.container-video .card .cover .text-block1{
+  display: inline-block;
+  width: 250px;
+  /* background-color: aqua; */
+  text-align: left;
+}
+.container-video .card .cover .text-block2{
+    display: inline-block;
+    width: 340px;
+    /* background-color: red; */
+    text-indent: 60px;
+    text-align: left;
+  }
+  .container-video .card .cover .text-block3{
+    display: inline-block;
+    width: 340px;
+    /* background-color: palevioletred; */
+    text-indent: 60px;
+    text-align: left;
+  }
+/* .container-video-shorts{
+    background-color: lightseagreen;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 75%;
+    left: 0%;
+} */
+
+
+
+
+

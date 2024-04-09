@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const userName = prompt ('請輸入姓名')
+        const birthMonth = prompt ('請輸入生日月份')
+        const birthDate = prompt ('請輸入生日日期')
+        let starSign = ('')
+        if ((birthMonth == 12 && birthDate >= 22) || (birthMonth == 1 && birthDate <= 19 )) {
+        let starSign = '魔羯座';
+        console.log(starSign);
+        } else if 
+        ((birthMonth == 12 && birthDate <= 21) || (birthMonth == 11 && birthDate >= 23)) {
+        let starSign = '射手座';
+        console.log(starSign);
+        } document.write(`${userName}你好，你的星座是${starSign}`)
+
+    </script>
+</body>
+</html>

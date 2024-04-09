@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function 處理資料時盡量不要使用外部的變數，只針對傳入的資料做處理
+        // 這種不會影響到外部的資料的 function 叫做 Pure Function
+
+
+        // 1. pure funstion 純函數
+        // const isEven = (Number) => {
+        //     return Number %2 === 0
+        // }
+        // isEven(n)
+
+        // (1)不是 pure funstion 純函式 :一樣的輸入會不一樣的輸出，改到 function 外的變數
+
+        let n = 0 // let 為區域變數 ( 第一次 n 帶 2 會再往外找，所以第二次 n 會代 2 )
+        const add = (data) => {
+            n += data
+            return n
+        }
+        console.log(add(2))  //2
+        console.log(add(2))  //4
+
+        // (2) pure funstion 純函式: 一樣的輸入會一樣的輸出，不會改到 function 以外的變數
+        const add2 = (data) => {
+            let n = 0  // 在裡面宣告n，每次輸入輸出才會是一樣的東西
+            n += data
+            return n
+        }
+        console.log(add2(2))  //2
+        console.log(add2(2))  //2
+
+    </script>
+</body>
+</html>

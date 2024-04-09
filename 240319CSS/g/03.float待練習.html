@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    /* 單位的差別: px、em、rem (往回推找父層) */
+    .container{
+        width:75%;
+        margin: 2rem;
+        background: gray;
+        padding: 1rem;
+        color: azure;
+        border-radius: 1rem;
+
+    }
+
+    .float-left{
+        /* float 文繞圖 */
+        /* float自動轉型為block，可正常使用! 概念補? */
+        float: left;
+        margin: 1rem;
+    }
+    
+    .clear-left{
+        /* 通常both */
+        clear: left;
+    }
+
+    .float-right{
+        /* float 文繞圖 */
+        /* float自動轉型為block，可正常使用! 概念補? */
+        float: right;
+        margin: 1rem;
+    }
+
+    .clear-right{
+         /* 通常both */
+         clear: right;       
+    }
+    
+    .clear-both{
+        /*  */
+        clear: both;
+    }
+    /* 結構是menu從這開始 */
+    .menu{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: #000;
+        /* color會不見，要做overflow讓文字出現 */
+        color: white;
+        overflow: hidden;
+    }
+
+    /* 誰要浮動 menu-item要做浮動 */
+    .menu-item{
+        /* 如果沒有 box-sizing: border-box 的話，本來因為會被padding影響會被擠到下面，要只以box-sizing: border-box可以改善 */
+        /* 用box - sizing: border-box 的話 width = 可以包含 padding、border(不會被擠掉) */
+        box-sizing: border-box;
+        /* 抓個寬度去設定 */
+        /* w=100/5 = 20 */
+        width: 20%;
+        padding: 1rem;
+        border: 10px solid #333;
+
+        float: left;
+        text-align: center;
+        background: #aaa;
+    }
+
+    </style>
+   
+
+</head>
+<body>
+
+    <!-- f12 圖片是inline -->
+    <img class="float_left" src="https://picsum.photos/300/200/?random=10">
+    <img class="float_left" src="https://picsum.photos/300/200/?random=10">
+    <img class="float_left" src="https://picsum.photos/300/200/?random=10">
+
+    <!-- float用來做文繞圖、flexbox未出現以前用來排版 -->
+    <!-- 打開compute: display-inline -->
+    <!-- 當使用float會變成block = 代表模型可以正常使用(可以用margin...) -->
+
+    <!-- 右圖 -->
+    <div class="container">
+        <img class="float-right" src= "https://picsum.photos/300/200/?random=10">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+        
+        <!-- 如果在用第二段p段落，不想圍繞在周圍、第二個p被float影響，要有一個屬性不被float影響 -->
+        </p >
+        <p class = "clear-right">  
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique ea expedita harum reiciendis, cupiditate dolor repellendus dolorum ipsa aut sit quidem illo quos, aperiam cum rerum iste ratione delectus aliquam in fugit. Possimus facere et porro, doloribus dolorum est ipsam amet cupiditate reprehenderit. Consequuntur placeat cum ut, consectetur molestiae tempora alias quia recusandae explicabo magni quas, corporis iure non deleniti minima perspiciatis nostrum a. Autem, sint a ullam, suscipit assumenda quia repellendus et, eius asperiores modi cum? Sunt consequuntur tempora, non recusandae quo corrupti dolores sed, libero aperiam repudiandae porro, ullam numquam commodi doloribus veniam placeat facilis quaerat qui adipisci.
+        </p>
+    </div>
+
+
+    <!-- 左圖 -->
+    <div class="container">
+        <img class="float-left" src= "https://picsum.photos/300/200/?random=10">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+        
+        <!-- 如果在用第二段p段落，不想圍繞在周圍、第二個p被float影響，要有一個屬性不被float影響 -->
+        </p >
+        <p class = "clear-left">  
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique ea expedita harum reiciendis, cupiditate dolor repellendus dolorum ipsa aut sit quidem illo quos, aperiam cum rerum iste ratione delectus aliquam in fugit. Possimus facere et porro, doloribus dolorum est ipsam amet cupiditate reprehenderit. Consequuntur placeat cum ut, consectetur molestiae tempora alias quia recusandae explicabo magni quas, corporis iure non deleniti minima perspiciatis nostrum a. Autem, sint a ullam, suscipit assumenda quia repellendus et, eius asperiores modi cum? Sunt consequuntur tempora, non recusandae quo corrupti dolores sed, libero aperiam repudiandae porro, ullam numquam commodi doloribus veniam placeat facilis quaerat qui adipisci.
+        </p>
+    </div>
+
+
+        <!-- 左右圖 1 + 文字無class = clear -->
+        <div class="container">
+            <img class="float-left" src= "https://picsum.photos/300/200/?random=10">
+            <img class="float-right" src= "https://picsum.photos/300/200/?random=10">
+            <!-- 文字如果沒有放 float 會往上擠 -->
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+            <!-- 如果在用第二段p段落，不想圍繞在周圍、第二個p被float影響，要有一個屬性不被float影響 -->
+            </p>
+            <!-- 上方沒有影響元素????? -->
+            <p>  
+                你就防治點這裡下載，桌面流行為何特徵規律青草湖，發佈有所進入天下授權方式檢查產品先生限制，增長好處如果您承受玩家草魚點頭男子有的交通規律高中事件答應，故意運用普通，觀念重要一時說法年代戀愛不怕故意完了，讓他前後顯得類型更多財經，軟體美女，電視劇，真實已有。
+            </p>
+        </div>
+
+         <!-- 左右圖 2 + 文字有class = clear-both跟left都可以 -->
+        <div class="container">
+            <img class="float-left" src= "https://picsum.photos/300/200/?random=10">
+            <img class="float-right" src= "https://picsum.photos/300/200/?random=10">
+            <!-- 文字如果沒有放 float 會往上擠 -->
+            <p class="clear-left">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa neque tenetur quas ab dolorem dolorum maxime ex veritatis nulla aperiam perferendis accusantium totam eligendi, consectetur, possimus in eaque quam?
+            <!-- 如果在用第二段p段落，不想圍繞在周圍、第二個p被float影響，要有一個屬性不被float影響 -->
+            </p>
+            <!-- 上方沒有影響元素????? -->
+            <p>  
+                你就防治點這裡下載，桌面流行為何特徵規律青草湖，發佈有所進入天下授權方式檢查產品先生限制，增長好處如果您承受玩家草魚點頭男子有的交通規律高中事件答應，故意運用普通，觀念重要一時說法年代戀愛不怕故意完了，讓他前後顯得類型更多財經，軟體美女，電視劇，真實已有。
+            </p>
+        </div>
+
+
+
+        <!-- 浮動的特性 -->
+        <div class="container">
+            <h2>浮動的特性????</h2>
+            <ul>
+                <li>具有區塊化(block)特性，將元素轉型成 block</li>
+                <li>會脫離正常流向(float)獨立，會影響父元素無法包覆浮動元素，若父元素沒有內容或是paddding就會造成高度崩塌消失</li>
+                <li>父元素設定 overfloat:hidden 可以讓浮動元素再次被包覆</li>
+            </ul>
+        </div>
+
+
+
+        <!-- 浮動的特性 -->
+        <!-- float會獨立離開流向、div變成沒有東西可以包覆，高度崩塌 ，用 overflow:hidden 處理高度崩塌問題-->
+        <!-- inline-block有幽靈問題，用另一個會有另一個問題-->
+        <div style=" background:deepskyblue; overflow:hidden">
+            <span style="float: left;"> 我是span，誕生時為 inline，float 後變成 block  </span>
+            <button style="float: right">我是button，誕生時為 inline-block，float 後變成 block</button>
+        </div>
+
+
+        <div class="container">
+            <!-- ul.menu>li.menu-item{item$}*5   用美金符號$-->
+            <h2> float 選單</h2>
+            <ul class="menu">
+                <li class="menu-item">item1</li>
+                <li class="menu-item">item2</li>
+                <li class="menu-item">item3</li>
+                <li class="menu-item">item4</li>
+                <li class="menu-item">item5</li>
+            </ul>
+        </div>
+
+
+
+</body>
+</html>

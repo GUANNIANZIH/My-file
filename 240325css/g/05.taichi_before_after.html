@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .taichi{
+        width: 300px;
+        height: 300px;
+        /* 作弊法上對下 */
+        /* top: 250px; */
+        background: linear-gradient(90deg,white 50%,black 50%);
+        border: 1px solid gray;
+        border-radius: 100%;
+        box-shadow: 0px 0px 15px gray; 
+        margin: auto;
+        /* 水平垂直置中(2種方法) */
+        /* 方法一 + relative ????????????? */
+        /* left: 50%; */
+        /* top: 50%; */
+        /* transform: translate(-300%,100%); */
+
+        /* 方法二 + absolute(改座標) */
+        /* position: absolute; */
+        /* top: 0; */
+        /* left: 0; */
+        /* right: 0; */
+        /* bottom: 0; */
+        /* margin: auto; */
+
+        position: relative;
+        /* align-items: center; */
+        
+
+        }
+        .yinyang{
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 100%;
+            /* border: 1px solid gray; */
+            position: absolute;
+            top: 0;
+            left:75px;
+        }
+        /* 相對關係位置對應上層關係 */
+        .yinyang::after{
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            content: "";
+            background: black;
+            position: absolute;
+            bottom: -150px;
+            /* ??????????????? */
+            left: 0px;
+        }
+
+        .yinyang::before{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            content: "";
+            background: black;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .taichi::before{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background: white;
+        border: 1px solid gray;
+        border-radius: 100%;
+        position: absolute;
+        top: 200px;
+        left: 125px;
+        /* z-index是排列序號順位 */
+        z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="taichi">
+        <div class="yinyang"></div>
+    </div>
+
+    
+</body>
+</html>

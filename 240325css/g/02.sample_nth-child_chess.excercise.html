@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.sample_nth-child_chess</title>
+
+    <style>
+        body{
+            background: #aaa;
+        }
+        
+        table{
+            /* 複習怎麼做出 table ? */
+            width: 600px;
+            height: 600px;
+            /* border-spacing? */
+            border-spacing: 0;
+            /* 表格空間合併 */
+            border-collapse: collapse;
+            border: 1px solid #000;
+            position: absolute;           
+            top: 50%;
+            left: 50%;
+            /* transform: translate(-50%,-50%)? */
+            transform: translate(-50%,-50%);
+        }
+
+        /* td格數 */
+        /* tr、tr td差異 */
+        tr td {
+            border: 1px solid #000;
+        }
+
+        /* 奇數列奇數欄位 */
+        tr:nth-child(odd) td:nth-child(odd){
+            background: #000;
+        }
+        /* 奇數列偶數欄位 */
+        tr:nth-child(odd) td:nth-child(even){
+            background: #fff;
+        }
+        /* 偶數列偶數欄位 */
+        /* tr:nth-child(even) td:nth-child(odd){ */
+            /* background: #fff; */
+        /* } */
+        /* 偶數列奇數欄位 */
+        /* tr:nth-child(even) td:nth-child(even){ */
+            /* background: #000; */
+        /* } */
+            
+    
+    </style>
+
+
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+</body>
+</html>

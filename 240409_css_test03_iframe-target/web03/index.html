@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國家公園介紹網</title>
+
+    <style>
+    /* body{
+    background-color: #0000FF;  
+    } */
+/* main */
+    #main{
+    /* #main 1024px */
+    width: 1024px;
+    height: 768px;
+    /* background-color: lightcoral; */
+    /* 記得 m:a */
+    margin: auto;
+    }
+
+/* top */
+    #top{
+    width: 1000px;
+    height: 65px;
+    /* 網頁標題背景色 */
+    background-color: #0000FF;
+    margin: auto;
+    text-align: center;
+    }
+
+
+
+/* 選單區 */
+    #left{
+    width: 200px;
+    /*沒有29px*/
+    height: 683px;
+    background-color: #00FFFF;
+    float: left;
+    /* margin-left: 12px;??? */
+    margin-left: 12px;
+    }
+    /* table 的 .menu*/
+    .menu{
+    /* 讓 table 變寬才能圖片置中 */
+    width: 100%;
+    border: 0;
+    text-align: center;
+    }
+    .menu img{
+    width: 120px;
+    height: 40px;
+    }
+    .menu img:hover{
+    /* 色相轉換 */
+    filter: hue-rotate(120deg);
+    }
+    /* 讓格子變寬: 方法1/對每個 td 下 class="a" 設定h20px */
+    /* 讓格子變寬: 方法2/空白,特殊字元 &nbsp;b */
+    /* 讓格子變寬: 方法3/<br> */
+
+    /*  */
+    .download{
+    text-align: center;
+    }
+
+/* right */
+    #right{
+    width: 800px;
+    height: 683px;
+    /* margin-right */
+    margin-right: 12px;
+    float: right;
+    background-color: white;
+    }
+    marquee{
+    width: 800px;
+    height: 29px;
+    vertical-align:middle;
+    line-height: 30px;
+    }
+    iframe{
+    width: 800px;
+    height: 654px;
+    }
+    #footer{
+    width: 1000px;
+    height: 20px;
+    /* background-color: lightskyblue; */
+    margin: auto;
+    clear:both;
+    color:#000;
+    font-size: 16px;
+    font-family: "標楷體";
+    color: #000;
+    text-align: center;
+    }
+    </style>
+
+</head>
+<body>
+<div id="main">
+    <div id="top">
+        <!-- 先做連結回首頁、再放 gif -->
+        <a href="./index.html"><img src="./images/park0307.gif" alt=""></a>
+    </div>
+    <div id="left">
+        <table class="menu">
+            <tr>
+                <!-- 圖片1、3有連結 -->
+                <td>
+                    <!--  target="iframe" -->
+                    <a href="./park/yangmingshan.html" target="iframe">
+                    <img src="./images/park0302.jpg" alt="陽明山國家公園" title="陽明山國家公園">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <!--  target="iframe" -->
+                    <a href="./park/sheipa.html"target="iframe">
+                    <img src="./images/park0303.jpg" alt="雪霸國家公園" title="雪霸國家公園">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><img src="./images/park0304.jpg"alt="太魯閣國家公園" title="太魯閣國家公園"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><img src="./images/park0305.jpg"alt="玉山國家公園" title="玉山國家公園"></td>
+            </tr>
+        </table>
+        <!-- 檔案下載 a連結 :只會跳出撥放，要有下載功能 download-->
+        <p class="download"><a href="./others/park.mp3" download>檔案下載</a></p>
+    </div>
+
+    <!-- right 裡面有 marquee、iframe -->
+    <div id="right">
+        <!-- marquee -->
+        <marquee>歡迎進入國家公園介紹網，本網站有詳細的國家公園介紹哦！</marquee>
+        <!-- iframe src 連結到others 裡的 main, 記得設 name -->
+        <!-- 怎麼做點擊地圖的功能 -->
+        <iframe src="./others/main.html" frameborder="0" name="iframe"></iframe>
+    </div>
+    <!-- footer -->
+    <div id="footer">網頁設計及維護：02官念孜、近更新日期： 2024/04/09</div>
+</div>
+    
+</body>
+</html>

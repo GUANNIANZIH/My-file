@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parseint()將字串轉換為十進位表示的整數，接受兩個參數 string、radix(代表進位系統)
+        // 但如果第一個字元就無法解析，會回傳NaN
+        // 例:
+        // parseInt("5A34",10) //5，字元 A 無法被解析為數字，因此停止解析，回傳 5
+        // parseInt("5A34",16) //23092，依照 16 進制解析並計算為 10 進位???
+        // parseInt("") // NaN
+        // parseInt("16px",10) //16
+        // parseInt(" 332",10) //332，空白會被忽略
+
+        const y=parseInt(prompt('請輸入西元年'))
+        const m=parseInt(prompt('請輸入月份'))
+        const d=parseInt(prompt('請輸入日期'))
+        let bm=0
+        let sm=0
+        let m2=0
+
+        // 判斷閏年
+        // if(( y%4==0 && y%100!=0)||(y%400==0)){
+        //     d29
+        // }
+        // for裡面()內用分號；分開
+        for(let i=1; i<=m ; i++) {
+            // 判斷大月31天
+            if( (i%2!=0 && i<8) && (i%2==0 && i>=8)){
+                bm += 31
+                // 判斷小月30天
+            }else if((i%2==0 && i<8) && (i%2!=0 && i>8)){
+                sm += 30
+            }else if((i==2)&&(( y%4==0 && y%100!=0)||(y%400==0))){
+                m2 += 29
+            }else{ m2 += 28   
+            }
+        }
+        document.write('今天是該年的第'+i*bm+i*sm+d+'天')
+
+                // 先判斷閏年
+        // if(( y%4==0 && y%100!=0)||(y%400==0)){
+        //     d29
+        // }else{
+        //     d28
+        // }
+        // for(let i=1,i<m,m++){
+        //     if( i%2=0 && i<8){
+        //         sm
+        //     }
+        // }
+
+    </script>
+    
+</body>
+</html>

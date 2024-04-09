@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1. 直接給值: 會分開變成不同物件
+        // 直接給給 person1 = {money:1000} 會分開變成不同物件
+        let person1 = { money:100 }
+        let person2 = person1
+        console.log(person1,person2) //100 100
+
+        // 給 person1 全新的物件 object 就不會變, 所以 person1 跟 person2 分開了
+        person1 = {money:1000}   //{}物件
+        console.log(person1,person2) //1000 100
+
+
+
+        // 2. function 給值: 不會影響到外面的原變數
+        // 給值的觀念 : function (在 function 裡面重新給值時，並不會影響到外面的原變數)
+        const obj1 = {name:'AAA'}
+        // 這下面是 function 簡寫 =>
+        const test1 = (data) => { //test1 把(data)傳入
+            data = { name:'BBB' } // ( 直接用物件{} 整個換掉 ) 把 data 變成新的物件{}
+            console.log(data)  //'BBB'
+            console.log(obj1)  //'AAA'
+        }
+        // 外部
+        test1(obj1)
+        console.log(obj1)  //'AAA'
+
+
+
+        // 3. 修改 function 裡面的內容: function參數內容修改內部內容時，會影響外面傳入的原變數
+        const obj2 = { name:'XXX'}
+        const test2 = (data) => {
+            data.name = '000'   //(改裡面的內容)
+            console.log(data)  //000
+            console.log(obj2)  //000
+        }
+        test2(obj2)
+        console.log(obj2)  //000
+
+    </script>
+
+</body>
+</html>

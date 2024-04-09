@@ -1,0 +1,292 @@
+<!-- HTML(hyper text markup language)超文本標記語言 -->
+<!-- 剛開始打開文件一定要習慣!+tab -->
+<!-- 前面的!doctype html是一種宣告，是指html5的宣告方式 -->
+<!-- 如果沒有doctype宣告，預設會變成怪異模式quirks mode -->
+<!-- 因為在html5以前html 4.01 有三種不同的宣告方式 -->
+<!-- 分別是strict嚴格、transitional過度(最常)、frameset框架集 -->
+<!-- 直到出現html5以後才變簡單化，以前的都很長 -->
+<!DOCTYPE html>
+<!-- lang是一種屬性，指的是頁面內容的自然語言，在html5的lang屬性可以用任何html元素 -->
+<!-- lang是一種html標籤的屬性，設定頁面上所有文字的語言 -->
+<!-- 一個網頁很少會去參雜很多不同的語言，所以最常看見的做法會用"zh-TW"(台灣地區最常使用) -->
+<!-- 但如果去找對照表會看不到"zh-TW"" 但少使用-->
+<!-- 而使用en代表網頁中幫某區塊想要另外標示其他語言，那某可以直接寫在那個元素上 -->
+<html lang="en">
+    <!-- head代表給機器運作、搜尋引擎搜尋的爬蟲所看，不是給一般使用者檢視的區塊 -->
+    <!-- body代表網站的主體，主要給使用者檢視資料的區塊 -->
+    <!-- head、body都是基本的宣告 -->
+<head>
+    <!-- meta都出現在head中，提供搜尋引擎能更好的理解網站內容及資訊 -->
+    <!-- meta tag可以讓爬蟲快速理解網頁、並檢索與建立索引，為操作SEO重要的區域，提升seo自然搜尋排名的關鍵 -->
+    <!-- meta title、description、keyword(三大主要meta) -->
+    <!-- meta title為網站的標題，有點像是大綱摘要網站內容，顯示在瀏覽器分頁集搜尋結果標題上，最多75字以內 -->
+    <!-- meta chharset是連覽器採用的字元編碼、每個網站必要的標籤!!大多數都採用utf-8 -->
+    <!-- meta description網站的描述、簡短文字大綱、顯示在搜尋結果標題下方，150字以內，全中文75字以內 -->
+    <!-- meta keyword 網站的關鍵字，重點描述，最多5組-->
+    <!-- meta viewport解決行動裝置瀏覽器的tag，網站的RED響應式設定 -->
+    <!-- meta og(open graph)使用者將網站分享到社群網站所顯示的標題、描述、縮圖 -->
+    <!-- meta robots讓搜尋引擎爬蟲進行檢索及索引 -->
+    <!-- meta copyright版權歸屬、author網頁作者資訊 -->
+    <!-- style body{background} -->
+
+<!-- 外部樣式link rel? -->
+
+    <meta charset="UTF-8">
+    <meta name="description" content="guan的生活日誌分享,生活學習、愛好地球">
+    <meta name="keywords" content="GUAN,GU,ZIH">
+    <meta name="author" content="GUAN">
+    <meta property="og:title" content="官念孜GUAN-NIAN-ZIH">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="官念孜的網頁">
+    <style>body{background-color: antiquewhite};</style>
+    <title>GUAN-NIAN-ZIH官念孜</title>
+</head>
+
+<!-- 習慣打標籤名+tab -->
+<!-- h1-h6 標題字級差距由大至小、p段落文字、hr分段線(無尾)、br斷行(無尾) -->
+<!-- 英文假字 lorem+字數、中文ct+lorem+字數 -->
+<!-- <a href= "網址連結">連結名稱</a> -->
+<!-- <a href= "link"target="_blank">name</a>(由新的空白頁到連結位置) -->
+<!-- <a>包含一個target裡面的_self為所有沒有目標的值為預設 -->
+<!--  <a>target的_parent同等_self、_top在整個式窗打開被link文件、framename指定框架打開link-->
+<!-- <超連結的#代表返回前面頁面內容 -->
+<!-- ol有序、ul無序、li清單數 -->
+<!-- ime的./目前、../上一層、../../上上層 -->
+<!-- 插入假圖picsum -->
+<body>
+    <h1>官念孜的超級大寵物?</h1>
+    <p>吉爾Jill大寶貝</p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, dolores. Suscipit fugit eos tempore dolorum aliquid nesciunt assumenda nobis magnam voluptatem neque odit ad blanditiis iusto, aspernatur alias corporis provident quidem ullam, quos incidunt! Molestiae officia veritatis sequi, voluptatibus saepe vel placeat ducimus tempore voluptas, velit nobis itaque nisi dolor commodi adipisci, sint iste! Iure repellat excepturi consequatur id sunt possimus itaque tempora consequuntur, debitis aliquam commodi officia corrupti delectus architecto sequi molestiae odit beatae tempore fugiat laboriosam impedit dolor! Voluptate repellat rem odio, provident officiis vel quis assumenda magni, repudiandae aut eos ipsum cum rerum ad maiores atque consequatur!<br>
+    眼睛職位，回家保健同事下列登記實驗辦公社區訂單幾天彩色請大家也就，硬盤網頁謝謝目錄友情連結改革你自己相應學校命運，衛生成熟關閉使用昨天感染網站通常提前自信國人，前後不夠，小學歡迎只需崇拜，盯着幾次導。<br>
+    <a href="http://www.google.com">GOOGLE網址連結</a><br>
+    <a href="http://www.google.com" target="_blank">GOOGLE網址連結(貼心版)</a><br>
+    <a href="#">back回頂端</a>
+    <a href="/xxx.doc">點此下載</a><br>
+    <a href="#對應id標籤碼">從這裡快速看</a><br>
+
+   
+    <h3 id="對應id標籤碼">從這裡快速看</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti at incidunt dolore non quia provident exercitationem tenetur explicabo! Saepe atque autem est, reprehenderit maiores modi omnis. Reiciendis, libero velit.</p><br>
+    <hr>
+<h3>我最愛的人</h3>
+    <ol>
+    <li>官念孜</li>
+    <li>徐子惇</li>
+    <li>吉爾</li>
+    </ol>
+<h3>爬過的百岳</h3>
+    <ul>
+    <li>品田山</li>
+    <li>池有山</li>
+    <li>雪山東峰</li>
+</ul>
+<hr>
+<h3>練習巢狀結構</h3>
+<ol>
+    <li>
+        <ul>美感技能</ul>
+        <ul>前端技能</ul>
+        <ul>後端技能</ul>
+    </li>
+</ol>
+<hr>
+<h3>插入圖片</h3>
+<ol><li>絕對路徑(少使用)</li>
+    <p>製作絕對路徑時一般都使用在連接外部資源</p>
+    <img src="https://obs.line-scdn.net/0hDBc_gJIhG21eJgyVO_BkOmZwFxxtQAFkfBcDD3l1EVh6CgxvZxVIDnJ2TUEjElw4fkFcWXMvTQ0gRl4-ag/w644" alt="圖片失去連結" title="甲一球星" width="600"><br>s
+    <img src="https://obs.line-scdn.net/0hDBc" alt="圖片失去連結" title="甲一球星" width="600">
+
+    <li>相對路徑(大多使用)</li>
+<p>從編輯文件為起點找到目標資源位置的圖片、檔案等等，製作相對路徑才不會因為網址名改變位置跑掉</p>
+<img src="./pipi/pipi.jpg" alt="徐子惇是我的寶貝" title="徐子惇" width="600">
+<img src="./others/玉山.jpg" alt="玉山" title="我是玉山" width="600">
+<li>插入假圖</li>
+<img src="https://picsum.photos/600/?random=10">
+</ol>
+<hr>
+
+<h2>頁框iframe</h2>
+<a href="./04.htmlteeporaly.html" target="myframe">載入一個html檔案</a><br>
+<iframe src="./04.htmlteeporaly.html" frameborder="1" width="600" height="600" scrolling="yes" name="徐子惇"></iframe>
+<hr>
+<!-- b、strong粗體/u底線/ins底線/sup縮小右上/下標?、刪除線?、次方?特殊符號? -->
+<!-- pre+code保留原來樣式 -->
+<pre>
+    <code>
+        const clickme = document.getElementById('clickme')
+        clickme.onclick = function () {
+            alert('Hello world!')
+    </code>
+</pre>
+<hr>
+<!-- 剩下table、list -->
+<!-- caption表格標題、thead、tbody、tfoot頭身體腳、tr列包td行、th粗體第一行用 -->
+<!-- cellspacing內容與框的留白距離、儲存格與儲存格間距 -->
+<!-- tr(table row)行、td(table data)數值 -->
+<table border="1" width="600" cellspacing="0">
+    <caption>徐子惇教過的女朋友</caption>
+    <thead>
+     <tr>
+        <th>李姿璇</th>
+        <th>官念孜</th>
+        <th>官念孜</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    </tr>
+</tfoot>
+</table>
+<!-- 練習一個6x6 table,w=600,border=1 -->
+<!-- 表格快速製作的關鍵:記得用> ex,tr*6>td*6 -->
+<!-- 練習表格合併: colspan橫列欄位合併、rowspan直列欄位合併，ex,1吃掉234，colspan=4 並刪除後面234表格-->
+<table border="1" width="600" cellspacing="1">
+    <caption>我是一個聰明表格</caption>
+    <tr>
+        <td colspan="3" align="center">1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td rowspan="3">1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+<hr>
+
+
+<!-- form的action(指定URL位址，告訴browser當user發出表單要把表單送到哪) -->
+<!-- method(指定資料傳輸用http協議，常用get(在form action的URL上送出，資料小會被在表單直接看到)、post) -->
+<!-- post(放在http傳輸封包body送出，資料量大、夾帶檔案file、具隱私性用) -->
+<!-- target回應結果:_self當前視窗、_blank新頁、_parent顯示上層、_top最頂層視窗 -->
+<!-- autocomplete是否啟用自動完成:值off、on -->
+
+<!-- input輸入(有很多不同用途):.. -->
+<!-- type:text(文字輸入框)、password(密碼文字輸入框不備顯示字元)、checkbox(核取方塊) -->
+<!-- type:radio(選項按鈕)、submit(送出按鈕) -->
+<!-- input可配上value，如text value=指定輸入框預設文字、submit配上value指定按鈕文字 -->
+<!-- input的textarea輸入多行文字的輸入框 -->
+
+
+<h2>表單</h2>
+<form method="post" enctype="multipart/form-data"></form>
+<table width="600" border="1" cellpadding="0">
+<tr>
+    <td width="30" align="center">帳號</td>
+    <td width="100">
+        <input type="text" size="30" maxlength="10" placeholder="請輸入帳號" name="id"></td>
+</tr>
+<tr>
+    <td width="30" align="center">密碼</td>
+    <td width="100">
+        <!-- size是input輸入文字的寬度 -->
+        <input type="password" size="30" maxlength="10" placeholder="請輸入密碼" name="pw">
+    </td>
+</tr>
+<tr>
+    <td width="30" align="center">性別</td>
+    <td width="200">
+        <!-- checked預設選擇 -->
+        <!-- input在最後面的>打的文字才會出現在表單上，不是value -->
+        <!-- radio不能複選 -->
+        <input type="radio" value="boy" name="gender">boy
+        <input type="radio" value="girl" name="gender" checked>girl
+    </td>
+</tr>
+<tr>
+    <td width="30" align="center">興趣</td>
+    <td>
+        <!-- checkbox可複選 -->
+        <input type="checkbox" value="拍照" name="like">拍照
+        <input type="checkbox" value="看書" name="like">看書
+        <input type="checkbox" value="寫程式" name="like">寫程式
+        <input type="checkbox" value="睡覺" name="like">睡覺
+        <input type="checkbox" value="逛街" name="like">逛街
+    </td>
+</tr>
+<tr>
+    <td width="30" align="center">出生地</td>
+    <td>
+        <select>
+            <option value="台北">台北</option>
+            <option value="桃園">桃園</option>
+            <option value="台中">台中</option>
+            <option value="高雄">高雄</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td width="30" align="center">上傳檔案</td>
+    <td>
+        <input type="file" name="up_file">
+    </td>
+</tr>
+<tr>
+    <td width="30" align="center">留言訊息</td>
+    <td>
+        <!-- row高度輸入數、cols寬度輸入數 -->
+        <textarea name="meg" id="neg" cols="30" rows="10"></textarea>
+    </td>
+</tr>
+</table>
+
+<hr>
+
+<!-- 剩下表單!!!特殊字元!! -->
+<!-- 錨點多練習!! -->
+<!-- 小白yt的影片練習 -->
+<!-- 甚麼是css? -->
+
+
+
+
+<hr>
+</body>
+</html>

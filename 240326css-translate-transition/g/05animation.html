@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05animation</title>
+    <!-- cdn 可以直接 link 進來: 就不用上網找套件，可以直接用 cdn 找網路上的套件 -->
+    <!-- 套件 class化 !!!!! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css"></link>
+   
+
+    
+    <style>
+        .container{
+            width: 75%;
+            margin: auto;
+            padding: 1rem;
+            border: 1px solid #333;
+        }
+
+        /* wrap */
+        .wrap{
+            border: 1px dashed #333;
+            margin: 50px;
+            /* padding: 50px 0? */
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightcyan;
+            color: white;
+            line-height: 100px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* 建立 animation */
+        /* 步驟一: 建立一組關鍵影格(keyframes)、可以自取名稱*/
+        /* 設定動畫名稱、起始from(0%)狀態 到 結束to(100%)狀態*/
+        /* 百分比% 進度可以自己去做設定 */
+
+        @keyframes animation{
+            /* 原本0%(from)-50%-100%(to)  */
+            0%{
+                /* translate 會被蓋過去
+                transform 的每一個階段都要放屬性，不然會被蓋過去 */
+                transform: rotate(0deg);
+                background: lightpink;
+                transform: translate(0,0) rotate(0deg);
+            }
+
+            50%{
+                background: lightgreen;
+                /* calc(50vw-30vw)計算函式單位? */
+                /* view-weight(寬)、view-height(高) */
+                transform: translate(25vw,0) rotate(360deg);
+
+            }
+            100%{
+                background-color: lightseagreen;
+                transform: translate(50vw,0) rotate(720deg);
+            }
+        }
+
+        /* animation 放在.box身上 */
+        .animation{
+            animation-name: animation;
+            animation-duration: 1s;
+            /* animation-iteration-count 沒有設定: 預設一次 */
+            /* 播放次數 */
+            animation-iteration-count: 3;
+            /* infinite 無限次撥放 */
+            animation-iteration-count: 1;
+
+            /* 自定義速率: Easing Functions Cheat Sheet - 費茲陷速率
+            (但不是每一個都會給css的曲線樣式) */
+            transition-timing-function:cubic-bezier(0.12, 0, 0.39, 0);
+            /* nomal(預設) 正向播放 0-100% */
+            /* reverse 反向播放 100-0% */
+            /* alternate 正向交替播放 0-100-0-100% */
+            /* alternate-reverse 反向交替播放 100-0-100-0% */
+            animation-direction: normal;
+
+            /* animation-fill-mode: 動畫從哪裏開始去做? */
+            /* animation-fill-mode: none(預設) */
+            /*  animation-direction: normal + animation-fill-mode: none
+                以上兩個狀態設定 box 的狀態會回到原本 */
+            animation-fill-mode: none;
+            animation-fill-mode:forwards;
+            /* animation-fill-mode:forwards (box停留在會後的畫面) */
+            /* ???? */
+            /* animation-fill-mode: backwards - 動畫開始前，先套用第一個關鍵影格 100% */
+            /* animation-delay: 1s; */
+            /* animation-fill-mode: both - 動畫一開始在第一幀，結束再最後一幀 */
+            animation-fill-mode: both;
+
+            /* 縮寫!!! */
+            /* direction, delay, 屬性值 */
+            /* ?????? */
+            animation: animation  2s 1s linear infinite alternate both;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1> 動畫(animation) </h1>
+        <p> 動畫與轉場的差異 </p>
+        <ul>
+            <li>css 動畫大多用 GSAP、 css套件 - 用amimate.css (可以link起來動畫連結) </li>
+            <li>可以設定關鍵影格(keyframes)控制蹭畫進度狀態，產生更複查的動畫</li>
+            <li>可以循環或重複來回播放，網頁載入時自動發生，也可以觸發發生(新增、刪除、class)</li>
+        </ul>
+        <h2> transition </h2>
+        <ul>
+            <li>一次性且沒有循環效果，必須重新再觸發一次</li>
+            <li>一定要有觸發條件，兩種樣式狀態的改變</li>
+        </ul>
+
+        <div class="wrap">
+            <div class="box animation"></div>
+        </div>
+        <h1 class="animate__animated animate__backInDown"> animation動畫插件 - cdn </h1>
+
+
+    </div>
+    
+</body>
+</html>

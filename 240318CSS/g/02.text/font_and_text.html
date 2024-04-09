@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.設定google font字型(需要google-font的第三個link 貼在這裡) -->
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+    <style>
+        /* html跟root的關係確認，html>root? */
+        html {
+            font-size: 16px;
+        }
+
+        /* :root可以選擇到html */
+        :root {
+            font-size: 16px;
+        }
+
+        /* 通常都會在body設定文字*/
+        body {
+            /* 用打的選、貼過去、有順序、電腦有沒有支援 */
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        /* 要注意class前後要對應起來!  */
+        .font-style {
+            /* 設定字型家族、有順序 、先使用 微軟正黑*/
+            /* 用打的選、貼過去、有順序、電腦有沒有支援 */
+            font-family: 'Arial Narrow Bold', sans-serif;
+            /* 字體大小，px；em、rem(不同單位) */
+            font-size: 30px;
+            /* 設定斜體 */
+            font-style: italic;
+            /* 設定粗體 */
+            font-weight: bold;
+            /* 設定字體變大寫，第一個字母較大(只選英文) */
+            font-variant: small-caps;
+            /* 縮寫font */
+            /* 30px/40px 代表字體大小/行高 (斜線一定要，不能省略) */
+            /* bold 跟 italic 前後調換沒有影響 */
+            font: italic bold 30px/40px 'Arial Narrow Bold', sans-serif;
+        }
+
+        /* 自訂字型固定格式、url連結位置、./+檔案 、用,隔開 */
+        /* 有兩個步驟: 一、@font-face先設定；二、用class設定 .font-set */
+        /* 有很多字型網站資源: ex, 1001 Fonts*/
+        @font-face {
+            font-family: "myfont";
+            src: url(./waltograph42.otf), url(./Adine\ Kirnberg.ttf), url(./Antro_Vectra_Bolder.otf)
+        }
+
+        .font-set {
+            font-family: "myfont";
+            font-size: 50px;
+        }
+
+        /* google font的css class裡面的font-family...貼過來 */
+        .google-font {
+            font-family: "Madimi One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* 文字的型式 */
+        .text-style {
+            /* 文字對齊:　left、center、right */
+            text-align: center;
+            /* 文字畫線:underline、overline、line-through、none */
+            text-decoration: overline;
+            /* 第一行文字的縮排 */
+            text-indent: 2rem;
+            /* 文字大小寫轉換:  lowercase、capitalize(締一個英文單字大寫)、 uppercase*/
+            text-transform: lowercase;
+            /* 文字陰影:
+            水平位移 垂直位移 陰影模糊半徑 顏色*/
+            /* 水平位移(右邊+ 左-) 垂直位移(下+ 上-) 陰影模糊半徑()  rgba顏色()*/
+            text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
+            /* 每個字元的間距(英文、中文可以) */
+            letter-spacing: 3px;
+            /* 單字的間格，必須要有空格才會有作用(中文難) */
+            word-spacing: 5rem;
+            /* 行高(每一行之間的高度(單位): px、rem、em) *
+            /* f12的style - computed可以檢查line-height */
+            /* 用font-size作為檢查??? */
+            font-size: 16px;
+            line-height: 10px;
+            /* 行高也可以用數字，用來表示倍數(以字體大小為倍數) */
+            /* 整份文字預設: 16px ，以font-size為倍數*/
+            line-height: 2;
+        }
+
+        /* 其他組逗號、最後一定會有分號 */
+        /* 練習陰影漸層! */
+        .multi-text-shadow {
+            font-size: 4rem;
+            text-shadow:
+                /* 數字跟px之間不能有空格 */
+                1px 1px 1px rgba(255, 255, 255, 1),
+                2px 2px 2px rgba(255, 255, 0, 1),
+                3px 3px 3px rgba(255, 150, 0, 1),
+                4px 4px 4px rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>1.Font 樣式設定</h1>
+    <!-- 以class樣是設定 -->
+    <p class="font-style">
+        專題先進，日月潭是。
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore vitae fuga atque facilis esse corrupti
+        officia ipsam explicabo possimus repellat, quasi modi quas reiciendis ad velit repellendus odio necessitatibus
+        fugiat.</p>
+    <!--body設定  -->
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil esse totam beatae perspiciatis impedit eos,
+        aliquam sunt officiis repellat reiciendis earum modi repudiandae accusamus, expedita error quibusdam rem. Magni,
+        porro.
+    </p>
+
+    <h2>自訂字型</h2>
+    <!-- 字型的副檔名: .ttf、.otf -->
+    <p class="font-set">Lorem ipsum dolor sit amet. </p>
+    <hr>
+
+    <h2>Google Fonts</h2>
+    <!-- google提供很多字型服務: google font(中文字體支援很少) -->
+    <!-- ctlorem中文假字 -->
+    <p class="google-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ad aspernatur quis numquam nobis
+        voluptatem! Cupiditate, ducimus! Pariatur iusto, nesciunt beatae dolorem est eum quis, explicabo quos sunt modi
+        natus.</p>
+    <hr>
+
+    <h2 class="text-style">
+        不禁共享感到輸出容量漫畫部
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, molestias.
+    </h2>
+    <hr>
+
+    <h2>文字多重陰影</h2>
+    <p class="multi-text-shadow">
+        Lorem ipsum dolor sit amet.
+    </p>
+
+    <h1>3.rem 跟 em的差異</h1>
+    <ul>
+        <li>文字預設字體大小為 16px</li>
+        <li>root指根元素html、root</li>
+        <!-- 可以在f12的style-compute看 -->
+    </ul>
+
+    <h2>REM</h2>
+    <!-- 直接找root乘以倍數，root在上面head設定 -->
+    <div style="font-size:1rem">
+        <!-- 16(倍數) -->
+        font
+        <div style="font-size:2rem">
+            <!-- 32 -->
+            font
+            <div style="font-size:3rem">font</div>
+            <!-- 48 -->
+        </div>
+    </div>
+
+
+    <h2>EM</h2>
+    <p>em 可能為父層或祖先層 font-size的倍數
+        父層有設定字體大小以他為基準，若無就會繼續往外找，如果有就用，沒有就會一直找到根元素html，也就是16px
+        <!-- 注意div容器的巢狀結構! -->
+    </p>
+    <!-- em從外面找父元素 -->
+    <div style="font-size:1em">
+        font
+        <div style="font-size:2em">
+            <!-- 16x2 -->
+            font
+            <div style="font-size:3em">font</div>
+            <!-- 16x2x3 -->
+        </div>
+    </div>
+
+</body>
+
+</html>

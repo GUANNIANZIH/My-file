@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>g-position</title>
+    <style>
+        .container{
+            width: 75%;
+            margin: auto;
+            border: 1px solid #000;
+            margin-bottom: 3rem;
+        }
+
+        .box1{
+            background: lightpink;
+        }
+
+        .box2{
+            background: paleturquoise;
+        }
+
+        .box3{
+            background: lightcoral;
+        }
+
+        .box4{
+            background: lightgreen;
+        }
+
+        /* position用在這裡!!! */
+        /* 用相對定位: 空間保留給box2、 */
+        .relative{
+            position: relative;
+        }
+
+        .absolute{
+            position: absolute;
+
+        }
+
+        /* 進入定位層: 層為較高 */
+        .left{
+            left: 0px;
+        }
+
+        .top{
+            top: 100px;   
+        }
+        
+        .right{
+            right: 0;
+        }
+
+        .bottom{
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- position 為定位、不參與流向排版(由左至右、由上至下) -->
+    <!-- 千萬不要用一個一個 position 去排版，定位用在fix(固定定位)、(絕對定位)、(相對定位
+        ) -->
+</body>
+    <div class="container"></div>
+    <h1>position: relative</h1>
+    <h2>當元素為相對定位時</h2>
+    <ul>
+        <li>使用屬性(top、right、bottom、left)會以自己原來的位置位移，保留自身原來的空間，不會被其他元素佔據</li>
+        <li>沒有任何位移屬性，只有設定 position: relative 會留在原地不動， relative 元素常作為 absolute 子元素為一目標依據</li>
+        <li>進入定位層，可以設定 z軸( z-index )</li>
+
+    </ul>
+
+    <div class="box1">
+      <h1>box1</h1>
+        <p>
+            轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+        </p>
+
+        <div class="box2 relative left right " style="right: 100px;bottom: 100px;">
+            <h1>box2</h1>
+              <p>
+                  轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+              </p>
+              
+              <div class="box3">
+                <h1>box3</h1>
+                  <p>
+                      轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                  </p>
+
+                  <div class="box4">
+                    <h1>box4</h1>
+                      <p>
+                          轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                      </p>
+        
+
+
+        <!-- 絕對定位: 也會進入定位層 -->
+        <div class="container relative"></div>
+        <h1>position: absolute </h1>
+            <h2>當元素為絕對定位時</h2>
+             <ul>
+                <li>沒有任何位移屬性，該元素脫離正常流向，進入定位層，後方元素會流動至絕對元素的下方(被遮性) </li>
+                <li>若祖先元素找不到定位點 (absolute、relative、fixed)，最後會以 html 根元素為位移目標 </li>
+            </ul>
+                  
+                 <div class="box1">
+                <h1>box1</h1>
+                <p>
+                     轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                </p>
+                  
+                <!-- BOX2脫離正常流向、寬度變寬 -->
+                <div class="box2 absolute left top">
+                <h1>box2</h1>
+                <p>
+                11111111111111111111轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                </p>
+                                
+                <div class="box3">
+                <h1>box3</h1>
+                <p>
+                轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                 </p>
+                  
+                <div class="box4">
+                <h1>box4</h1>
+                <p>
+                轉身投資計算系統的話簡歷留在你能這些之一斑竹湖北最終，億元大哥銷售科技有限公司頭銜晶片同樣時候望着我是，委託減肥積分住了討論主任回覆完美明年，積極供應商良好每月擔任選項原理，反映所有管理鑒定信號，面。
+                </p>
+
+             </div>
+</html>

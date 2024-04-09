@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1. 陣列裡搜尋東西 (文字 include)
+        const numbers = [100,200,300,500]
+        // (1).includes (搜尋內容)  ****常用
+        // 尋找陣列是否有東西符合搜尋內容，回傳 boolean
+        console.log(numbers.includes(200))
+
+        // (2).indexOf (搜尋內容，從第幾個開始往後找)(回傳的索引值同陣列，不會被修改) ****常用
+        // 尋找陣列是否有東西符合搜尋內容，回傳第一個符合的索引， -1 代表找不到
+        console.log(numbers.indexOf(100,2))  //從索引2開始找， -1 代表找不到
+
+        // (3).lastIndexOf (搜尋內容，從第幾個開始往前找)
+        // 尋找陣列是否有東西符合搜尋內容，回傳第一個符合的索引， -1 代表找不到 (從後面開始往前找)
+        // 第二個參數是選填，預設是 array.length -1
+        console.log(numbers.lastIndexOf(100,2))
+
+        // 2. 在陣列中搜尋
+        const arr = [{a:1}] //建立了新的物件
+        console.log(arr.includes({a:1}))  //跟上行一樣都變成建立了新物件----false
+        // 正確的:
+        const obj = {b:2}
+        const arr2 = [obj]
+        console.log(arr2.includes(obj)) //----true
+
+
+        // 3. 
+        // (1) .some(function) ----只要有一個就 true
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 判斷陣列有沒有東西執行 function 後 return true
+        // 得到 boolean
+        const numbers2 = [100,200,300,400,500]
+        // 可以只挑要的選項(value,index,array)
+        //  function 有三個參數
+        //  value = 現在執行 function 的東西值
+        //  index = 現在執行 function 的東西索引
+        //  array = 陣列本身
+        const some = numbers.some((value) => {
+            return value > 300
+        })
+        console.log('some',some)                  //some ture
+        // 簡寫:const some = numbers2.some(value => value > 300) 
+
+
+        // (2) .every(function) ----每個東西跑完才會是 true
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 判斷陣列所有東西執行 function 後 return true
+        // 得到 boolean
+        const every = numbers2.every((value) => {
+            return value > 300
+        })
+        console.log('every',every)   //every false
+
+
+        // (3) .find(function) 
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 回傳第一個執行 function 結果為 true 的值
+        const find = numbers2.find((value) => {
+            return value > 300
+        })
+        console.log('find',find)   //find 400
+
+
+        
+        // (4) .findLast(function) 
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 回傳最後一個執行 function 結果為 true 的值
+        const findLast = numbers2.findLast((value) => {
+            return value > 300
+        })
+        console.log('findLast',findLast)   //findLast 500
+
+
+
+        // (5) .findIndex(function) ****常用
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 回傳第一個執行 function 結果為 true 的索引
+        const findIndex = numbers2.findIndex((value) => {
+            return value > 300
+        })
+        console.log('findIndex',findIndex)   //findIndex 3
+
+
+
+        // (6) .findLastIndex(function) 
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 回傳最後一個執行 function 結果為 true 的索引
+        const findLastIndex = numbers2.findLastIndex((value) => {
+            return value > 300
+        })
+        console.log('findLastIndex',findLastIndex)   //findLastIndex 4
+
+
+
+        // (7) .filter(function) ****常用(使用者關鍵字搜尋)
+        // 迴圈陣列，每個東西都執行提供的 function
+        // 將所有執行結果為 true 的值產生為新陣列，false 的值刪掉，不會動到原陣列，會產生新的陣列
+        const filter = numbers2.filter((value) => {
+            return value > 300
+        })
+        console.log('filter',filter,numbers2)   //(2) [400, 500]、(5) [100, 200, 300, 400, 500]
+
+
+    </script>
+</body>
+</html>

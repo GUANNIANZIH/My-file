@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        //物件出來會是物件{}，陣列出來會是陣列[]!!!!!
+        //解vue的時很常用: 物件對名字、拿出來用冒號(:)重新命名，避免衝突
+        const array =[1,2,3,4]
+        // const one = array[0]  ![]裡面放索引號碼，所以 索引0號=1=one
+        // const two = array[1]  ![]裡面放索引號碼，所以 索引1號=2=two
+        // ...代表剩下的分配給 others 一定要放在最後面，也可以不放(不取的話)
+        // 陣列解構時的 one、two、others 都可以自己命名
+        //+++ const 改成 let 避免重複const
+        let [one, two, ...apple] =array
+
+
+        // 如果用陣列用 document.write 會以語法 tostring()會失去[]，所以改用console.log
+        // +++
+ 
+        console.log(one) //1
+        console.log(two) //2
+        console.log(apple) // (2)[3,4] ，(2)代表的是[]裡面有兩個值
+
+        // +++解構是看資料型態，陣列物件是reference ，其他是 value
+        // 資料型態:數字 直接改，但陣列、物件會改到原本的!!!!!!!
+        one = 100
+        console.log('one',one)   // one 100
+        console.log('array',array) //  array (4)[ 1,2,3,4 ]
+
+        const obj ={a:1, b:2, c:3, d:4}
+        // const a = obj.a
+        // const bbb = obj.b
+        // 物件解構必須跟 key 相同的名字，或是用冒號(:)重新命名
+        // ...可以自己命名，如果用不到剩下的就不用寫...+命名，會自己抓取位置
+
+        // 要用冒號(:)再命名一次，避免重複命名，如下
+        // const b =23154533
+        // const {a,b,c,...banana}= obj - 裡面b又再重複命名一次，所以會發生錯誤
+
+        // 所以要用冒號(:)再命名一次 const { a, b: bbb, ...othersObj}= obj
+        const b =23156498
+        // +++避免重複 const 改 let
+        let { a, b: bbb, ...othersObj }= obj
+        console.log(a)   //1
+        console.log(bbb) //2
+        console.log(othersObj) //物件出來會是物件，陣列出來會是陣列??? {c:3, d:4}
+
+        //++++
+        a = 100
+        console.log(a)   // 100
+        console.log(obj) //{ a:1,b:2,c:3 }
+
+
+    </script>
+</body>
+</html>

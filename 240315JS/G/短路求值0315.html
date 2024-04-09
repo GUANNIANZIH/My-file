@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //短路求值
+        // ||會取第一個boolean判斷為true的值
+        // 如果全部都是 false 則回傳最後一個值
+        //! 以星座為例(想一下?)
+        const x = null || 0 || undefined || 123 || 'abc' || 'dfgd' || false
+        console.log(x)
+
+        //! prompt收到文字或null(沒輸入)
+        //省code(跟下方比較)
+        //prompt name = prompt('請輸入名字') || '路人'
+        //console.log(name)
+
+        //let name = prompt('請輸入名字)
+        //if (name === ''|| name === null){
+        //  name = '路人'
+        //}
+
+        //&&會取第一個boolean()判斷為false的值
+        // 如果全部都是 true 則回傳最後一個值
+        const y = 'abc' && 123 && 456 && false && undefined
+        console.log(y)
+
+        // ??會取第一個boolean()判斷為不是null也不是undefined的值
+        const z = undefined ?? null ?? false ?? 'abc' ?? 123 ?? 456 ?? false ?? 'def'
+        console.log(z)
+
+
+
+
+    </script>
+</body>
+
+</html>

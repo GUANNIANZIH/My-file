@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> numbers </title>
+</head>
+<body>
+    <script>
+    
+    // // 四捨五入
+    // console.log(Math.round(4.2))
+    // console.log(Math.round(4.5))
+    // // 無條件進位
+    // console.log(Math.ceil(4.2))
+    // // 無條件捨去
+    // console.log(Math.floor(3.99999))
+    // // 次方
+    // console.log(Math.pow(3,2))
+    //  // 平方根
+    // console.log(Math.sqrt(64))
+    //  // 正負數判斷 - 負數(-1)、0(0)、正數(1)
+    // console.log(Math.sign(0))
+    //   // 絕對值
+    // console.log(Math.abs(-3-9))
+    //  // 數組取最小值
+    // console.log(Math.min(3,2,0,-99,320,78,0))
+    //  // 數組取最大值
+    // console.log(Math.max(3,2,0,-99,320,78,0))
+    //  // 陣列取最大值
+    // let array =[0,-55,38,99,3888,9,-300]
+    // console.log(Math.max(...array))
+    //  // 隨機數，0~1之間，不包含1，所以永遠會比1小
+    // console.log(Math.random( ))
+
+
+    // 題目一: 想想看怎麼從 0 到 100 隨機取一個整數?
+
+    // document.write(Math.random()*2)
+    // document.write(`<br>`)
+    // // 最小-最大回傳到0-99
+    // document.write(Math.floor(Math.random()*100))
+    // document.write(`<br>`)
+
+    // // 設一個函式，並在最後+1，才可以回傳到100
+    // function getNumber(n){
+    //     return Math.floor(Math.random()*n)+1
+    // }
+    // // 回傳最小到最大區間 0-100
+    // document.write(getNumber(100))
+
+    // 設一個 for 測試:
+    for(i=1 ; i<200 ; i++){
+        const number = Math.floor(Math.random()*100)+1
+        document.write(number)
+    
+    if(number === 0){
+        document.write(`這裡出現0`)
+    }else if(number === 100){
+        document.write(`這裡出現100`)
+    }
+    document.write(`<br>`)
+}
+    // 老師的答案:
+        // for (let i = 0; i < 200; i++) {
+    // const number = Math.round(Math.random() * 100)
+    // document.write(number)
+
+    // if (number === 0) {
+    //     document.write('&emsp;這一行有 0')
+    // } else if (number === 100) {
+    //     document.write('&emsp;這一行有 100')
+    // }
+    // document.write('<br>')
+    // }
+
+    document.write(`<hr>`)
+
+    // 題目二: 製作隨機數字 function，提供最小整數和最大整數，回傳一個區間內的隨機整數
+        
+        function range (min,max){
+        // 最小到最大的區間+1才會包含最大的數值，再加上被扣掉的最小值
+        return Math.floor(Math.random()*(max-min+1))+min     
+        }
+        document.write(range(10,100))
+
+        document.write(`<hr>`)
+
+        // 先設一個空的 array
+        let array = []
+        // 設定 for 迴圈跑出5個數字，0-10範圍
+        for(i=0 ; i<=5 ; i++){
+            array.push(range(0,10))
+        }
+        document.write(array)
+
+    // 題目三: 請寫一個 function，判斷傳入的數字是不是質數，並使用該 function 列出 1 ~ 100 間的所有質數
+    // 質數特性: 1.不能被大於 2 且小於自身平方根的數整除  2.只能被 1 和自身整除，不能被 2 到 (num-1) 整除
+        const isPrime = function(x){
+            
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

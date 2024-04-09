@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../240314JS/班上同學的hk"
+		},
+		{
+			"path": "../../240315JS"
+		},
+		{
+			"path": "../../240314JS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "240314_js"
+	}
+}

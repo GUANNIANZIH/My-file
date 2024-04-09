@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //如果只有a+10沒有結果(少了=等於)答案一樣是5，要改成a=a+10
+        //單純的a+10，卻沒有改道a的值
+        let a = 5
+        a + 10
+        console.log(a)  //a=5
+        //將a改為a原本的值+10
+        a = a + 10
+        console.log('a', a)  //a=15
+        //簡寫運算值，簡寫邏輯練習!!!
+        a += 10
+        console.log('a', a)  //a=25
+
+        let b = 5
+        b -= 2
+        console.log('b', b) //b=3
+        //con裡面太多用'去改'去加文字，參考上面('a',a)內再看f12
+        let d = 100
+        d /= 5
+        console.log('d', d)  //d=20
+
+        let e = 51
+        e %= 5 //%取餘數
+        console.log('e', e)  //e=1
+
+
+    </script>
+</body>
+
+</html>

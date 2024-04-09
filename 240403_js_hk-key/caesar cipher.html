@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // error 問題
+        // 在函式定義時，不應該重新宣告 string 和 number 參數，參數已經在函式的參數列表中被定義
+        // 使用 prompt() 函式接收使用者輸入不太適合在函式內部執行，應該在呼叫函式之前進行
+        // 在 String.fromCharCode(newString) 的地方，需要將結果賦值給變數或者使用 console.log() 來輸出，否則新的字串並不會被處理或輸出
+        // 在 return 陳述中，應該直接返回計算結果，而不是將程式碼作為字串返回
+
+
+        // 宣告凱薩密碼函式，設兩個值 string是字串、number是偏移數
+        const caesarCipher = (string,number)=>{
+            // string 使用者輸入英文明文
+            // number 使用者輸入數字密碼(數字偏移量)
+            
+            // 設一個 result 儲存結果的變數
+            let result = " "
+
+            // 用 for 迴圈去跑出每一個字串索引，例如:abcd=4(索引0、1、2、3)
+            for( i=0 ;i <string.length  ; i++ ){
+                // 把字元轉換為編碼數字: newString.charCodeAt()，列出每個值得編碼
+                let coding = string.charCodeAt(i)
+                // 下 if 判斷式: 條件範圍 大寫字元65-90 小寫字元97-122 排除中間91-96
+                if( coding<=90 && coding>=65 || coding>=97 && coding<=122){
+                    // 產生新的編碼= 編碼數字 + 偏移量
+                    let newString = coding + number
+                    // 傳回 +偏移數後 並轉換為:字元編碼轉回文字 String.fromCharCode()
+                    result += String.fromCharCode(newString)
+                    // 錯誤: console.log(String.fromCharCode(newString))
+                }
+            }
+            
+            return result
+        }
+        // 讓使用者輸入英文明文跟數字密鑰
+        let inputString = prompt('請輸入字串')
+        // 使用 parseint 轉為數字
+        let offset = parseInt(prompt('請輸入偏移數字'))
+
+        // 要用 document去呼叫 caesarCipher函示，把結果顯示在葉面上
+        document.write(caesarCipher(inputString,offset))
+    </script>
+</body>
+</html>

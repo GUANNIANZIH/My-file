@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = prompt('請輸入姓名')
+        for (; ;) {
+            let month = parseInt(prompt('請輸入出生月份(數字)'))
+            if (month >= 1 && month <= 12) {
+                for (; ;) {
+                    let day = parseInt(prompt('請輸入出生日期(數字)'))
+                    if ((month === 3 && day >= 21 && day <= 31) || (month === 4 && day >= 1 && day <= 19)) {
+                        alert(name + "你好，你的星座是" + "牡羊座")
+                        break;
+                    } else if ((month === 4 && day >= 21 && day <= 30) || (month === 5 && day >= 1 && day <= 21)) {
+                        alert(name + "你好，你的星座是" + "金牛座")
+                        break;
+                    } else if ((month === 5 && day >= 22 && day <= 31) || (month === 6 && day >= 1 && day <= 21)) {
+                        alert(name + "你好，你的星座是" + "雙子座")
+                        break;
+                    } else if ((month === 6 && day >= 22 && day <= 30) || (month === 7 && day >= 1 && day <= 22)) {
+                        alert(name + "你好，你的星座是" + "巨蟹座")
+                        break;
+                    } else if ((month === 7 && day >= 23 && day <= 31) || (month === 8 && day >= 1 && day <= 23)) {
+                        alert(name + "你好，你的星座是" + "獅子座")
+                        break;
+                    } else if ((month === 8 && day >= 24 && day <= 31) || (month === 9 && day >= 1 && day <= 23)) {
+                        alert(name + "你好，你的星座是" + "處女座")
+                        break;
+                    } else if ((month === 9 && day >= 24 && day <= 30) || (month === 10 && day >= 1 && day <= 23)) {
+                        alert(name + "你好，你的星座是" + "天秤座")
+                        break;
+                    } else if ((month === 10 && day >= 24 && day <= 31) || (month === 11 && day >= 1 && day <= 22)) {
+                        alert(name + "你好，你的星座是" + "天蠍座")
+                        break;
+                    } else if ((month === 11 && day >= 23 && day <= 30) || (month === 12 && day >= 1 && day <= 21)) {
+                        alert(name + "你好，你的星座是" + "射手座")
+                        break;
+                    } else if ((month === 12 && day >= 22 && day <= 31) || (month === 1 && day >= 1 && day <= 20)) {
+                        alert(name + "你好，你的星座是" + "摩羯座")
+                        break;
+                    } else if ((month === 1 && day >= 21 && day <= 31) || (month === 2 && day >= 1 && day <= 19)) {
+                        alert(name + "你好，你的星座是" + "水瓶座")
+                        break;
+                    } else if ((month === 2 && day >= 20 && day <= 29) || (month === 3 && day >= 1 && day <= 20)) {
+                        alert(name + "你好，你的星座是" + "雙魚座")
+                        break;
+                    } else {
+                        alert('請輸入正確日期')
+                    }
+
+                }
+                break
+            }
+            else {
+                alert('請輸入正確月份')
+            }
+        }
+    </script>
+</body>
+
+</html>

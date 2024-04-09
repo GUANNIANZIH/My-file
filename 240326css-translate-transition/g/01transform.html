@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <title> 01 transform </title>
+    <style>
+        
+        /* *{}全域選擇器 */
+        *{
+            /* 每個 html 的原生的標籤像是 padding...都去掉 ( 暴力的 reset 全部清除 ) */
+            /* 將整個檔案重新整理，以便調整 */
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          font-family: "Noto Sans TC", sans-serif;  
+        }
+        /* 把 body 變成滿版高度(視窗100%的高度)，子元素才能繼承 body */
+        html,
+        body{
+            height: 100%;
+        }
+
+        /* body{ */
+            /* vh (view port height) */
+            /* height: 100%; */
+        /* } */
+
+        /* 子元素才能繼承 body */
+        section{
+            height: 100%;
+            background-color: lightseagreen;
+
+            /* 子元素全部水平置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 奇數、section? */
+        section:nth-child(odd){
+            background: lightcoral;
+            position: relative;
+        }
+
+        /* 偶數 */
+        section:nth-child(even){
+            background: lemonchiffon;
+            position: relative;
+        }
+        
+        h1{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .dashed{
+            display: inline-block;
+            border: 5px dashed lightslategray;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            color: lightgreen;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* px、em、rem、%
+        % 指的是元素本身尺寸 、 ex width = 300px =50% = 150px
+        第一個值是 x軸，正為右，負為左
+        第二個值是 y軸，正為下，負為上 */
+        /* !注意! transform: translate 移動屬性(不受 transform-origin 影響)!
+        transform-origin 改變圓心在中心點位置(預設) */
+        /* 可以嘗試在 f12 操作看物件移動的變化 */
+        /* 移動有三種: 1.margin、2.transform、3.  */
+
+        .translate{
+            /* 也可以在這裡設 absolute 在設定 top、left 50%，抓定位點 */
+            /* 以矩形盒子的左上角點位移、百分比(%)是依據原來的盒子產生移動距離(x,y)、  */
+
+            /*  transform 是結果論(會被cover過去)-水平垂直 */
+            transform: translate(0%, 0%); /* xy雙值才能移動，跟單值移動不一樣 */
+            /* 這邊是移動 x */
+            transform: translateX(-50%);
+            /* 這邊是移動 y */
+            transform: translateY(-50%);
+        }
+        
+        .scale{
+            /* scale 數值是以倍數顯ˋ，可以是負值 */
+            transform: scale(1);
+            /* transform: scaleX(2); */
+            /* transform: scaleY(2); */
+
+            /* transform-origin 改變原點-
+            預設是 center center
+            可以設定值  px、em、rem、%、left、right、top、bottom、center，如果省略第二個值 預設是center*/
+            
+            /* 右上角 */
+            /* transform-origin: 0% 0%; */
+            /* transform-origin: 0px 0px; */
+            /*  多利用 f12 去調整位置關係 */
+        }
+
+        .rotate{
+            /* transform: rotate - 0-360deg，正為順時針、負為逆時針  */
+            transform-origin: 0% 0%; /* 先設定圓心點 */
+            transform: rotate(360deg);  /*360deg = 0deg)*/
+        }
+
+        .skew{
+            /* card的設計可以應用: cards-Bootstrap */
+            /* 可以改變圓心  transform-origin: 0% 0% */
+            transform-origin: 0% 0%;
+            transform: skewX(45deg);
+            transform: skew(15deg,15deg);
+        }
+
+        .more{
+            /* more 多屬性值由左至右去執行，順序會影響結果 */
+            transform-origin: 0% 0%;
+            transform: translateX(50px) translateY(50px) rotate(15deg) scale(1.25);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1> translate (位移) </h1>
+        <div class="dashed">
+            <div class="box translate"> translate (位移) </div>
+        </div>
+    </section>
+
+    <section>
+        <h1> scale (縮放) </h1>
+        <div class="dashed">
+            <div class="box scale"> Scale(縮放) </div>
+        </div>
+    </section>
+
+    <section>
+        <h1> rotate (旋轉) </h1>
+        <div class="dashed">
+            <div class="box rotate"> Rotate(旋轉) </div>
+        </div>
+    </section>
+
+    <section>
+        <h1> Skew (傾斜) </h1>
+        <div class="dashed">
+            <div class="box skew"> Skew(傾斜) </div>
+        </div>
+    </section>
+
+    <section>
+        <h1> 設定多屬性 more </h1>
+        <div class="dashed">
+            <div class="box more"> 設定多屬性 more </div>
+        </div>
+    </section>
+    
+
+    
+</body>
+</html>

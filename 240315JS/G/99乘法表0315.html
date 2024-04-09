@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //99乘法表
+        // document.write(`${i}<br>`)
+        //for (var a = 1; a < 10; a++) {
+        //    for (var b = 1; b < 10; b++) {
+        //        document.write(a + 'x' + b + '=' + a * b + '<br>')
+        //     }
+        // }
+        // ctrl+/ 可以直接包+//、var、let差別
+
+
+        //document.write('<table border="1">')放在for外面，才不會變一個個表格
+        //script不能直接放html標籤要加'''引號
+        document.write('<table border="1">')
+        for (let a = 1; a < 10; a++) {
+            document.write('<tr>')
+            for (let b = 1; b < 10; b++) {
+                document.write('<td>')
+                // 作法一: code較長、這種做法會變成每個一個表格
+                //     document.write('<table border="1">', '<tr>', '<td>' + a + 'x' + b + '=' + a * b + '</td>', '</tr>', '</table>')
+                // }
+                //}
+                // 作法二: code較短、這種做法會變成每個一個表格
+                // document.write(`<table border="1"><tr><td>${a + 'x' + b + '=' + a * b}</td></tr></table>`)
+                // }
+                //}
+
+                //用美金的不用加號
+                document.write(`${a}x${b}=${a * b}<br>`)
+                document.write('</td>')
+            }
+            document.write('</tr>')
+        }
+        document.write('</table>')
+        //外面結尾也要放但不用再border
+        //再做一次老師 版本的9*9乘法表
+    </script>
+</body>
+
+</html>

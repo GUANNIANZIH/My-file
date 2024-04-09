@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 巢狀
+        const fruits = [
+            // 用物件{}包很多、好幾層(不同筆資料)
+            { name:'apple' , price: 50 },
+            { name:'banana' , price: 20 },
+            { name:'orange' , price: 40 },
+        ]
+
+        // 試著用迴圈去把上述列出來
+        // 另一種console.table (二維資料:表達比較清楚)
+        console.log(fruits)
+        console.table(fruits)
+
+
+        document.write('<ul>')
+        // fruits.length是陣列可以取 length
+        for( let i=0; i< fruits.length; i++){
+            // 注意物件用(.)、陣列用[]
+            document.write(`<li>`)
+            document.write(`第${i+1}個水果${fruits[i].name}，價格是${fruits[i].price}`)
+            document.write('</li>')
+        }
+        document.write(`</ul>`)
+
+        // 假設有一個商店有名字(PCHome)、網址、物件{}
+        // 記得要用逗號(,)
+        // 都會中括號[]包大刮號{}
+        const store={
+            name: 'PCHome',
+            url:'https://24h.pchome.com.tw/',
+            products:[  //陣列裡面包陣列
+                { name: 'Apple Iphone 15 Pro Max (512G)-藍色鈦金屬' , price: 48900},
+                { name: 'Nothine Phone(2) 12+256 深灰' , price: 21900},
+            ]
+        }
+        // 用表格印出來
+        document.write('<table border="1">')
+        document.write('<caption>') //表格標題
+        // 注意用 .url(.物件:找值(網址)) 、.name
+        document.write(`<a href = "${store.url}">${store.name} </a>`)
+        document.write('</caption>') //注意<caption></caption>
+
+        //用 for 把它印出來: 注意store.products.length(2)
+        for( let i=0 ; i<store.products.length; i++){
+            // 注意<tr><td>位置層級、[]陣列、{}物件、 .name
+            document.write('<tr>')
+            document.write(`<td>${store.products[i].name}</td>`)
+            document.write(`<td>${store.products[i].price}</td>`)
+            document.write('</tr>')
+        }
+        document.write('</table>')
+        // csv是xcel檔案
+
+
+    </script>
+</body>
+</html>

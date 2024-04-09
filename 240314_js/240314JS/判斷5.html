@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //
+
+        //巢狀判斷式 (判斷式裡面還可以再使用判斷式，做更詳細的判斷)
+        //三個等於(===)
+        //
+        //
+        const weather = 'rain' //定義天氣
+        const umbrella = false
+
+        if (weather === 'rain') 
+        {  //出現巢狀if包if
+            if (umbrella) {
+                document.write('下雨，有傘，沒事')
+            } else {
+                document.write('下雨，沒傘，有事')
+            }
+        } 
+        else 
+        {
+            document.write('沒下雨，沒差')
+        }
+
+        
+
+        if (umbrella === false) 
+        {  //出現巢狀if包if
+            if (umbrella) {
+                document.write('下雨，有傘，沒事')
+            } else {
+                document.write('下雨，沒傘，有事')
+            }
+        } 
+        else 
+        {
+            document.write('沒下雨，沒差')
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

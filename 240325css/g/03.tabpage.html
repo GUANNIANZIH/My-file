@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 03 </title>
+
+    <style>
+        #mytab{
+            /* ?? */
+            display: flex;
+        }
+        .container{
+            width: 600px;
+            padding: 1rem;
+            border: 1px  solid #000;
+        }
+        label{
+            background: deeppink;
+            padding: 0.5rem 0.5rem;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        label:hover{
+            /*  cursor:pointer  */
+            cursor:pointer;
+            background: white;
+        }
+
+        label+label{
+            margin-left: 5px;
+        }
+
+        input{
+            display: none;
+        } 
+
+        .container1,
+        .container2,
+        .container3,
+        .container4{
+            display: none;
+        }
+        
+        /* 選擇誰要顯示: 藉由 radio 單一選項，當 radio 被checked時，同層全體選擇器(~)會找到對應的內容顯示 */
+        /* 條件只有一個會達成、點一跑一、二跑二... */
+        #tab1:checked~.container1{
+            display: block;
+        }
+        #tab2:checked~.container2{
+            display: block;
+        }
+        #tab3:checked~.container3{
+            display: block;
+        }
+        #tab4:checked~.container4{
+            display: block;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <!-- 做一個分頁選單(用css做) -->
+    <!-- 四個按鈕，點下去呈現內容 -->
+    <div id="mytab">
+        <!-- 這邊是按紐 -->
+        <label for="tab1">tab01</label>
+        <label for="tab2">tab02</label>
+        <label for="tab3">tab03</label>
+        <label for="tab4">tab04</label>
+    </div>
+
+    <div class="container">
+        <!-- 這邊是內容 -->
+        <!-- 值對應 id 、 只有第一個有checked 、 rasio單選、按甚麼就切換(因為上面 for屬性值 跟 id值 搭配)-->
+        <!-- checked 預設 -->
+        <input id="tab1" type="radio" name="tabControll" checked>
+        <input id="tab2" type="radio" name="tabControll" >
+        <input id="tab3" type="radio" name="tabControll" >
+        <input id="tab4" type="radio" name="tabControll" >
+
+        <div class="container1">
+            container1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt explicabo cum quo eum similique rem culpa quam recusandae nostrum distinctio dignissimos sunt illum praesentium iste cumque voluptates, officiis doloremque aut deleniti! Quibusdam adipisci reiciendis quis eaque veritatis, nesciunt praesentium minima cupiditate vitae delectus similique impedit harum! Cum odio exercitationem maiores?
+        </div>
+        <div class="container2">
+            container2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt explicabo cum quo eum similique rem culpa quam recusandae nostrum distinctio dignissimos sunt illum praesentium iste cumque voluptates, officiis doloremque aut deleniti! Quibusdam adipisci reiciendis quis eaque veritatis, nesciunt praesentium minima cupiditate vitae delectus similique impedit harum! Cum odio exercitationem maiores?
+        </div>
+        <div class="container3">
+            container3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt explicabo cum quo eum similique rem culpa quam recusandae nostrum distinctio dignissimos sunt illum praesentium iste cumque voluptates, officiis doloremque aut deleniti! Quibusdam adipisci reiciendis quis eaque veritatis, nesciunt praesentium minima cupiditate vitae delectus similique impedit harum! Cum odio exercitationem maiores?
+        </div>
+        <div class="container4">
+            container4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt explicabo cum quo eum similique rem culpa quam recusandae nostrum distinctio dignissimos sunt illum praesentium iste cumque voluptates, officiis doloremque aut deleniti! Quibusdam adipisci reiciendis quis eaque veritatis, nesciunt praesentium minima cupiditate vitae delectus similique impedit harum! Cum odio exercitationem maiores?
+        </div>
+        
+    </div>
+</body>
+</html>

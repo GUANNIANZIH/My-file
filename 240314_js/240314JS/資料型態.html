@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //數字直接打
+        const abc = 5
+        const pi = 3.14
+        //布林值
+        //true、false不能當保留字
+        //js
+        const on = true
+        const off = false
+        //文字，單雙引號都可以，中間要加單雙引號會亂掉變成拆組，要告訴是文字用\去跳脫字元，如下
+        //ˋ波浪可以換行，'跟"單雙引號不可以換行
+        const text1 = 'aa'
+        const text2 = 'bbb"b"bbbb'
+        const text3 = 
+        `cccc
+        cccc
+        ccc     
+        cc`
+
+        //typeoff取得後面資料變數，有''為文字
+        //typeof 這個指令來讓程式告訴我們這個變數目前的型態是什麼
+        //會連空白一起算進來
+        console.log(abc, typeof abc)  //得到number
+        console.log(pi, typeof pi)          //3.14
+        console.log(on, typeof on)          //得到boolean
+        console.log(text2,typeof text2)
+        console.log(text3, typeof text3)    //得到string
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //用and兩個都成立(&&)跟or(||)的判斷式
+        //兩個&&
+        //如果拿掉大刮{}建議對齊、排版(如:程式碼排版工具:機器人會上)
+        //
+        const rain = false, wind = true //
+        if (!rain && wind) console.log('看電影')
+        else console.log('在家發呆') //所以瀏覽器f12是"在家發呆""
+
+
+        //
+        const dinner = '炸雞'  //指定晚餐"炸雞"
+        if (dinner === '炸雞' || dinner === '可樂') { //如果晚餐是"炸雞"或是"可樂"
+            console.log('好耶')                       //是的話"好耶"
+        }
+        else {
+            console.log('不好耶')                      //不是的話"不好耶"
+        }
+
+        //混用以上兩者
+        //兩個其中一個ok，如果1不成立看2有成立嗎?
+        //注意括號內要兩者都成立
+        //當條件有多筆需要判斷時，你可以用 () 組合判斷式
+        const coding = confirm('你會寫code嗎?') //confirm問問題、promt另外一個
+        const game = confirm('你有玩原神嗎?')
+        const player = confirm('你是可莉玩家嗎?')
+        if ((game && coding) || player) {    //()括號內要兩者都成立才成立，或是後者成立
+            console.log('酷欸')
+        }
+        else {
+            console.log('加油')
+        }
+        // 以上判斷式都是2選1，當遇到3選1、4選1或更多就需要用到else if
+
+
+    </script>
+</body>
+
+</html>

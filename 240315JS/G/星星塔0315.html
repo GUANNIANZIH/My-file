@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 
+        // 變數設定差異var、let、const?
+        //input、count怎麼運用? let input = ''  
+        // 請熟記! document.write(`${a}x${b}=${a * b}<br>`)
+
+
+        //0315自己做的*星星塔1* (回家檢查)、第一層代表跑幾列、第二行代表跑幾顆
+        // 錯誤原因: 一直少一行?
+        // const input = prompt('請輸入幾層')
+        // let count = 0
+        // for (let i = 0; i <= input; i++) {
+        //     for (let j = 1; j < i; j++) {
+        //         document.write(`★`)
+        //         //document.write(`${i}${j}★<br>`)
+        //     }
+        //     document.write(`<br>`)
+        // }
+
+
+        //0315老師作的範例*星星塔1*
+        // const input = prompt('請輸入幾層', 10)
+        // // let count = 0 不用設count /count怎麼運用?
+        // for (let i = 0; i <= input; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(`★`)
+        //         //document.write(`${i}${j}★<br>`)
+        //     }
+        //     document.write(`<br>`)
+        // }       //很容易忘記巢狀結構原理! 練習寫的手法!
+
+        //0315自己做的*星星塔2* (回家檢查)
+        //先不設input
+        // const input = prompt()
+        // let count = 0 不用設count /count怎麼運用?
+
+        // 先以5帶入計算
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 5 - i; j++) {
+                document.write(`☆`)
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write(`★`)
+            }
+            for (let j = 1; j <= 5 - i; j++) {
+                document.write(`☆`)
+            }
+            document.write(`<br>`)
+        }
+
+
+        // 改為input
+        const input = prompt()
+        for (let i = 1; i <= input; i++) {
+            for (let j = 1; j <= input - i; j++) {
+                document.write(`☆`)
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write(`★`)
+            }
+            for (let j = 1; j <= input - i; j++) {
+                document.write(`☆`)
+            }
+            document.write(`<br>`)
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

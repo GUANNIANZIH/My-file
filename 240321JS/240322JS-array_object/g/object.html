@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object的最後一筆資料不用加逗號(,)
+        // 物件: 一個資料的不同東西、存在一個東西的不同 廖
+        // 陣列: 很多資料
+        const wdaf2e ={
+            classroom: '1114',
+            name: '前端技術',
+            students: '18',
+            year: '113',
+            smester: '1'
+        }
+        // 用點(.+索引)去取資料
+        document.write(wdaf2e.name+'<br>')
+        // 用這種通常配有"變數"
+        document.write(wdaf2e['classroom']+'<br>')
+
+        // 設key為yeay，所以值是113 
+        const key = 'year'
+        document.write(wdaf2e[key]+'<br>')
+        // 在物件去用 .length 會undefine，會誤解為在物件中尋找一個較.length的名字
+        document.write(wdaf2e.length +'<br>')
+        document.write('<hr>')
+
+        // 如何在物件中取他有幾個東西: object.keys (把物件內的 key 取出陣列)
+        document.write(Object.keys(wdaf2e)+'<br>')
+        // object.values 把物件內的值取出陣列
+        document.write(Object.values(wdaf2e)+'<br>')
+        document.write('<hr>')
+
+        // 可以從 kay取value，反之不能
+        const keys = Object.keys(wdaf2e)
+        for(let i=0 ; i< keys.length ; i++){
+            document.write (`${keys[i]} - ${wdaf2e[keys[i]]}<br>`)
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>g-excercise.3</title>
+
+    <style>
+        /* 使用 display 設計一個960PX 三欄水平置中的版型 */
+        /* 1.col要橫向 display:inliner-block */
+        /* 2.container 960px 水平置中版型 */
+        .container{
+            /* 設定margin置中 */
+            width: 960px;
+            margin: auto;
+            background: black;
+            color: white;
+            /* 處理幽靈空白 */
+            font-size: 0;
+        }
+        .col{
+            /* 被撐開、掉下來 */
+            /* 960/3=360 三個盒子 */
+            /* 考慮幽靈空白fz */
+            /* 橫向排列 */
+            display: inline-block;
+            /* 計算盒子寬度 */
+            width: 300px;
+            margin: 5px;
+            padding: 5px;
+            /* 設回字型大小 */
+            font-size: 1rem;
+        }
+        
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- 包三個區塊div(container、col) -->
+    <!-- 要注意是一個container包三個col，不是三個container裡面各一個col -->
+
+    <div class="container">
+
+        <div class="col">
+            <img src="https://picsum.photos/300/200/?random=10" alt="">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente repudiandae dolorem suscipit ea provident earum nostrum qui, facilis aliquam nesciunt. Animi porro sint ipsam harum vel quam voluptatum aliquam distinctio!</p>
+        </div>
+
+        <div class="col">
+            <img src="https://picsum.photos/300/200/?random=10" alt="">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente repudiandae dolorem suscipit ea provident earum nostrum qui, facilis aliquam nesciunt. Animi porro sint ipsam harum vel quam voluptatum aliquam distinctio!</p>
+        </div>
+
+        <div class="col">
+            <img src="https://picsum.photos/300/200/?random=10" alt="">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente repudiandae dolorem suscipit ea provident earum nostrum qui, facilis aliquam nesciunt. Animi porro sint ipsam harum vel quam voluptatum aliquam distinctio!</p>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>

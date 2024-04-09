@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.before_after</title>
+
+    <style>
+        /* 偽元素的代名詞大多再講::before、::after */
+       /* <!-- reset? 但bos-sizing...reset沒用--> */
+       *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;     
+       }
+   
+       /* *全域選擇器 */
+       *::before,
+       *::after{
+           box-sizing: border-box;
+       }
+       
+       h1{
+        color:white;
+        background: lightslategray;
+        margin: 2rem 0 0 0;
+        padding: 1rem;
+       }
+   
+       .container{
+           width: 75%;
+           margin: 1% auto;
+       }
+   
+       /* 如果要讓定位留在原地用 relative */
+       .box{
+        width: 100px;
+        height: 100px;
+        color: white;
+        background-color: gray;
+        margin: 20px auto;
+        /* 設父層的relative */
+        position: relative;
+       }
+       /* 思考三個父元素的定位(flex、relative、absolute)??? */
+
+       /* 注意不要空格 */
+       /* 裡面一定要有 conatin 內容、在box的上跟下 */
+       /* 要先認清楚每一個元素的display，才可以去設定修改 */
+       /* 用::before、::after會用到定位- absolute 會自動轉成 block，所以就可以設定寬高、顏色 */
+       /* 使用定位要先找上一層有沒有的定位點 relaive */
+       .box::before{
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: lightcoral;
+        /* inline 轉成 block */
+        /* 一個元素可以建立兩個來做? 沒有的話會要建立兩個標籤<div>來修飾 */
+        position: absolute;
+        left: -100px;
+        top: 0;
+       }
+
+       /* after會蓋在before上面 */
+       .box::after{
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: lightseagreen;
+        position: absolute;
+        right: -100px;
+        top:0;
+       }
+
+       /* container clearfix bg-color */
+       .bg-color{
+        background: lightcyan;
+       }
+
+       .col{
+        width: 45%;
+        /* ??? */
+        margin: 2.5%;
+        float: left;
+       }
+
+       .clearfix::after{
+        content: "";
+        /* inline變成block */
+        display: block;
+        clear: both;
+       }
+
+       .box2{
+        width: 150px;
+        height: 150px;
+        /* ??? */
+        background: url("https://picsum.photos/300/200/?random=10") no-repeat center/cover;
+        margin: auto;
+        position: relative;
+        /* ???轉場交換 */
+        transition: 0.5s;
+       }
+
+       .box2::before{
+        content:"";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 0;
+        right: -110px;
+        background: url("https://picsum.photos/300/200/?random=10") no-repeat center/cover;
+        /* ???轉場交換 */
+        transition: 0.5s;
+       }
+
+       .box2::after{
+        content:"";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 0;
+        right: -110px;
+        background: url("https://picsum.photos/300/200/?random=12") no-repeat center/cover;
+        /* ???轉場交換 */
+        transition: 0.5s;
+       }
+
+
+       /* 讓他摸到box並讓before去做事情 */
+       /* 摸到主體box2，讓其分身 before、after 做事情不能有空格 */
+       /* .box2:hover ::before 是錯誤的、注意中間有空格問題(選到了後代的 before) */
+       /* 注意層級關係:after>inside>before */
+       .box2:hover::before{
+        background: url("https://picsum.photos/300/200/?random=1") no-repeat center/cover;
+        /* 調整這裡 */
+        right: 110%;
+       }
+
+       .box2:hover::after{
+        background: url("https://picsum.photos/300/200/?random=21") no-repeat center/cover;
+        /* 調整這裡 */
+        right: 110%;
+       }
+
+       .inside{
+        position: absolute;
+        /* 拿box2的w、h來使用100% */
+        width: 100%;
+        color: white;
+        /* background: lightpink; */
+       }
+
+       .box2 .inside::before{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 0, 0.5);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* ?????? */
+        transform: translate(-50%,-50%);
+        transition: 0.5s;
+       }
+
+       /* hover 到 box2 後對 inside 做事情 */
+       /* 只要選擇到就可以一直做事情! */
+       .box2:hover .inside::before{
+        width: 100%;
+        height: 100%;
+        background: lightcoral;
+       }
+       
+
+
+
+       </style>
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <h1> ::before、::after </h1>
+        <p>偽元素讓主元素有兩個分身，用於輔助裝飾或繪圖製作</p>
+        <p>::before、::after ，兩者都是以display:inline-block的屬性存在</p>
+        <div class="box">
+            我是box原來的樣式
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>啟動條件與特性</h1>
+        <ul style="font-size: 22px;">
+            <li>1.要有 content 才會有作用，content </li>
+            <li>2. 建立時 lnline </li>
+            <li>3.使用對定位 absolute 時自動轉為 block，並需要確立父元素有沒有定位</li>
+            <li>4.在結構上， ::before在內容區域的前方 ， ::after在內容區域的後方</li>
+            <li>5. ::after 會蓋掉 ::before ，如果想讓 ::before 在上面要調正 z-index</li>
+            <li>6.偽元素建立分身後，沒辦法再建立其他分身</li>
+        </ul>
+    </div>
+
+    <hr>
+    
+    <!-- 各大框架會使用到 clearflex -->
+    <div class="container">
+        <h1>1.當作清除浮動</h1>
+    </div>
+
+    <div class="container clearfix bg-color ">
+        <!-- 內容區域 -->
+        <div class="col">
+            <img src="https://picsum.photos/300/200/?random=10">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, voluptas inventore facilis dolor, atque quod adipisci nisi autem quos velit vitae ab repudiandae temporibus neque. Sit vel accusantium accusamus amet iste eius officiis debitis sed quisquam sapiente voluptatum placeat nam quia maxime, adipisci, doloremque, ab officia voluptas aut necessitatibus. Asperiores?</p>
+        </div>
+
+    <div>
+        <div class="col">
+            <img src="https://picsum.photos/300/200/?random=10">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, voluptas inventore facilis dolor, atque quod adipisci nisi autem quos velit vitae ab repudiandae temporibus neque. Sit vel accusantium accusamus amet iste eius officiis debitis sed quisquam sapiente voluptatum placeat nam quia maxime, adipisci, doloremque, ab officia voluptas aut necessitatibus. Asperiores?</p>
+        </div>
+        <!-- ::after 產生的區域 / 以偽元素做清除動作 -->
+
+    </div>
+
+    <!-- ??????? -->
+    <div class="container">
+        <h1>2.摸到主體，分身做事</h1>
+
+        <div class="box2">
+            <div class="inside"></div>
+        </div>
+    </div>
+    
+    
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星座判斷器</title>
+  </head>
+  <body>
+    <!-- 作業要求：製作一個星座判斷器，
+      進入網頁時出現三個輸入視窗，分別是姓名、出生月份和出生日期
+      輸入完成後跳出訊息，格式為 OOO 你好，你的星座是 OOO 座 -->
+
+    <script>
+      alert("歡迎來到星座判斷器！");
+      const name = prompt("請輸入姓名");
+      const month = prompt("請輸入出生月份");
+      const day = prompt("請輸入出生日期");
+
+      if (
+        (month == 3 && day >= 21 && day <= 31) ||
+        (month == 4 && day >= 1 && day <= 19)
+      ) {
+        document.write(`${name} 你好，你的星座是牡羊座`);
+      } else if (
+        (month == 4 && day >= 20 && day <= 30) ||
+        (month == 5 && day >= 1 && day <= 20)
+      ) {
+        document.write(`${name} 你好，你的星座是金牛座`);
+      } else if (
+        (month == 5 && day >= 21 && day <= 31) ||
+        (month == 6 && day >= 1 && day <= 20)
+      ) {
+        document.write(`${name} 你好，你的星座是雙子座`);
+      } else if (
+        (month == 6 && day >= 21 && day <= 30) ||
+        (month == 7 && day >= 1 && day <= 22)
+      ) {
+        document.write(`${name} 你好，你的星座是巨蟹座`);
+      } else if (
+        (month == 7 && day >= 23 && day <= 31) ||
+        (month == 8 && day >= 1 && day <= 22)
+      ) {
+        document.write(`${name} 你好，你的星座是獅子座`);
+      } else if (
+        (month == 8 && day >= 23 && day <= 31) ||
+        (month == 9 && day >= 1 && day <= 22)
+      ) {
+        document.write(`${name} 你好，你的星座是處女座`);
+      } else if (
+        (month == 9 && day >= 23 && day <= 30) ||
+        (month == 10 && day >= 1 && day <= 22)
+      ) {
+        document.write(`${name} 你好，你的星座是天秤座`);
+      } else if (
+        (month == 10 && day >= 23 && day <= 31) ||
+        (month == 11 && day >= 1 && day <= 21)
+      ) {
+        document.write(`${name} 你好，你的星座是天蠍座`);
+      } else if (
+        (month == 11 && day >= 22 && day <= 30) ||
+        (month == 12 && day >= 1 && day <= 21)
+      ) {
+        document.write(`${name} 你好，你的星座是射手座`);
+      } else if (
+        (month == 12 && day >= 22 && day <= 31) ||
+        (month == 1 && day >= 1 && day <= 19)
+      ) {
+        document.write(`${name} 你好，你的星座是摩羯座`);
+      } else if (
+        (month == 1 && day >= 20 && day <= 31) ||
+        (month == 2 && day >= 1 && day <= 18)
+      ) {
+        document.write(`${name} 你好，你的星座是水瓶座`);
+      } else if (
+        (month == 2 && day >= 19 && day <= 29) ||
+        (month == 3 && day >= 1 && day <= 20)
+      ) {
+        document.write(`${name} 你好，你的星座是雙魚座`);
+      } else {
+        document.write(`請不要亂打`);
+      }
+    </script>
+  </body>
+</html>

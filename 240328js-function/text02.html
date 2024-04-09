@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //函式定義 - 使用名稱函式 
+    // function sum(a,b){
+    //     return a+b
+    // }
+    // 函式表達式 - 常數 const 指定 sum 為匿名函式 function
+    // const sum = function(a,b){
+    //     return a+b
+    // }
+    // 函式呼使用函式名稱，加上( () )，在( )中船入對應的參數值，
+    // const newValue = sum(100,150)
+    // console.log(newValue)
+
+    // function sayHello(){
+    //     alert('Hello')
+    // }
+    // sayHello()
+
+    // const obj = ( ) =>  ({a:1,b:2})
+    // console.log(obj())
+
+    // const addOne = function(value){
+    // return value + 1
+    // }
+
+    // const addOneAndTwo = function(value, fn){
+    //     return fn(value) + 2
+    // }
+
+    // console.log(addOne)
+    // console.log(addOneAndTwo)
+    // console.log(addOneAndTwo(20, addOne)) 
+
+
+    // function sum() {
+    // return arguments[0]+arguments[1]
+    // }
+
+    // console.log(sum(1, 100))
+
+
+
+    // const calculate = (n , m) => {
+    //     let count = 0
+    //     let sum = 0
+    //     while(sum <= m){
+    //         sum += n
+    //         n++
+    //         count++
+    //     }
+    //     return count
+    // }
+
+
+    // const number1 = parseInt(prompt('n'))
+    // const number2 = parseInt(prompt('m'))
+    // console.log(calculate(number1,number2))
+
+    // function god( name1='徐子惇' , name2='官念孜' ){
+    //     document.write(`${name1}是${name2}的寶貝`)
+    // }
+    // god()
+    // document.write(`<br>`)
+    // god('吉爾','徐子惇')
+
+
+    // const jill = function(a,b){
+    //     document.write(`${a+b}`)
+    // }
+    // jill(12,36)
+    // document.write(`<br>`)
+
+
+    // function sum(a,b){
+    //     return a+b
+    // }
+    // const newValue = sum(100,50)
+    // document.write(newValue)
+    // document.write(`<br>`)
+    // document.write(sum(30,60))
+    // document.write(`<br>`)
+
+    // const aa = (a,b) => {document.write(a*b)}
+    
+    function aaa (a=123,b=234){
+        return a+b
+    }
+    const abc = aaa()
+    console.log(aaa(30,23))
+    document.write(aaa())
+
+    </script>
+</body>
+</html>

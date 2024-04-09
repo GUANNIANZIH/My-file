@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = prompt('請輸入姓名')
+        const month = prompt('請輸入出生月份')
+        if (month <= 12 && month >= 1) {
+            const Day = prompt('請輸入出生日期')
+            alert('你的名字是' + name)
+            if (month == 1) {
+                if (Day >= 21 && Day <= 31) {
+                    alert('<br>星座為' + '水瓶座')
+                } else if (Day >= 1 && Day <= 20)
+                    alert('<br>星座為' + '摩羯座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 2) {
+                if (Day >= 20 && Day <= 29) {
+                    alert('<br>星座為' + '雙魚座')
+                } else if (Day >= 1 && Day <= 19)
+                    alert('<br>星座為' + '水瓶座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 3) {
+                if (Day >= 21 && Day <= 31) {
+                    alert('<br>星座為' + '牡羊座')
+                } else if (Day >= 1 && Day <= 20)
+                    alert('<br>星座為' + '雙魚座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 4) {
+                if (Day >= 21 && Day <= 30) {
+                    alert('<br>星座為' + '金牛座')
+                } else if (Day >= 1 && Day <= 20)
+                    alert('<br>星座為' + '牡羊座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 5) {
+                if (Day >= 22 && Day <= 31) {
+                    alert('<br>星座為' + '雙子座')
+                } else if (Day >= 1 && Day <= 21)
+                    alert('<br>星座為' + '金牛座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 6) {
+                if (Day >= 22 && Day <= 30) {
+                    alert('<br>星座為' + '巨蟹座')
+                } else if (Day >= 1 && Day <= 21)
+                    alert('<br>星座為' + '雙子座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 7) {
+                if (Day >= 23 && Day <= 31) {
+                    alert('<br>星座為' + '獅子座')
+                } else if (Day >= 1 && Day <= 22)
+                    alert('<br>星座為' + '巨蟹座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 8) {
+                if (Day >= 24 && Day <= 31) {
+                    alert('<br>星座為' + '處女座')
+                } else if (Day >= 1 && Day <= 23)
+                    alert('<br>星座為' + '獅子座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 9) {
+                if (Day >= 24 && Day <= 30) {
+                    alert('<br>星座為' + '天秤座')
+                } else if (Day >= 1 && Day <= 23)
+                    alert('<br>星座為' + '處女座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 10) {
+                if (Day >= 24 && Day <= 31) {
+                    alert('<br>星座為' + '天蠍座')
+                } else if (Day >= 1 && Day <= 23)
+                    alert('<br>星座為' + '天秤座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 11) {
+                if (Day >= 23 && Day <= 30) {
+                    alert('<br>星座為' + '射手座')
+                } else if (Day >= 1 && Day <= 22)
+                    alert('<br>星座為' + '天蠍座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+            else if (month == 12) {
+                if (Day >= 22 && Day <= 31) {
+                    alert('<br>星座為' + '魔羯座')
+                } else if (Day >= 1 && Day <= 21)
+                    alert('<br>星座為' + '射手座')
+                else {
+                    alert('<br>請輸入正確日期')
+                }
+            }
+        } else {
+            alert('請輸入正確月份')
+        }
+    </script>
+</body>
+
+</html>

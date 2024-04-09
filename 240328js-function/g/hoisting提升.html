@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.完全沒有定義
+        // Uncaught : ReferenceError: text is not defined
+        // console.log(text)
+
+
+
+        // 2.出現錯誤，無法在變數前初始化之前做存取
+        // console.log(text)
+        // console text = 'abc'
+        // hoisting(變數的提升)= Uncaught SyntaxError: Unexpected identifier 'text'
+
+
+
+        // 3. 可以用 var的功能: 先給 text 一個空間，所以會出現 undefined 而不是 error
+        console.log(text)
+        var text = 'abc'  //undefined
+
+
+
+        // 4. 不宣告用改值的方式還是會出現變數未定義的錯誤
+        // Uncaught : ReferenceError: text is not defined
+        // console.log(text)
+        // text = 'abc' //給值不是宣告，所以還是會出現變數未定義的錯誤
+        // console.log(text)
+
+
+
+        // 5. function - declaration 有提升的作用
+        hi('AAA')
+        function hi (name){
+            console.log('hi,'+ name)
+        }
+
+        //6. function expression
+        console.log(hi2)  //undefined
+        // hi2('BBB')
+        // Uncaught : TypeError: hi2 is not a function
+        var hi2 = function (name){
+            console.log('hi,'+name)
+        }
+        
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

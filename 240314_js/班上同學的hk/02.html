@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //製作一個星座判斷器，進入網頁時出現三個輸入視窗，分別是姓名、出生月份和出生日期
+        //輸入完成後跳出訊息，格式為 OOO 你好，你的星座是 OOO 座
+        //水瓶座：1/20~2/18
+        //雙魚座：2/19~3/20
+        //牡羊座：3/21~4/19
+        //金牛座：4/20~5/20
+        //雙子座：5/21~6/21
+        //巨蟹座：6/22~7/22
+        //獅子座：7/23~8/22
+        //處女座：8/23~9/22
+        //天秤座：9/23~10/23
+        //天蠍座：10/24~11/22
+        //射手座：11/23~12/21
+        //魔羯座：12/22~1/19
+
+        const name = prompt('請輸入你的名字', '輸入名字')
+        console.log(name)
+        const mon = prompt('請輸入生日月份', '輸入月份')
+        console.log(mon)
+        const date = prompt('請輸入生日日期', '輸入日期')
+        console.log(date)
+        if ((mon == 1 && date >= 20) || (mon == 2 && date <= 18)) {
+            document.write(name + '你好，你的星座是水瓶座')
+        }
+        if ((mon == 2 && date >= 19) || (mon == 3 && date <= 20)) {
+            document.write(name + '你好，你的星座是雙魚座')
+        }
+        if ((mon == 3 && date >= 21) || (mon == 4 && date <= 19)) {
+            document.write(name + '你好，你的星座是牡羊座')
+        }
+        if ((mon == 4 && date >= 20) || (mon == 5 && date <= 20)) {
+            document.write(name + '你好，你的星座是金牛座')
+        }
+        if ((mon == 4 && date >= 20) || (mon == 5 && date <= 20)) {
+            document.write(name + '你好，你的星座是雙子座')
+        }
+        if ((mon == 5 && date >= 21) || (mon == 6 && date <= 21)) {
+            document.write(name + '你好，你的星座是巨蟹座')
+        }
+        if ((mon == 6 && date >= 22) || (mon == 7 && date <= 22)) {
+            document.write(name + '你好，你的星座是獅子座')
+        }
+        if ((mon == 8 && date >= 23) || (mon == 9 && date <= 22)) {
+            document.write(name + '你好，你的星座是處女座')
+        }
+        if ((mon == 9 && date >= 23) || (mon == 10 && date <= 23)) {
+            document.write(name + '你好，你的星座是天坪座')
+        }
+        if ((mon == 10 && date >= 24) || (mon == 11 && date <= 22)) {
+            document.write(name + '你好，你的星座是天蠍座')
+        }
+        if ((mon == 11 && date >= 23) || (mon == 12 && date <= 21)) {
+            document.write(name + '你好，你的星座是射手座')
+        }
+        if ((mon == 12 && date >= 22) || (mon == 1 && date <= 19)) {
+            document.write(name + '你好，你的星座是魔羯座')
+        }
+        //alert(name + '你好，你的星座是' + '座')
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

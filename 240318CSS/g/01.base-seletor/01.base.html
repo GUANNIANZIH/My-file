@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第二種寫法:(可以給大家使用、可能有很多樣式可以給其他文件使用、可以重用的問題、不需要每個文件寫重複的樣式、檔案會相對較小好維護)
+        .css檔案: 引入外部樣式的方式link起來 (but原本應該藍色，但下面紫色覆蓋上面藍色) -->
+    <!-- if要把每份文件的顏色都改掉，如果都寫在style就要一個一個慢慢改  -->
+    <link rel="stylesheet" href="./style1.css">
+
+    <!-- 第一種方式: 用style標籤寫這份網頁的樣式，標籤選擇器、類型選擇器、選擇標籤使用 -->
+    <!-- 選擇器{
+            屬性: 值；
+        } -->
+    <!-- css只有多行註解 -->
+    <style>
+        /* 打在style裡面的標籤不能有<> */
+        h1 {
+            color: white;
+            /* 文字顏色、h1文字都變成紅色 */
+            background:gray;
+            /* 打fz */
+        }
+
+        p {
+            color: blueviolet;
+        }
+
+        /* 群組選擇器，以逗點分開，最後一個不用逗點 */
+        /* 由上至下，後面屬性會蓋掉前面 */
+        /* f12檢查style樣式，看哪個被覆蓋掉 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 寫在style代表css的: 注意切的時候會突然跑版、css只能看style、style樣式給的訊息去判斷 -->
+    <!-- 選擇器、背景、結構、盒模型 -->
+    <!-- 第三種樣式: 行內樣式(優先權最高 + important 變成最高): 在標籤裡面寫屬性跟值，例:寫在h1裡面，其他人不會改變，只寫在h1上 -->
+    <!-- 盡量少用important，除了在框架上使用 -->
+    <h1 style="color: brown;">Title</h1>
+    <!-- 假字? Lorem Ipsum -->
+    <p>斗內至於生長長度，本公司激情，例如一款。</p>
+
+    <h1>Title</h1>
+    <p>斗內至於生長長度，本公司激情，例如一款。</p>
+
+    <h1>Title</h1>
+    <p>斗內至於生長長度，本公司激情，例如一款。</p>
+
+    <h1>Title</h1>
+    <p>斗內至於生長長度，本公司激情，例如一款。</p>
+
+    <hr>
+
+    <!-- 群組選擇器 -->
+    <h1>hello,world</h1>
+    <h2>hello,world</h2>
+    <h3>hello,world</h3>
+    <h4>hello,world</h4>
+    <h5>hello,world</h5>
+    <h6>hello,world</h6>
+
+
+</body>
+
+
+
+</body>
+
+</html>

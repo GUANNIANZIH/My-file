@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // array 陣列:[]包起來的陣列、索引是數字
+        // index、key(索引): 0.雞排飯、1.魚排飯、2.章魚飯
+        // 用[]取得資料
+        let bendons =['雞排飯','魚排飯','章魚飯']
+        document.write(bendons+'<br>')
+        document.write('我想要吃'+bendons.length+'個便當'+'<br>')
+        document.write('第一個便當是'+bendons[1]+'<br>')
+        document.write('<hr>')
+
+        // object 物件: 用到 JSON物件，索引可以放文字，清楚區分每筆資料
+        // 最後一組不用放逗號(,)、無法直接用 .length取得長度，也不能用[]取得資料
+        // 可以用["索引名"]取得某索引名
+        let dog ={
+            name: 'JILL',
+            age: 3,
+            namber: 22
+        }
+
+
+
+
+
+
+
+
+
+        // for of 迴圈
+        let string = "Hello";
+        for(let s of string){
+            document.write(s+"<br>")
+        }
+
+        //for in 迴圈 : 跑每個索引，陣列有幾個索引就跑幾次  
+        // object(物件)的最後一位不用逗號(,)
+        let person = {
+            name: "王小明",
+            age: "25",
+            number: 24
+        }
+        for(let p in person){
+            document.write(person[p]+"<br>")
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>g-05.position</title>
+    <style>
+        /* 外面相對、裡面絕對 */
+        .parent{
+            width: 500px;
+            height: 500px;
+            background: black;
+            /* 相對定位: 讓子元素產生定位點，讓對定位子元素在裡面，不然會在外面? */
+            /* position: absolute 絕對定位後面東西會往上跑 */
+            /* 大盒子根據外面做定位 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 變形移動 */
+            transform: translate(-50%,-50%);
+            border-radius: 0%;
+        }
+
+        .child{
+            width: 100px;
+            height: 100px;
+            background: lightsalmon;
+            /* 裡面東西可以用絕對定位去做定位點 */
+            /* 小盒子根據 */
+            position: absolute;
+            left: 50px;
+            right: 50px;
+            transform: translate(-50%,-50%);
+        }
+
+        /* 水平 */
+        .child1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            /* z-index 調動位置(後蓋前) */
+            z-index: 4;
+        }
+
+        /* 正常流向分布 */
+        .child2{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            left: 50px;
+            z-index: 3;
+        }
+
+        /*正常流向分布*/
+        .child3{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 200px;
+            z-index: 10;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <h1>z-index</h1>
+    <p style="background: lightgoldenrodyellow;">
+        <!-- 固定導覽列: 一般都寫在上層，假設後面還有定位，後方會覆蓋調前面，所以會對導覽列做 z-index 的操作以確保在上方 -->
+        當元素進入定位時，可以使用 z-index 去調動誰遮蓋誰
+    </p>
+
+    <!-- 注意parent跟child的巢狀關係 -->
+    <div class="parent">
+        <div class="child1">我是一</div>
+        <div class="child2">我是二</div>
+        <div class="child3">我是三</div>
+    </div>
+    
+
+    <p style="background: lemonchiffon;">
+    Lorem ipsum dolor sit amet consectetur 
+    </p>
+
+    <p style="background: lightcyan;">
+    Lorem ipsum dolor sit amet consectetur
+    </p>
+
+</body>
+</html>

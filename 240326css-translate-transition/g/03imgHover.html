@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            /* background 可有可無，不會影響overflow */
+            background: #000;
+            /* 可以用 overflow:hidden 把照片藏在下面 */
+            overflow: hidden;
+            position: relative;
+        }
+
+        img{
+            /* 照片定位 box 位置 */
+            position: absolute;
+            /* display: inline-block; */
+            transition:  0.25s;
+            /* vertical-align: middle; */
+        }
+
+        /* 初始值設定 */
+        .img1{
+            top: 0;
+        }
+
+        .img2{
+            top: 200px;
+        }
+
+        .box:hover .img1{
+            /* transform: translateY(-100%) */
+            top: -200px
+        }
+
+        .box:hover .img2{
+            /* transform: translateY(-100%); */
+            top:0;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="img1" src="https://picsum.photos/200/200/?random=10">
+        <img class="img2" src="https://picsum.photos/200/200/?random=21">
+    </div>
+    
+</body>
+</html>

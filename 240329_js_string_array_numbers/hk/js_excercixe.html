@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 印出1-9
+        // for(i=1;i<10;i++){
+        //     document.write(`${i}<br>`)
+        // }
+        // document.write(`<hr>`)
+
+        // // while
+        // // 設區域外變數為初始值、終止條件放( 列出所有j<5的數字 )，step(  )放最後
+        // let j = 0
+        // while(j<5){
+        //     console.log(j)
+        //     j++
+        // }
+        
+        
+
+        // // do while
+        // // 先執行程式碼，再判斷要不要進行下一次
+        // let k = 1
+        // do{
+        //     document.write(k)
+        //     k++
+        // }   while(k <= 9)
+        
+
+        // break
+        // 打斷迴圈執行
+        // let count = 1
+        // let num = '123'
+        // while(true){
+        //     let answer = prompt(`第${count}次猜測，猜猜看秘密數字式多少`)
+        //     if (answer === num){
+        //         break
+        //     }
+        //     count++
+        // }
+        // document.write(`共猜了${count}次`)
+
+
+        // continue
+        // 略過一次執行
+        // for(i=0;i<=5;i++){
+        //     if(i===5){
+        //         continue
+        //     }
+        //     document.write(i+'<br>')
+        // }
+
+        // 印出 n 個*的函式
+        function star(n){
+            let answer = ''
+            for(let i=1;i<=n;i++){
+                answer += '*'
+            }
+            document.write(answer)
+        }
+        star(5)
+        document.write('<br>')
+        star(6)
+
+        
+
+    </script>
+</body>
+</html>

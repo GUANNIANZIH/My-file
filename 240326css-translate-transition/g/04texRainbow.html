@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04texRainbow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /*  */
+            box-sizing: border-box;
+            font-family: '微軟正黑';
+        }
+
+        body{
+            /* vh? */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: lightslategray;
+        }
+
+        h2 span{
+            color: lightgrey;
+            transition: 0.5s;
+        }
+
+        h2:hover span{
+            color: lightgreen;
+            /*  */
+            text-shadow: 
+            0 0 5px lightgreen,
+            0 0 15px lightgreen,
+            0 0 30px lightgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2 class="text">
+        鐵路寶貝觀看設立總是瞬間組成，有機會等方面廠商，萬元我一收費優秀詳細內容，不懂當初真實，新臺幣聯合研究所營銷生日樹林主流日常她們，不禁桃園不夠對我地位初步，檢驗當前位置，你在水溝新型動畫製造身份頻道。
+    </h2>
+
+    <script>
+        // js????
+        const text = document.querySelector('.text');
+        text.innerHTML = text.innerText
+        .split('') //將字串轉為陣列
+        //map 可以重新組合陣列中的每一個元素
+        .map((char, i)=>{
+            // return 傳回
+            return `<span style="transition-delay: ${i*40}ms; filter:hue-rotate(${i*30}deg)">${char}</span>`
+            // filter 色相轉換值
+        })
+        .join(''); //轉為字串
+    </script>
+    
+</body>
+</html>

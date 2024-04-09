@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勞動部勞動力發展署─運動廣場連結網</title>
+    <style>
+        body{
+            background: #42413c;
+    
+        }
+/* top */
+        /* 全部的 table 設定的屬性 */
+        table{
+            width: 100%;
+            /* !!!合併儲存格 - 原本的 table 之間都會有一些距離 */
+            border-collapse: collapse;
+            /* 將table 裡面的內容都水平置中 */
+            text-align: center;
+        }
+        /* table td 樣式 - 沒設置的會表格會有破綻 */
+        table td{
+            padding: 0;
+        }
+        .logo{
+            width: 180px;
+            height: 90px;
+        }
+        .main-title{
+            font-size: 52px;
+            font-family: "標楷體";
+            color: #fff;
+            /* 文字陰影: x y 模糊係數 顏色 */
+            text-shadow: 10px 10px 15px #333;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #main{
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            background-color: #fff;
+
+        }
+        #top{
+            width: 1024px;
+            height: 90px;
+            background-color: #00B0F0;
+        }
+
+
+
+
+/* menu */
+        #menu{
+            width: 1024px;
+            height: 25px;
+            background-color: lightpink;
+        }
+        #menu a{
+            color: #000;
+            background-color: #eee;
+            text-decoration: none;
+            /* a 元素原本是 inline、轉型為 block 才可以填滿父元素 */
+            display: block;
+        }
+
+        #menu a:hover{
+            /* 字體大小 */
+            font-size: 14px;
+            /* 字體粗細 */
+            font-weight: bold;
+            color: #f00;
+            background-color: yellow;
+            /* cursor 的種類 */
+            cursor: pointer;
+        }
+
+
+
+
+
+
+/* content 內容區 */
+        #content{
+            /* box-sizing: border-box;
+            width: 1024px;
+            height: 568px;
+            padding: 20px; */
+            width: 984px;
+            height: 568px;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+            font-size: 14px;
+        }
+/* iframe 目標畫面 */
+        iframe{
+            width: 984px;
+            height: 568px;
+            /* background-color: lightgreen; */
+        }
+
+
+
+/* footer */
+        #footer{
+            width: 1024px;
+            height: 45px;
+            background-color: #ccc;
+            color: #FFFFFF;
+            font-size: 14px;
+            text-align: center;
+            /* 不算分 */
+            line-height: 22.5px;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="top">
+            <!-- table 一列兩欄 -->
+            <table>
+                <tr>
+                    <!-- + logo 的 class -->
+                    <td class="logo">
+                        <!-- 做回首頁的連結 -->
+                        <a href="./index.html">
+                        <img src="./image10/logo.png" alt="運動廣場連結網-回首頁">
+                        </a>
+                    </td>
+                    <!-- 方便做 main-title 要做陰影效果所以 + class -->
+                    <td class="main-title">運動廣場連結網</td>
+                </tr>
+            </table>
+        </div>
+        <div id="menu">
+            <!-- 一列7欄: 選單項目 -->
+            <!-- 防止抖動 table-layout: fixed -->
+            <table style="table-layout: fixed;">
+                <tr>
+                    <td><a href="./index.html" target="iframe">首頁</a></td>
+                    <!-- 測 jQ 改 link-->
+                    <td><a href="./results/health.htm" target="iframe">健康天地</a></td>
+                    <td><a href="./results/basketball.htm" target="iframe">籃球介紹</a></td>
+                    <td><a href="./results/baseball.html" target="iframe">棒球介 紹</a></td>
+                    <td><a href="./results/swimming.html" target="iframe">游泳介紹</a></td>
+                    <td><a href="./results/msgboard.html" target="iframe">訪客留言</a></td>
+                    <td><a href="./results/reference.html" target="iframe">資料來源</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="content">
+            <!-- 少了name=' '沒辦法對應 content -->
+            <iframe src="./results/main.htm" frameborder="0" name="iframe"></iframe>
+        </div>
+        <div id="footer">
+            網頁設計及維護:00官念孜<br>
+            最近更新日期:2024/04/08
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>

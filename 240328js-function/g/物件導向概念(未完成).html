@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1. 直接把 key 綁定為 function?
+        // 物件裡面放 function
+        // 物件是一個東西裡面有不同資料
+        const teacher1 = {
+            firstName: 'AA',
+            LastName:'BB',
+            // fullName 對應到 function()
+            // this 在不同地方有不同意思，這裡的 this 是指上面物件{}內的值
+            fullName: function(){
+                return this.firstName + this.LastName
+            }      
+        }
+        console.log(teacher1.firstName)
+        console.log(teacher1.LastName)
+        console.log(teacher1.fullName()) //
+
+
+
+        // 2. 直接把 function 放進去?
+        const teacher2 = {
+            firstName: 'AA',
+            LastName:'BB',
+            fullName: function(){
+                //  this 指的是這個物件
+                return this.firstName + this.LastName
+            },
+            sayHi (){
+                return '你好，我是' +this.fullName
+            },
+            //  箭頭函式 => 的 this 指的是 window
+            sayHi2:() => {
+                console.log(this)
+                // window 沒有 fullName 所以會出錯
+                return '你好，我是' + this.fullname()
+            }
+        }
+        console.log(teacher1.firstName)
+        console.log(teacher1.LastName)
+        console.log(teacher1.fullName())
+        console.log(teacher2.fullName())
+        // window 沒有 fullName 所以會出錯
+        // console.log(teacher1.sayHi2())
+
+
+        // 物件導向的概念????????????????????
+        // 如果 teacher 有1234.....，要一直複製? - 可以用 class 去區分物件變數(習慣第一個字大寫)
+        // class 在程式裡面建立一個新的東西， constractior(固定)
+        class Teacher { 
+            //建立一個Teacher: 並聲明 teacher 裡面的屬性、會做甚麼事情?
+            // 在物件中執行
+            constructor (firstName,LastName){
+                this.firstName = firstName
+                this.LastName = LastName
+            }
+            fullName (){
+                return this.firstName + this.LastName
+            }
+        }
+        const teacher3 = new Teacher('CC','DD')
+        console.log(teacher3.fullName)
+        // 在透過 new 的語法把 class物件的東西生出來後，再傳回代表 constractior
+        // 有 new 代表是一個物件，物件導向的 class
+
+
+
+
+    </script>
+</body>
+</html>

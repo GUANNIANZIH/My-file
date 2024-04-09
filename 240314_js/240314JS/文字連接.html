@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*prompt(輸入框文字)
+        跳出一個文字輸入框，輸入框出現時網頁為暫停
+        會收到輸入文字，如果按下取消是null無值
+        一個變數不會變(會用const:如姓名)、再問一次會變(let)
+        在文件上寫東西(放在html內容)
+        */
+
+        const lastName = prompt('請輸入姓名') //跳出瀏覽器輸入框 小刮號()內放輸入姓名，代表網頁載入暫停
+        const firstName = prompt('請輸入名')  //先不做判斷
+        const fullName = lastName + firstName //
+        document.write('<h1>' + fullName + '</h1>') //用h1去寫的、f12  look
+        //模板語法?
+        //根據寫的情況使用上或下，寫順，可以分寫中間用下，只有一個用上
+        document.write(`<h1>${fullName}</h1>`) //怎麼快速打? 一個東西塞變數，美金符號只能用`
+        //網頁上顯示變數
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

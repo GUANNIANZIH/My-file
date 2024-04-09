@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //判斷式:if、else
+        //習慣if跟小刮()空格、習慣{}打的方式
+        const a = 10, b = 20
+        if (a > b) {
+            console.log('a大於b')
+        } else {
+            console.log('a不大於b')
+        } //用f12查看網頁判斷式是否有執行
+
+        //資料型態問題、例如:一個數字一個文字(資料型態不同)
+        const c = 100, d = '100'
+        if (c == d) {
+            console.log('c==d') //兩個等於(==)資料型態不一定要相同，成立的話顯示
+        } else {
+            console.log('c!=d') //不成立的話顯示
+        }
+        if (c === d) {
+            console.log('c===d') //三個等於(===)代表資料型態也要相同，成立的話顯示
+        } else {
+            console.log('c!==d') //不成立的話顯示
+        }
+        //通常寫code會用3個(===)比較多，較嚴謹
+
+
+        //boolean值得判斷是變數的話(簡寫)，判斷只要 if(ok)就可以；或是if(!ok)???
+        const ok = true
+        //if (ok) 等於if(true)
+        if (ok) {
+            console.log('ok')
+        }
+        //if (!ok)等於if(ok===false)
+        if (!ok) {
+            console.log('not ok')
+        }
+
+        //簡寫: if可以去簡寫，大刮內只有單行可以不用加大刮{}
+        //but如果有三行沒有大刮{}的話，只會運算第一行
+        //comfirm(跳出訊息確認窗，收到true、false)
+        //簡寫: 如果 if、else、else if、for裡面只有一行，就不需要{}
+        const sleep = confirm('中午有睡覺')
+        if (sleep) console.log('有睡')
+        else console.log('沒睡')
+
+        //三元運算，當有一個變數會根據判斷式的成立與否，少用在執行動作，用在給值比較多
+        const like = confirm('你喜歡js嗎?')
+        //將以下三行簡寫為一行
+        //let message = ''
+        //if (like) message='喜歡'
+        //else message='不喜歡'
+        //用?跟:去取代
+        const message = like ? '喜歡' : '不喜歡'
+        console.log(message)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

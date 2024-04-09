@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ?點用來對下undefine產生錯誤用: 
+
+        const user ={
+            name: 'AAA',
+            //物件裡面又放一個物件
+            info: {
+                email: 'aaa@gmail.com'
+            }
+        }
+        // 用點(.)去取值
+        // info有東西、要保險可以全部都用(?.)
+        console.log(user.name)
+        console.log(user.info.email)
+        console.log(user.info.address)
+        // 沒有東西會出現錯誤 (cannot read properties of undefined) undefined裡面無法查詢資料
+        // 下句出現錯誤(cannot read properties of undefined) 因為ciyt沒有那個屬性 undefined(不確定會不會有這些資料)
+        // console.log(user.info.address.city) ---- 用問號點(?.)去處理這個情況
+        // 通常用物件的undefined、陣列較少
+        // 注意問號點的位置(?.) --- 因為city沒有資料所以前面 address後面放?.
+        console.log(user.info.address?.city)  // undefined
+        console.log(user.info.address?.city?.postcode)  // undefined
+
+
+        // 舉例: 怎麼用迴圈印出製造商? 短路求值?
+        // 用陣列包物件，數字不用包''、
+        const products = [ 
+        { name: 'iPhone 15' , price: 48900 },
+        { 
+            name: 'Nothing Phone(2)',
+            price: 21900,
+            // 物件裡面又在物件
+            producer: {
+                name: 'Nothing',
+                url: 'https://24h.pchome.com.tw/'
+            }
+        }, //與第二個物件資料連接(前面有物件包物件，所有有兩個{})
+        {
+            name: 'Nothine Phone(1)', 
+            price: 14900,
+            // 裡面又包物件資料
+            producer:{
+                name: 'Nothing',
+                url: 'https://24h.pchome.com.tw/'
+            }
+        }
+        ] //注意跟第一個的位置，這裡為[]陣列的結尾
+
+        // 這裡開始for迴圈(分號;)
+        // 陣列從0開始
+        for( let i=0 ; i < products.length ; i++){
+            //注意括號()位置關係、並使用波浪(`)${}
+            document.write(`  
+            <p>
+                ${products[i].name}，價格為${products[i].price}
+                製造商為
+                <a href="${products[i].producer?.url || '#'}">${products[i].producer?.name || '不明'}</a>
+            </p>
+            `)
+        }           
+        // 跑第一個iphone沒有producer(沒有name、url)
+        // ||'#'回頁首、||'不明'去顯示
+
+        
+
+
+    </script>
+</body>
+</html>

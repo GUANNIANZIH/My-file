@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //break 可以打斷迴圈的執行
+        //continue 可以略一次執行
+        for (let i = 1; i <= 9; i++) {
+            if (i !== 5) {
+                document.write(i + '<br>')
+            }
+        }
+
+        //兩層怎麼用loop?
+
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= 5; j++) {
+                //多層迴圈十，continue是對寫的那層有效，無法指定哪一層
+                //直接跳到j++後進下一次j迴圈
+                document.write('a')
+                if (i === 2) continue
+                document.write(`${i}x${j}=${i * j}<br>`)
+            }
+        }
+        document.write(i + '<hr>')
+
+        //設定loop1、loop2
+        //將外層迴圈命名為loop1(固定)
+        //將內從迴圈命名為loop2
+        loop1: for (let i = 1; i <= 5; i++) {
+            loop2: for (let j = 1; j <= 5; j++) {
+                //指定對loop1迴圈continue
+                if (i === 2) continue loop1
+                document.write(`$[{i}x${j}=${i * j}<br>}`)
+            }
+        }
+
+        //用內層變數去控制要不要continue???? 不行?但可以用break
+
+    </script>
+</body>
+
+</html>

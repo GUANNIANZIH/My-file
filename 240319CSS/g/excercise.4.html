@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 可以直接在body裡面設定 */
+        body{
+            text-align: center;
+            font-size: 50px;
+            font-family: "微軟正黑體";
+        }
+
+        .container{
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            /* 填container顏色測試畫面顏色 */
+            background: lightgoldenrodyellow;
+        }
+        
+        /* div溢出 */
+        .col-bk{
+            width: 1024px;
+            height: 100px;
+            background: black;
+            color: white;
+            text-align: center;
+            /* line-height垂直置中:跟高度一致 */
+            /* lineheight 高度扣掉文字高度 / 2 分給跟下 */
+            line-height: 100px;
+            /* 下面的文字設定可以直接在body裡面設定 */
+            /* font-size: 50px;
+            font-family: "微軟正黑體"; */
+
+        }
+
+        .col-gr1{
+            width: 200px;
+            height: 568px;
+            background: lightgray;
+            float: left;
+
+            color: white;
+            text-align: center;
+            /* line-height垂直置中:跟高度一致 */
+            line-height: 568px;
+            /* 下面的文字設定可以直接在body裡面設定 */
+            /* font-size: 50px;
+            font-family: "微軟正黑體"; */
+
+        }
+
+        .col-gr2{
+            width: 824px;
+            height: 568px;
+            background: gray;
+            float: right;
+
+            color: white;
+            text-align: center;
+            /* line-height垂直置中:跟高度一致 */
+            line-height: 568px;
+            /* 下面的文字設定可以直接在body裡面設定 */
+            /* font-size: 50px;
+            font-family: "微軟正黑體"; */
+        }
+        
+        .col-bk2{
+            width: 1024px;
+            height: 100px;
+            background: black;
+            clear: both;
+
+            color: white;
+            text-align: center;
+            /* line-height垂直置中:跟高度一致 */
+            line-height: 100px;
+            /* 下面的文字設定可以直接在body裡面設定 */
+            /* font-size: 50px;
+            font-family: "微軟正黑體"; */
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 1個div包4個div -->
+    <!-- .container>.header....簡寫看拍的照片 -->
+    <div class="container">
+
+        <div class="col-bk">
+        Header
+        </div>
+
+        <div class="col-gr1">
+        Left
+        </div>
+
+        <div class="col-gr2">
+        Right
+        </div>
+
+        <div class="col-bk2">
+        Footer
+        </div>
+
+    </div>
+
+</body>
+
+</html>

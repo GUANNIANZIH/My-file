@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //else if程式執行的流程
+        //prompt()
+        //跳出一個輸入視窗，使用者可以輸入文字，變數接收到的資料型態為文字
+        //不同於confirm
+        //型別定義? typescript?(以js為加上...)
+        //function定義、整格function給出一個...
+        //會給出題是第二參數要給甚麼...
+        //題目: 要做user看電視的分級判斷
+
+
+        //習慣由大而小判斷 (因為有順序性、第一個如果判斷0那全都會是0)
+        //執行上有順序、組數，不能if、if、if一起..注意是否為同組判斷
+
+        const age = prompt('請輸入年齡', 12)  //以，逗號分隔，(顯示訊息,預設值)
+        if (age >= 18) {
+            document.write('限制級')
+        } else if (age >= 15) {             //如果是大於等於12
+            document.write('輔15級')        //document.write('') 表示網頁顯示的資訊
+        } else if (age >= 12) {
+            document.write('輔12級')
+        } else if (age >= 6) {
+            document.write('保護級')
+        } else if (age >= 0) {
+            document.write('普遍級')
+        }
+        else {
+            document.write('年齡不正確')    //如果都不是，就會...
+        }
+
+
+        //switch case
+        //上方都是"比較同一個變數的不同值的話"，用switch case<較精簡
+        //從指定位置往下執行直到看到break!!!
+        //
+        //
+        //
+
+
+
+
+        //巢狀判斷式 (判斷式裡面還可以再使用判斷式，做更詳細的判斷)
+        //三個等於(===)
+        //
+        //
+
+
+
+        //短路求值 (邏輯運算子也可以用在賦值)
+        // Boolean() 會回傳 false 的狀況
+        // false、0、""、null、undefined、NaN
+        // || 回傳第一個 Boolean() 判斷是 true 的值
+        // 如果全部都是 false 則回傳最後一個值
+        //
+        //
+
+
+
+
+        //prompt() 會跳出一個輸入視窗，使用者可以輸入文字，資料型態為文字
+        //confirm() 會跳出一個確認視窗，使用者可以點確認或取消，資料型態為布林值
+        //以上兩個函式 () 內都是放視窗文字
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

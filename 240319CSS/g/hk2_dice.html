@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 骰子作業</title>
+
+    <style>
+        /* 使用*的意思? */
+        /* *{
+            padding: 0px;
+            margin: 0px;
+        } */
+        
+        .container{
+            width: 630px;
+            height: 350px;
+            margin: auto;
+            margin-top: 300px;
+            border: 3px solid white;
+            background-color: white;
+        }
+        .box{
+            /* 為甚麼box盒子之間，在沒有設定margin下，每一個都會自己有間隔??? */
+        
+            /* box-sizing: border-box; border、padding 會內推寬高(內容範圍) */
+            width: 100px;
+            height: 100px;
+            /* inline-block 以inline方式呈現，並擁有 block的屬性，有正常的盒模型屬性 */
+            display: inline-block;
+            margin: 0px;
+            background-color: rgba(0, 0, 0, 0.08);
+            background: linear-gradient(45deg,rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 1));
+            border: 1px solid black;
+            margin-top: 135px;
+            border-radius: 5%;
+            box-shadow: 0px 2px 1px gray;
+            box-sizing: border-box;
+            /* 處理文字高度崩塌處理在float上 */
+            /* overflow: hidden; */
+            position: relative;
+            
+        }
+    
+        .point1{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 14px;
+            left: 14px;
+        }
+    
+        .point2{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 42px;
+            left: 14px;
+        }
+    
+        .point3{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 70px;
+            left: 14px;
+        }
+    
+        .point4{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 42px;
+            left: 42px;
+        }
+    
+        .point5{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+        }
+    
+        .point6{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 42px;
+            right: 14px;
+        }
+    
+        .point7{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 70px;
+            right: 14px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box" > 
+            <div class="point1"></div>
+        </div>
+        
+        <div class="box">
+            <!-- 會覆蓋掉class標籤屬性，要分開 -->
+            <div class="point1" style="background-color: red;"></div>
+            <div class="point7" style="background-color: red;"></div>
+        </div>
+    
+        <div class="box">
+            <div class="point1"></div>
+            <div class="point4"></div>
+            <div class="point7"></div>
+        </div>
+    
+        <div class="box" > 
+            <div class="point1" style="background-color: red;"></div>
+            <div class="point5" style="background-color: red;"></div>
+            <div class="point3" style="background-color: red;"></div>
+            <div class="point7" style="background-color: red;"></div>
+        </div>
+        
+        <div class="box">
+            <div class="point1"></div>
+            <div class="point5"></div>
+            <div class="point4"></div>
+            <div class="point3"></div>
+            <div class="point7"></div>
+        </div>
+    
+        <div class="box">
+            <div class="point1"></div>
+            <div class="point2"></div>
+            <div class="point3"></div>
+            <div class="point5"></div>
+            <div class="point6"></div>
+            <div class="point7"></div>
+        </div>
+    </div>        
+
+</body>
+
+</html>

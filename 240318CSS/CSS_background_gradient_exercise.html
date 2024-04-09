@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		table {
+			margin: 1rem;
+			display: inline-block;
+		}
+
+		table,
+		tr,
+		td {
+			border: 1px solid #000;
+		}
+
+		table td {
+			width: 200px;
+			height: 200px;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+		}
+
+		.bg-color {
+			background-color: red;
+		}
+
+		.bg-img {
+			background-image: url("https://picsum.photos/300/200/?random=10");
+		}
+
+		.bg-repeat-x {
+			background-image: url("https://picsum.photos/50/?random=2");
+			background-repeat: repeat-x;
+		}
+
+		.bg-repeat-y {
+			background-image: url("https://picsum.photos/50/?random=3");
+			background-repeat: repeat-y;
+		}
+
+		.bg-no-repeat {
+			background-repeat: no-repeat;
+		}
+
+		.bg-center {
+			background-image: url("https://picsum.photos/50/?random=6");
+			background-position: center;
+		}
+
+		.bg-mix {
+			background-color: #f5deb3;
+		}
+
+		.bg-three-y {
+			background-image:
+				url("https://picsum.photos/300/50/?random=1"),
+				url("https://picsum.photos/300/100/?random=2"),
+				url("https://picsum.photos/300/50/?random=1");
+
+			background-repeat: no-repeat, no-repeat, no-repeat;
+			background-position: left top, left center, left bottom;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<!-- div裡面一定要先設定box -->
+				<div class="box bg-color"></div>
+			</td>
+			<td>
+				<div class="box bg-img"></div>
+			</td>
+			<td>
+				<div class="box bg-repeat-x"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="box bg-repeat-y"></div>
+			</td>
+			<td>
+				<div class="box bg-center bg-no-repeat"></div>
+			</td>
+			<td>
+				<div class="box bg-mix bg-center bg-no-repeat "></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<div class="box bg-three-y"></div>
+			</td>
+			<td>
+
+			</td>
+			<td>
+
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
