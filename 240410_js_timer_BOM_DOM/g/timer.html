@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1.計時器: 直接用計時器 + 匿名函式
+        // setTimeout(()=>{
+        //     document.write('經過五秒')
+        //     // 1000毫秒 = 1秒
+        // }, 5000)
+
+        // 2.計時器: 使用預先定義好的函式
+        // 注意有( )跟沒有( )的差別 - 跟function不同
+        // const write = () => {
+        //     document.write('經過五秒')
+        // }
+        // setTimeout(write,5000)
+
+        // 3.計時器: 使用預先定義好的函式 - 跟上者的差異?
+        // const write = (ms,text) => {
+        //     document.write(`經過${ms/1000}秒，${text}`)
+        // }
+        // 使用 timer 不能用 ( )，參數接在毫秒的後面:  ms=500 - 代入${ms/1000}秒 = 5秒, text='aaa'
+        // setTimeout(function , 毫秒 , function 參數)
+        // const timer = setTimeout(write,5000,5000,'aaa')
+        // // 取消計時器
+        // clearTimeout(timer)
+
+
+        // 練習一: 自己寫
+        // const userInput = prompt('輸入毫秒數')
+        // const timer = (ms) => {
+        //     document.write(`時間到`)
+        // }
+        // setTimeout(timer,parseInt(userInput))
+
+        // // 練習一:老師寫
+        // const delay = parseInt(prompt('ms'))
+        // // 設定匿名函數
+        // setTimeout(() => {
+        // document.write('時間到')
+        // },delay)
+
+
+
+
+        
+
+
+
+
+        // 重複計時器: 同計時器 setTimeout 語法
+        // const timer = setInterval(() =>{
+        //     // 第一次執行在指定時間後才會出現
+        //     document.write('過一秒<br>')
+        // },1000)
+        // setTimeout(() => {
+        //         取消重複計時器 
+        //     clearInterval(timer)
+        // },5000)
+
+        // 練習二: error 自己寫: 用 for 的話會開 10 個計時器，但用 setInterval 只開一個計時器
+        // 造成無限迴圈的問題，因為用 for 搭配 setInterval 會造成無限迴圈，一直在執行第一個值
+        // const reaction = () => {
+        //     // 設遞減 for - 每一次減1000ms - 10000、9000、....、0
+        //     for(let i=10000; i>=0; i-=1000){
+        //         setInterval(()=>{
+        //             let s = i/1000
+        //             document.write(`${s}秒<br>`)
+        //         },i)
+        //     }
+        // }
+        // reaction()
+
+
+        // 練習二: 用 for 搭配 setTimeout 讓計時器跑出每一次 for(有10個計時器) 
+        // const reaction = () => {
+        //     // 設遞減 for - 每一次減1000ms - 10000、9000、....、0
+        //     for(let i=10000; i>=0; i-=1000){
+        //         setTimeout(()=>{
+        //             let s = i/1000
+        //             document.write(`${s}秒<br>`)
+        //         },i)
+        //     }
+        // }
+        // reaction()
+
+
+        // 練習二: 老師解 :用 重複計時器 setInterval 搭配判斷式
+        let number = 10
+        let timer = setInterval(()=>{
+            document.write(number+'<br>')
+            // number 遞減
+            number --
+            if(number<0){
+                clearInterval(timer)
+            }
+        },1000)
+
+    </script>
+
+</body>
+</html>

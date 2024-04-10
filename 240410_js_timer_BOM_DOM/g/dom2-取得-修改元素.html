@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 2. js 修改 class */
+        .text-blue{
+            color: blue;
+        }
+        .border{
+            border: 1px solid black;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- 1. 用 .屬性 修改標籤屬性 -->
+    <div id="links">
+        <a href="https://x.com">x</a>
+        <a href="https://fb.com">fb</a>
+    </div>
+
+    <!-- 2.取下一層第一個 +class -->
+    <ul id="list1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <!-- 3.  -->
+    <ul id="list2">
+        <li class="text-blue">1</li>
+        <li class="border">2</li>
+        <li id="list2-li3">3</li>
+        <li class="border">4</li>
+        <li class="text-blue">5</li>
+    </ul>
+
+
+
+
+<script>
+    // 1. 抓到東西後 .getElementById('links')，用 .屬性 去取得值
+    // .getElementByID('')  --- 取得 id 的元素
+    // .children 取得下一層所有元素
+    const links = document.getElementById('links').children
+    // for of - 跑每個 value
+    for(const element of links){
+        // .屬性
+        console.log(element.href)
+        element.href = 'https://gogle.com'
+        element.target='_blank'
+        element.innerText ='Google'
+    }
+
+    // 2.取下一層第一個 +class
+    const list1 = document.getElementById('list1')
+    // (1).firstElementChild 下一層的第一個
+    // 加上 class: .classList.add(' ')   .classList 代表操作元素的 class
+    list1.firstElementChild.classList.add('text-blue')
+    // (2).lastElementChild 下一層的最後一個 ， 並加上 第二個class-border
+    list1.lastElementChild.classList.add('text-blue','border')
+    // (3)先設宣告 classes 的 class
+    const classes = ['text-blue','border']
+    list1.lastElementChild.classList.add(...classes)
+    // (4)className - 印出所有 class
+    console.log(list1.lastElementChild.className)  //text-blue border
+    // 
+    console.log(list1.lastElementChild.classList[0]) //text-blue
+    console.log(list1.lastElementChild.classList[1]) //border
+    console.log(list1.lastElementChild.classList.length) //2
+    console.log(list1.lastElementChild.classList.value)  //text-blue border
+
+    // 3. 同一層的前一個東西
+    const list2li3 = document.getElementById('list2-li3')
+    // .previousElementSibling ，一直.previousElementSibling(語法下兩次) 找到下一個，下 for 找比較快
+    // .classList.remove(' ') 移除 class
+    list2li3.previousElementSibling.classList.remove('border')
+    // 
+    let el = list2li3
+    for(let i =0;i<2;i++){
+        el = el.previousElementSibling
+    }
+    // .classList.toggle() 沒有就新增，有就移除(開關) 
+    // --- for迴圈 往上兩次 找到 第1個 本來有藍變成沒有藍
+    el.classList.toggle('text-blue')
+
+    // 4. .nextElementSibling 同一層的後面 --- 
+    // .classList.replace('A ',' B') A 取代成 B
+    list2li3.nextElementSibling.classList.replace('border','text-blue')
+
+    let el2 = list2li3
+    for( let i=0 ; i<2 ; i++ ){
+        el2 = el2.nextElementSibling
+    }
+    // .classList.contains() 是否包含
+    console.log(el2.classList.contains('border'))  //--- false
+
+
+    // 5. parentElement() 上一層
+    list2li3.parentElement.style.background = 'gray'
+</script>
+    
+</body>
+</html>

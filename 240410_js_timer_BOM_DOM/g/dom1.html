@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-blue{
+            color:blue
+        }
+        .text-blue::before{
+            /* content  裡面放要修改的內容 */
+            content: '藍色';
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 在 js 裡面控制 html -->
+
+    <!-- 1.抓標題文字 -->
+    <h1 id='title'>標題</h1>
+    <!-- 2.改 html -->
+    <h2>
+        <li>111</li>
+    </h2>
+    <h2>
+        <li>222</li>
+    </h2>
+
+    <!-- 3.用 Class -->
+    <h3 class="text-red">123</h3>
+    <h3 class="text-red">123</h3>
+    <h3 class="text-red">123</h3>
+
+    <!-- 4. -->
+    <h3 class="text-center">123456</h3>
+    <h3 class="text-center">123456</h3>
+    <h3 class="text-center">123456</h3>
+    <h3 class="text-center">123456</h3>
+    <h3 class="text-center">123456</h3>
+
+    <!-- 5.最後出來的樣式 上面搭配 <style>標籤控制 html -->
+    <h3 class="text-blue">123456789</h3>
+    <h3 class="text-blue">123456789</h3>
+    <h3 class="text-blue">123456789</h3>
+
+    <script>
+    // 1.習慣用 const?   .getElementById(' ') 用 id 抓元素
+    const title00 = document.getElementById('title')
+    // .innerText 元素內文字
+    console.log(title00.innerText)
+    // 可以直接把 .innerText 直接改掉文字(改值)
+    title00.innerText = 'abc'
+
+    // 2. .getElementsByTagName( ) 有s代表是陣列:用標籤名稱抓元素
+    const h22 = document.getElementsByTagName('h2')
+    // 連縮排的空白一起計算、縮排的空白也是節點
+    console.log(h22[0].innerHTML)
+    // 換成 html 把東西改掉: 刪除標籤:<del></del>
+    h22[0].innerHTML = '<del>AAA</del>'
+
+    // 直接用 for 迴圈: 寫 h2 的第 i 個 inner.html
+    for( let i=0 ; i< h22.length ; i++){
+        // 加上 .trim 修剪
+        console.log(i,h22[i].innerHTML.trim())
+    }
+    console.log(h22) //f12 - console.log: 會顯示標籤 HTMLCollection(2) [h2, h2](不是一般陣列)
+    
+    // 只能使用 for in、for of ，不能使用 forEach - 會error，因為他不是一般陣列，他是
+    // h22.forEach(element => {
+    //     console.log(element.innerHTML.trim())
+    // });
+
+
+    // 3. class抓
+    const red = document.getElementsByClassName('text-red')
+    // review for of
+    for(const element of red){
+        element.style.color = 'red'
+        // 直接改掉、console.log 看樣式
+        // 行內樣式(直接加在行內上面)
+        console.log(element.style.color)
+    }
+
+
+    // 4.
+    // .querySelector()  -  用選擇抓符合的第一個
+    // .querySelectorAll()  -  用選擇器抓符合的全部
+    // (' ')內該 #id、.class 的都要加
+    const center = document.querySelectorAll('.text-center')
+    for( const element of center){
+        // 只能用駝峰或是加 [' '] 才不會誤認 - 變成減號
+        element.style.textAlign = 'center'
+        element.style['text-align'] = 'center'
+    }
+
+
+    // 5. 取得最後樣式 -  因為.style(行內) 會取得行內會取得空的，要用 .detComputedStyle( )取得最後樣式，唯獨(不能改: 例如不能把class 顏色換掉，就要用 js style 再寫) 
+    const blue = document.querySelectorAll('.text-blue')
+    // 跑 for 
+    for(const element of blue){
+        // .style 行內樣式
+        console.log(element.style.color)
+        // .getComputedStyle() 取得最後樣式，唯獨(不能修改)
+        console.log(getComputedStyle(element).color)
+        console.log(getComputedStyle(element, '::before').color)
+    }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+    
+
+
+    <script>
+    
+    
+    // 設 function 倒數秒數
+    const timer =()=>{
+        // user 輸入秒數
+        let userInput = parseInt(prompt('輸入秒數數字'))
+        let interval = setInterval(()=>{
+        // 先顯示 剩餘?秒 並呈現藍色
+        alert=(`剩餘${userInput}秒`)
+        // 跑每秒遞減
+        userInput--
+        if(userInput===0){
+        // 停止計時器
+        clearInterval(interval)
+        // 最後顯示一行字 "時間到"，且為紅色
+        alert=(`時間到`)      
+        }
+    // 每秒執行一次
+    },1000)
+    }
+    timer()
+
+
+    </script>
+
+</body>
+</html>

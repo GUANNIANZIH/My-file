@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #div1{
+        border: 1px solid black;
+    }
+    #div2{
+        border: 1px solid blue;
+    }
+    #div3{
+        border: 1px solid red;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- 1. div1 .insertAdjacentHTML(位置,HTML) 元素移動 -->
+    <div id="div1">
+        <p>div1事件字元頻道笑容討論信心這款有很多日前，引發加入時間推進女朋友您是規則留言藥物數碼某個身體文件大小。</p>
+    </div>
+
+    <!-- 2. div2 -->
+    <div id="div2">
+        <p>div2事件字元頻道笑容討論信心這款有很多日前，引發加入時間推進女朋友您是規則留言藥物數碼某個身體文件大小。</p>
+    </div>
+
+    <!-- 3 div3 -->
+    <div id="div3">
+        <p>div3事件字元頻道笑容討論信心這款有很多日前，引發加入時間推進女朋友您是規則留言藥物數碼某個身體文件大小。</p>
+    </div>
+
+    <!-- 4. div4 -->
+    <ul id="list1">
+        <li>西瓜</li>
+        <li>芒果</li>
+        <li>芭樂</li>
+    </ul>
+    <ul id="list2">
+        <li>香蕉</li>
+        <li>蘋果</li>
+        <li>葡萄</li>
+    </ul>
+
+
+
+    <script>
+    const div1 = document.getElementById('div1')
+    // 1. .insertAdjacentHTML(位置,HTML)
+    // .insertAdjacentHTML(位置, HTML) 在元素內指定位置插入 HTML
+    div1.insertAdjacentHTML('beforebegin','<p>beforebegin</p>')
+    div1.insertAdjacentHTML('afterbegin','<p>afterbegin</p>')
+    div1.insertAdjacentHTML('beforeend','<p>beforeend</p>')
+    div1.insertAdjacentHTML('afterend','<p>afterend</p>')
+
+
+
+    // 2.  .createElement(標籤名) 新增一個元素，需另外使用語法 DOM
+    const div2 = document.getElementById('div2')
+    // 建立了元素但未放進去裡面，沒辦法顯示
+    const p = document.createElement('p')
+    p.innerText ='123456'
+    p.style.color='red'
+    // .createElement(' ')
+    const a = document.createElement('a')
+    a.innerText='X'
+    a.href='http://x.com'
+
+    // 要使用 .append 下一層的後面 、 prepend 下一層的前面
+    // 如果第一次下指令會做 "新增的動作" 放在 BOM上，但下第二次就只會"移動位置"，不會有兩個(不存在就新增)
+    div2.append(p)
+
+    // .appendchild(' ')、prependchild(' ') 只能新增一個東西
+    // div2.prepend(p,a) //可以新增兩個
+    // .appendchild(' ')、prependchild(' ') 只能新增一個東西
+    div2.appendChild(a,p) //不會 error 但只會值行第一個 
+    
+    // 內容清空??????
+    // .remove() - 直接移除
+    // div2.remove()
+
+    // .removeChild(子元素) 移除元素內的子元素，回傳被刪除的元素、裡面一定要放參數
+    // div2.removeChild(div2.firstElementChild)
+    // 等同於
+    div2.firstChild.remove() //--- .firstChild.remove() 變成內文被移除???
+    // div2.firstElementChild.remove()
+    // div2.lastElementChild.remove()
+
+
+
+
+
+
+    // 3.  .replaceChild(新,舊)
+    // 用新的取代舊的
+    // 如果新的不在頁面上會放上 DOM ，已經存在就移動位置
+    // 舊的一定要在指定元素內(div3)
+    const div3 = document.getElementById('div3')
+    const img = document.createElement('img')
+    // 出現自己 github 大頭貼
+    img.src = 'https://github.com/GUANNIANZIH.png'
+    img.width = 100
+    // 要替換得一定要在 div3 裡面
+    div3.replaceChild(img,div3.firstElementChild)
+
+
+    // 4.   .insertBefore(新元素, 參考元素) 在內部最前面插入一個元素，並指定插入位置，用於新增或移動元素
+    const list1 = document.getElementById('list1')
+    const list2 = document.getElementById('list2')
+    // 把 list2 的第一個東西(香蕉)，放到 list1 的前面
+    // A 放到 B 前面，B 必須在指定的元素內
+    list1.insertBefore(list2.firstElementChild, list1.firstElementChild)
+    // 當 B 為 null 時，會放在最後面
+    list1.insertBefore(list2.firstElementChild, null)
+
+
+
+    
+
+    </script>
+    
+</body>
+</html>
