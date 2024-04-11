@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 2.out-in 盒子 */
+        #out{
+            width: 300px;
+            height: 300px;
+            background: lightseagreen;
+            /* display: table-cell - 顯示方式變成表格盒子:就可以使用 vertical-align */
+            display: table-cell;
+            /* vertical-align: middle - 垂直置中 */
+            vertical-align: middle;
+        }
+        #in{
+            width: 100px;
+            height: 100px;
+            background: lightpink;
+            /* 水平置中 */
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 1.  .preventDefault -->
+    <a href="https://x.com" id="link">X</a>
+    <!-- 2. out-in 盒子  -->
+    <div id="out">
+        <div id="in"></div>
+    </div>
+    <!-- 3.如何保冒泡動作停止?  -->
+
+
+<script>
+    // 1.
+    const link = document.getElementById('link')
+    link.addEventListener('click',event => {
+        // 阻止預設動作發生: 像是在表單送出時跳頁，可以做更好的動畫效果-可跳出成功、失敗的對話框
+        event.preventDefault()
+    })
+    
+    // 2. out-in 盒子( in 是保留字，命名+div)
+    const divOut = document.getElementById('out')
+    const divIn = document.getElementById('in')
+    // 在內外層都下 click 事件
+    divOut.addEventListener('click',(event)=>{
+        console.log('out',event.target)
+    })
+    divIn.addEventListener('click',(event)=>{
+        console.log('in',event.target)
+        // 3. 停止事件冒泡 .stopPropagation: 點擊 in 就只出現 in
+        event.stopPropagation('in',event.target)
+    })
+        // in 被包在 out 裡面 - 兩個點擊事件都出現  ----- in、out
+        // out 只出現 out 的點擊事件 ----out
+        // 事件的 target 都是 in，先 in 再 out(冒泡動作:往上傳遞、一層一層往外傳遞)
+</script>
+    
+</body>
+</html>

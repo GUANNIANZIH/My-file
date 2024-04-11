@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 設 onclick: onBtn -->
+    <input type="button" value="scissor" id="scissor" >
+    <input type="button" value="rock" id="rock">
+    <input type="button" value="paper" id="paper">
+    <hr>
+
+    <h3>count</h3>
+    <!-- p 裡面放 span 設 id 計算次數: 從0 開始計算 -->
+    <p id="win">win: <span id="winCount">0</span></p>
+    <p id="lose">lose: <span id="loseCount">0</span></p>
+    <p id="tie">tie: <span id="tieCount">0</span></p>
+    <hr>
+    
+    <!-- 設 ul 控制 li 顯示? -->
+    <ul id="resultList"></ul>
+
+
+
+    <script>
+    let userChoice=''
+    // 使用者出拳-三個值
+    const s = document.getElementById('scissor')
+    const r = document.getElementById('rock')
+    const p = document.getElementById('paper')
+    s.addEventListener('click',() =>{
+        userChoice = 'scissor'
+    })
+    r.addEventListener('click',() =>{
+        userChoice = 'rock'
+    })
+    p.addEventListener('click',() =>{
+        userChoice = 'paper'
+    })
+
+
+
+    // users 按下 button - 放進函式?
+    // const onBtn1 = () => {
+    //     alert('你出了剪刀')
+    // }
+    // const onBtn2 = () => {
+    //     alert('你出了石頭')
+    // }
+    // const onBtn3 = () => {
+    //     alert('你出了布')
+    // }
+
+
+
+    // 設定 電腦隨機 裡面有[scissor,rock,paper]
+    // 電腦跑出隨機answer: 陣列範圍 0~2 - random*3  
+    let computerAnswer = ['scissor','rock','paper']
+    // console.log(computerAnswer[Math.floor(Math.random()*3)]) 
+    let computerChoice = computerAnswer[Math.floor(Math.random()*3)]
+
+     // 計算結果
+    let winCount= 0
+    let loseCount= 0
+    let tieCount= 0
+
+    if(userChoice == computerAnswer){
+        document.getElementById('resultList').innerHTML += `<li>你出了${userChoice},電腦出了${computerChoice},平手!</li>`
+        tieCount++
+    } else if ((userChoice === 'scissor' && computerChoice === 'paper') ||
+                (userChoice === 'rock' && computerChoice === 'scissor') ||
+                (userChoice === 'paper' && computerChoice === 'rock')){
+        document.getElementById('resultList').innerHTML += `<li>你出了${userChoice},電腦出了${computerChoice},贏!</li>`
+        winCount++
+    } else{
+        document.getElementById('resultList').innerHTML += `<li>你出了${userChoice},電腦出了${computerChoice},輸!</li>`
+        loseCount++
+    }
+    
+
+
+
+
+ 
+
+
+
+    // 當 user 點擊按鈕時，onBtn 函數會被調用，並且傳入用戶的選擇
+    // onBtn 函數會計算電腦的選擇，並且顯示出結果
+    // 用戶和電腦的選擇以及結果會以列表的形式顯示出來
+    // getResult 函數會計算出勝負結果，並且更新計數器
+    // updateCounters 函數會將計數器的值更新到網頁上
+    
+
+
+    
+
+    
+
+
+
+
+
+    
+
+    </script>
+    
+</body>
+</html>

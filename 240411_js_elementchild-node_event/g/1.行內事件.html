@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件寫法有三種(3): input -->
+
+    <!-- 1.行內事件: 事件值寫在標籤內部: -->
+    <!-- input:button / value 按鈕上的名字 / onlick 當點擊時"要執行的動作" / 單雙引不要同時 - 跳脫字元// -->
+    <input type="button" value="按鈕1" onclick="alert('ABCD')">
+
+    <!-- this 在這裡代表這標籤(每個 this 在不同地方代表不一樣) / onclick="this.value++" 數字會一直往上加 / 事件可以都寫在裡面但不好維護會很長 -->
+    <input type="button" value="0" onclick="this.value++"> <!--this.value 這個標籤的屬性-->
+    <input type="button" value="按鈕" onclick="onBtnClick()"> <!--記得加上 ( )-->
+    <input type="button" value="按鈕2" onclick="onBtnClick2('清晰降低。')">
+    <input type="button" value="按鈕3" onclick="onBtnClick3(this,'清晰降低。')">
+
+
+
+    <script>
+        // 1.行內事件 + function
+        // 寫 function 把 event 放進去: 呼叫 script 裡面的 function
+        const onBtnClick = () =>{
+            alert('點了按鈕')
+        }
+        const onBtnClick2 = (text) =>{
+            alert(text)
+        }
+        const onBtnClick3 = (el,text) =>{
+            el.value = text
+            alert(text)
+        }
+    </script>
+
+    <!-- 2.事情 -->
+    
+</body>
+</html>

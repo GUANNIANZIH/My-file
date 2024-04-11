@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. -->
+    <input type="button" value="btn-on" id="btn-on">
+    <!-- 2. -->
+    <input type="button" value="btn-listener" id="btn-listener">
+
+    <script>
+    const btnOn = document.getElementById('btn-on')
+    const btnListener = document.getElementById('btn-listener')
+
+    btnOn.onclick = () =>{
+        // .onclick 一次只能綁一個 function，同一個事件的話會後蓋前
+        // 
+        alert('on 1')
+    }
+    btnOn.onmouseover = () =>{
+        alert('on 2')
+    }
+
+    // .addEventListener 可以綁定多個 function 到同一個事件，且不會覆蓋掉前面的
+    btnListener.addEventListener('click', () => {
+        alert('listener 1')
+    })
+    btnListener.addEventListener('click', () => {
+        alert('listener 2')
+    })
+
+
+    </script>
+    
+</body>
+</html>

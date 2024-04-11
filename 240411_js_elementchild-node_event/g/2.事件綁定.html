@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.單一對象的事件綁定 -->
+    <input type="button" value="btn1" id="btn1">
+    <!-- 2. 如果對象為陣列-->
+    <input type="button" value="my-btn" class="my-btn">
+    <input type="button" value="my-btn" class="my-btn">
+    <input type="button" value="my-btn" class="my-btn">
+    <hr>
+    <!-- 3. 解除事件綁定-->
+    <input type="button" value="unbind" id="unbind">
+
+    <script>
+        // 1. .getElementById(id) 透過 id 抓 btn1
+        const btn1 = document.getElementById('btn1')
+        // *通常不會又再宣告一個 function(aaa)
+        // const aaa = () =>{}
+        // btn1.onclick = aaa
+        // btn1.onclick = function(){}
+
+        // *通常會使用這個，onclick 前面接一個 function
+        btn1.onclick = () =>{
+            alert('Hi')
+        }
+
+        // 2. 如果要綁定的對象是"陣列(所有元素)"，要使用"迴圈"對陣列裡面的每個東西做綁定
+        // .getElementsByClassName('my-btn') - ( )內不用加.點
+        const myBtn = document.getElementsByClassName('my-btn')
+        for(const el of myBtn){
+            el.onclick = () =>{
+                alert('Hi')
+            }
+        }
+
+        // 3.解除事件綁定，設 null 的 btn1 失效
+        const unbind = document.getElementById('unbind')
+        unbind.onclick=() =>{
+            btn1.onclick = null
+        }
+    </script>
+    
+</body>
+</html>

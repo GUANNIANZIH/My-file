@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="scissor" id="scissor" onclick="onBtn('scissor')">
+    <input type="button" value="rock" id="rock" onclick="onBtn('rock')">
+    <input type="button" value="paper" id="paper" onclick="onBtn('paper')">
+    <hr>
+    <h3>count</h3>
+    <p id="win">win: <span id="winCount">0</span></p>
+    <p id="lose">lose: <span id="loseCount">0</span></p>
+    <p id="tie">tie: <span id="tieCount">0</span></p>
+    <hr>
+    
+    <ul id="resultList">
+    </ul>
+
+    <script>
+    let winCount = 0;
+    let loseCount = 0;
+    let tieCount = 0;
+
+    const onBtn = (userChoice) => {
+        const computerChoice = computerAnswer[Math.floor(Math.random()*3)];
+        document.getElementById("resultList").innerHTML += `<li>You chose ${userChoice}, computer chose ${computerChoice}, ${getResult(userChoice, computerChoice)}</li>`;
+        updateCounters(userChoice, computerChoice);
+    }
+
+    const getResult = (userChoice, computerChoice) => {
+        if (userChoice === computerChoice) {
+            tieCount++;
+            return "It's a tie!";
+        } else if ((userChoice === 'scissor' && computerChoice === 'paper') ||
+                   (userChoice === 'rock' && computerChoice === 'scissor') ||
+                   (userChoice === 'paper' && computerChoice === 'rock')) {
+            winCount++;
+            return "You win!";
+        } else {
+            loseCount++;
+            return "You lose!";
+        }
+    }
+
+    const updateCounters = () => {
+        document.getElementById("winCount").textContent = winCount;
+        document.getElementById("loseCount").textContent = loseCount;
+        document.getElementById("tieCount").textContent = tieCount;
+    }
+
+    let computerAnswer = ['scissor','rock','paper'];
+
+    </script>
+</body>
+</html>

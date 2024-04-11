@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="my-btn" class="my-btn">
+    <input type="button" value="my-btn" class="my-btn">
+    <input type="button" value="my-btn" class="my-btn">
+    <input type="button" value="unbind" id="unbind">
+
+<script>
+     // 解除事件監聽 - 事件的 function 獨立拉出來寫
+    const hi = () => {
+        alert('Hi')
+    }
+
+    // const 後面 myBtn 名稱可以改?
+    const myBtn = document.getElementsByClassName('my-btn')
+    for(const el of myBtn){
+        //  el.addEventListener('click',()=>{
+        //         alert('Hi')
+        //  })
+
+        // 事件名稱沒有 on，'click' / 後面放 function
+         el.addEventListener('click',hi)
+    }
+
+
+    const unbind = document.getElementById('unbind')
+    unbind.addEventListener('click',() => {
+        for (const el of myBtn){
+            // (事件種類,解除的function(要跟原本加上去的 function 一樣))
+            el.removeEventListener('click',hi)
+        }
+    })
+   
+</script>
+    
+</body>
+</html>

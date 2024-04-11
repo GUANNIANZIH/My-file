@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 不是只有 btn 有點擊事件， div也有 -->
+    <div id="div"></div>
+    <p id="key"></p>
+
+    <!-- 範例: 常用的事件 -->
+    <!-- min、max、step、value初始值 -->
+    <input type="range" name="" id="range" value="0" min="0" max="100" step="10">
+    <!--  -->
+    <span id="range-value">0</span>
+    <br>
+    <input type="email" value="" name="inputEmail" id="input-email">
+
+
+
+    <script>
+
+        // event: 包含了事件的資訊
+        // 滑鼠座標: 滑鼠類事件可以取得滑鼠座標
+        const div = document.getElementById('div')
+        // div.onclick = (event) => {}
+        div.addEventListener('click',(event)=>{
+            console.log(event)
+            // event.target 事件的目標
+            console.log(event,target)
+        })
+
+        // 鍵盤事件-出現鍵盤打的鍵
+        // 只能對 document 偵測 keydown 事件
+        const key = document.getElementById('key')
+        document.addEventListener('keydown',(event)=>{
+            console.log(event)
+            key.innerText = event.key
+        })
+
+        // 範例: input - range
+        const range = document.getElementById('range')
+        const rangeValue = document.getElementById('range-value')
+        // .addListener 同時監聽兩個事件
+        // .on 對同一個事件一個監聽
+
+        // input 邊拖拉邊觸發
+        range.addEventListener('input',() => {
+            console.log('range input')
+            // 文字跟著變化
+            rangeValue.innerText = range.value
+            // 怎麼改背景而色?
+            // rangeValue.getElementById.div('background')
+        })
+        // change 拖拉完，值改變才會觸發
+        range.addEventListener('change',() =>{
+            console.log('range change')
+        })
+
+
+        // 範例: 信箱
+        // 如果要做信箱的格式驗證? 要在哪一個事件做?
+        const inputEmail = document.getElementById('input-email')
+        inputEmail.addEventListener('focus', () =>{
+            console.log('focus')
+        })
+        inputEmail.addEventListener('blur', () =>{
+            console.log('blur')
+        })
+        inputEmail.addEventListener('change', () =>{
+            console.log('change')
+        })
+        inputEmail.addEventListener('input', () =>{
+            console.log('input')
+            // 如果要做信箱的格式驗證? 要在哪一個事件做?
+            // 檢查 vaild 裡面是否包含 @
+            const vaild = inputEmail.value.includes('@')
+            if(vaild){
+                inputEmail.style.border = '5px solid green'
+            }else{
+                inputEmail.style.border = '5px solid red'
+            }
+        })
+    </script>
+</body>
+</html>
