@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{
+        margin: 0;
+    }
+    #clock{
+        width: 300px;
+        height: 300px;
+        background: gray;
+        border-radius: 50%;
+        position: relative;
+    }
+    #hour{
+        width: 20%;
+        height: 10px;
+        background: skyblue;
+        position: absolute;
+        left: 30%;
+        /* calc 不同單位的尺寸運算(+-*) */
+        top: calc(50% - 5px);
+        border-radius: 5px;
+        /* 設定旋轉中心: 變換原點位於其右側邊緣的中心位置 */
+        transform-origin: right center ;
+    }
+    #minute{
+        width: 40%;
+        height: 10px;
+        background-color: lightseagreen;
+        position: absolute;
+        left: 10%;
+        /* calc 不同單位的尺寸運算(+-*) */
+        top: calc(50% - 5px);
+        border-radius: 5px;
+        /* 變換原點位於其右側邊緣的中心位置 */
+        transform-origin: right center ;
+    }
+    #second{
+        width: 45%;
+        height: 4px;
+        background-color: lightpink;
+        position: absolute;
+        left: 5%;
+        /* calc 不同單位的尺寸運算(+-*) */
+        top: calc(50% - 2px);
+        border-radius: 5px;
+        /* 變換原點位於其右側邊緣的中心位置 */
+        transform-origin: right center ;
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <!-- 顯示目前時間 -->
+        <p id="text">00:00:00</p>
+    </div>
+
+    <script>
+        // 前面都加 el
+        const elHour = document.getElementById('hour')
+        const elMinute = document.getElementById('minute')
+        const elSecond = document.getElementById('second')
+        const elText = document.getElementById('text')
+        
+        // 先宣告一個 functoin: 抓當下時間
+        const clock = ( ) => {
+            // new Date(): 空-當下時間
+            const date = new Date()
+            const hour = date.getHours()
+            const minute = date.getMinutes()
+            const second = date.getSeconds()
+            // +90度的原因 - 把原來在0的 90度 加回來
+            elHour.style.transform = `rotate(${hour * 30 +90}deg)`
+            elMinute.style.transform = `rotate(${minute * 6 +90}deg)`
+            elSecond.style.transform = `rotate(${second * 6 +90}deg)`
+            // 補2個0
+            // 自己手動補0: .padStart(2,'0')-用0去補2個字-20 / .padEnd(5,'0')-00005
+            elText.innerText =`${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}:${second.toString().padStart(2,'0')}`
+        }
+        setInterval(clock,1000)
+        clock()
+
+    </script>
+    
+</body>
+</html>

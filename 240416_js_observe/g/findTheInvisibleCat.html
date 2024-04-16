@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 原本有8px */
+            margin: 0;
+        }
+        #game{
+            /* 寬度固定 */
+            width: 1500px;
+            height: 800px;
+            /* 當設置為 border-box 時，元素的寬度和高度包括內邊距（padding）、邊框（border）和內容（content）的寬度和高度，這意味著內容框的寬度和高度是固定的，而內邊距和邊框會相對於內容框向內縮減。*/
+            box-sizing: border-box;
+            border: 1px solid black;
+            position: relative;
+        }
+        #img-cat{
+            /* 根據父容器 */
+            position: absolute;
+            width: 300px;
+
+            /* CSS 用來控制用戶對文本或元素選擇或拖曳行為 */
+            /* 控制用戶是否能夠選擇文本: none(用戶將無法選擇元素內的文本，如:防止用戶複製敏感信息或者使某些元素不可選擇) */
+            user-select: none;
+            /* WebKit引擎（Chrome、Safari等瀏覽器）的私有屬性，用於控制用戶是否能夠拖拽元素: 當設置為none時，用戶將無法通過拖拽來移動元素 */
+            -webkit-user-drag: none;
+            /* WebKit引擎的私有屬性，與user-select類似，用於控制用戶是否能夠選擇文本: 用戶將無法選擇元素內的文本 */
+            -webkit-user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 開始遊戲 button -->
+    <input type="button" value="開始遊戲" id="btn-start">
+    <!-- 計算使用者花多久的時間 -->
+    <p id="text-time">0</p>
+    <!-- 貓咪位置 -->
+    <div id="game">
+        <img src="../texture/cat.jpg" id="img-cat">
+    </div>
+    <!-- 聲音控制 audio 的播放-->
+    <audio src="../texture/meow.mp3" volume="0" id="audio-cat"></audio>
+
+    <!-- 引用 cdn.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.7/sweetalert2.all.min.js' integrity='sha512-sCRQAGZoT2SOdF+QT+pzQaJn2SP9K4t27Au967tsnf3gZNfHcKrkAKudpV2JBu16wsMouvG8C7iNV+dmMgDBgQ==' crossorigin='anonymous'></script>
+
+    <script>
+        const btnStart = document.getElementById('btn-start')
+        const divGame = document.getElementById('game')
+        const imgCat = document.getElementById('img-cat')
+        const textTime = document.getElementById('text-time')
+        // 設置音量 兩個方法: 1. 建立標籤用 JS 播放/  2.建立 new audio 物件 再設 src.
+        const audioCat = document.getElementById('audio-cat')
+
+        // setInterval、setTimeOut return 值是數字，所以習慣設0
+        // 經過時間，單位0.01秒
+        let time = 0
+        // 計時器
+        let timer = 0
+
+        // 最長距離: 對角線距離
+        // 怎麼取得最長距離 1500寬 800高 :畢氏定理
+        // .clientHeight - 屬性僅返回客戶區域的尺寸，不包括邊框、邊距、內外邊距等
+        const divGameMaxDistance = Math.sqrt(
+            Math.pow(divGame.clientHeight,2)+
+            Math.pow(divGame.clientWidth,2)
+        )
+
+        // 抓出貓的中心點座標、原作標都在左上
+        const catPosition = {
+            // .offsetLeft 上一層的左邊座標 / .offsetTop 上一層的上面座標
+            x: imgCat.offsetLeft + (imgCat.clientWidth/2),
+            y: imgCat.offsetTop + (imgCat.clientHeight/2)
+        }
+
+
+        // 遊戲從點擊開始
+        btnStart.addEventListener('click',()=>{
+            // 當按下'開始按鈕設'後設為為:停用 - 很常用到
+            btnStart.disabled =true
+            // 設定'重置遊戲'所有值都歸0
+            time = 0
+            textTime.innerText = 0
+            audioCat.volumn = 0
+            // 隨機擺放 cat 位置、貓的狀態為透明: 
+            imgCat.style.opacity = 0
+            imgCat.style.top = Math.round(Math.random() *80)+'%'
+            imgCat.style.left = Math.round(Math.random() *80)+'%'
+            // 更新貓的位置
+            catPosition.x = imgCat.offsetLeft + (imgCat.clientWidth/2)
+            catPosition.y = imgCat.offsetTop + (imgCat.clientHeight/2)
+
+            // 開始計時: 計算毫秒 srtInterval
+            timer = setInterval(()=>{
+                time++
+                textTime.innerText = time /100
+                // 下判斷式調整撥放時間 :
+                if(time % 300 === 0){
+                    audioCat.play()
+                }
+            },10)
+        })
+
+            // 取得滑鼠座標
+            divGame.addEventListener('mousemove',(event) => {
+                // 檢查: 滑鼠、貓在畫布上相對距離不一樣: error - 加判斷式讓滑鼠位置一樣當作在貓上面
+                // console.log(event,target)
+
+                 // 取得滑鼠相對於 divGame 的座標
+                const mousePosition = {
+                    x: event.offsetX,
+                    y: event.offsetY
+                }
+                // 如果滑鼠在貓上面: event
+                // 如果滑鼠移動到貓的圖片上，則將滑鼠的位置設置為貓的位置，這樣就會使得滑鼠的座標視為在貓的位置上。這個操作的目的可能是為了讓貓跟隨滑鼠移動的位置，或者在某些情況下將滑鼠視為在貓的位置上。
+                if (event.target === imgCat){
+                    mousePosition.x = catPosition.x
+                    mousePosition.y = catPosition.y
+                }
+                // f12 看滑鼠座標
+                // console.log(mousePosition)
+
+                // 計算滑鼠離貓有多遠
+                // 每次移動要去計算距離: 畢氏定理、平方(就可以得到正數)
+                // Math.sqrt() - 計算給定數字的平方根
+                // Math.pow() - 用於計算給定底數的給定指數次方
+                const distance = Math.sqrt(
+                    // Math.pow(a,b) a的b次方
+                    Math.pow(mousePosition.x - catPosition.x, 2)+
+                    Math.pow(mousePosition.y - catPosition.y, 2)
+            )
+                // f12 看滑鼠位置
+                // console.log(distance)
+
+                // 計算音量的方法: 根據物體距離某個最大距離的遠近，調整音量大小
+                // 設定音量越近越大聲、越遠越小聲( 1- )
+                // distance 表示物體到某個參考點（例如遊戲畫面的中心點）的距離、divGameMaxDistance 是這個參考點到遊戲畫面的對角線的長度
+                // 
+                audioCat.volumn = 1-distance / divGameMaxDistance
+            })
+
+            // 做遊戲結束的設定、推薦好用的套件(彈跳視窗:恭喜玩家花了多久時間找到貓)
+            imgCat.addEventListener('click',() => {
+                // 開始按鈕不是停用中，代表不在遊戲中，所以不做事
+                if(!btnStart.disabled)return
+                // 讓貓透明度回歸1
+                imgCat.style.opacity=1
+                // 停用計時器
+                clearInterval(timer)
+                // 負負得正
+                btnStart.disabled = false
+                Swal.fire({
+                icon: 'success',
+                title: '恭喜',
+                text: `你花了 ${time / 100} 秒`
+            })
+        })
+
+            // 恭喜使用者找到貓的訊息: 使用套件 sweetalert2
+        
+
+    </script>
+</body>
+</html>
