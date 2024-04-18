@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        table:nth-child(1){
+            background-color: #FFDDDD;
+            line-height: 32px;
+            margin: auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid #333;
+        }
+        td:nth-child(1){
+            width: 150px;
+        }
+        td:nth-child(2){
+            width: 350px;
+        }
+        /* table間用 br 就沒辦法用 nth:child() 會被斷開 */
+        table:nth-child(2){
+            background-color: #FFFF99;
+            line-height: 32px;
+            margin: auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        .float-left{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <table>
+        <tr>
+            <td>公司名稱</td>
+            <td>大家來購物有限公司</td>
+        </tr>
+        <tr>
+            <td>公司電子信箱</td>
+            <td>service@test.labor.gov.tw</td>
+        </tr>
+        <tr>
+            <td>服務項目</td>
+            <td>網路購物服務</td>
+        </tr>
+    </table>
+    &nbsp;
+    <!-- <br> -->
+    <table>
+        <tr>
+            <td>客戶姓名</td>
+            <!-- size 字元 -->
+            <td><input type="text" name="" id="text1" class="float-left" size="20"></td>
+        </tr>
+        <tr>
+            <td>電子郵件</td>
+            <td><input type="text" name="" id="text2" class="float-left" size="30"></td>
+        </tr>
+        <tr>
+            <td>意見留言</td>
+            <td><textarea name="" id="" cols="30" rows="5" class="float-left"></textarea></td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="alert(`歡迎蒞臨本網站，您的寶貴意見我們會儘速處理與回覆，謝謝！`)">送出</button>
+    <button>重置</button>
+    </form>    
+</body>
+</html>
