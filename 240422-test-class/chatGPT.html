@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        }
+
+        #clock {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        }
+
+        .time-display {
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="clock">
+    <div class="time-display" id="local-time">00:00:00</div>
+    <div class="time-display" id="new-york-time">00:00:00</div>
+    <!-- 在此添加其他時區的時間顯示 -->
+    </div>
+    <audio id="alarm-sound" loop>
+    <source src="alarm.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
+
+    <script>
+        function updateTime() {
+        var now = new Date();
+        var localTime = now.toLocaleTimeString();
+        var newYorkTime = now.toLocaleTimeString('en-US', {timeZone: 'America/New_York'});
+        
+        document.getElementById('local-time').textContent = localTime;
+        document.getElementById('new-york-time').textContent = newYorkTime;
+        // 在此添加其他時區的時間更新
+        
+        // 在此添加觸發鬧鐘的條件和播放音樂的代碼
+        }
+
+        setInterval(updateTime, 1000); // 每秒更新一次時間
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 文件裡面的元素都水平置中 */
+        body{
+            text-align: center;
+            background-color: #FFFFCC;
+        }
+        #title{
+            font-size: 20px;
+            font-family: '標楷體';
+            font-weight: bold;
+            color: #0000FF;
+            text-align: center;
+            text-decoration: underline;
+        }
+        table{
+            /* 水平置中 */
+            margin: auto;
+        }
+        .img{
+            width: 60px;
+            height: 45px;
+            border: medium solid #00F;
+        }
+        .img:hover{
+            cursor: pointer;
+            border: medium solid #00FFFF;
+        }
+        #img-big{
+            border: 5px solid #0000FF ;
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">蘭嶼賞魚去</div>
+    &nbsp;
+    <table>
+        <tr>
+            <td colspan="5"><img id="img-big" src="./images/0554.jpg"></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><img class="img" src="./images/0551.jpg" alt=""></td>
+            <td><img class="img" src="./images/0552.jpg" alt=""></td>
+            <td><img class="img" src="./images/0553.jpg" alt=""></td>
+            <td><img class="img" src="./images/0554.jpg" alt=""></td>
+            <td><img class="img" src="./images/0555.jpg" alt=""></td>
+        </tr>
+    </table>
+    <script src="./jquery-2.1.4.min.js"></script>
+    <script>
+        $('.img').each(function(index,img){
+            // $(this).click()
+            // $(this).on('click')
+            // jQ 寫法習慣用 $ 開頭
+            $(this).click(function(){
+                // jQ 的寫法(無等號)
+                $('#img-big').attr('src',`./images/055${index + 1}.jpg`)
+                // 原生的函式寫法
+                // big.src=`./images/055${index + 1}.jpg`
+            })
+        })
+    </script>
+    
+</body>
+</html>

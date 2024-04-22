@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書曼的旅遊相簿</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #333;
+        }
+        #main{
+            width: 1024px;
+            height: 768px;
+            background-color: #FFFFCC;
+        }
+        #left{
+            width: 150px;
+            height: 768px;
+            float: left;
+            /* background-color: lightcoral; */
+        }
+        #left table{
+            border: 0px;
+            margin: auto;
+            font-family: '標楷體';
+            /* 外框字效果 outer frame text affect */
+            /* 透明背景色 opacity background color */
+            text-align: center;
+            /* background-color: deeppink; */
+        }
+        /* 寫不出來時使用 */ 
+        /* #left .img:hover{
+            filter: hue-rotate(120deg);
+        } */
+
+        .info{
+            font-style: 12px;
+            font-family: '新細明體';
+            font-weight: bold;
+            color: #FF0000;
+        }
+
+        #right{
+            width: 874px;
+            height: 768px;
+            float: right;
+            /* background-color: lightgreen; */
+        }
+        #marquee{
+            width: 874px;
+            height: 50px;
+            /* background-color: lightseagreen; */
+            font-size: 24px;
+            font-family: '標楷體';
+            font-weight: bolder;
+            color: #FF0000;
+            /* 文字水平置中 text-align: center; 、垂直置中 line-height: 50px; 與容器高度同高 */
+            line-height: 50px;
+            text-align: center; 
+        }
+        #content{
+            /* 扣掉上下 padding 36px*2，不能用 box-sizing: border-box? */
+            width: calc(1024px - 150px - 72px);
+            height: calc(768px - 50px - 72px);
+            padding: 36px;
+            /* background-color: lightgrey; */
+        }
+        iframe{
+            width: calc(1024px - 150px - 72px);
+            height: calc(768px - 50px - 72px);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <audio src="./music/0501.mp3"  autoplay></audio>
+    <div id="main">
+        <div id="left">
+            <div id="menu">
+                <table>
+                    <tr>
+                        <td><img class="" src="./album5/0508.gif" alt="書曼的旅遊相簿" title="書曼的旅遊相簿"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="" src="./images/0507.jpg" alt="書曼" title="書曼"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><img class="img" src="./images/0501b.gif" alt="金門逍遙遊" title="金門逍遙遊"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="img" src="./images/0502b.gif" alt="卡蹓到馬祖" title="卡蹓到馬祖"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="img" src="./images/0503b.gif" alt="踏浪澎湖行" title="踏浪澎湖行"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="img" src="./images/0504b.gif" alt="綠島唱夜曲" title="綠島唱夜曲"></td>
+                    </tr>
+                    <tr>
+                        <!-- 自己建立 album5.html 連結 -->
+                        <td><a href="./album5.html" target="iframe"><img class="img" src="./images/0505b.gif" alt="蘭嶼賞魚去" title="蘭嶼賞魚去"></a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="info">日期: 2024/04/22
+                            維護: 02官念孜
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="./index.html" target="_top"><img class="img" src="./images/0506b.gif" alt="回首頁" title="回首頁"></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="right">
+            <div id="marquee"><marquee>歡迎來到書曼的旅遊相簿，本網站有我的旅遊影像紀錄介紹耶！</marquee></div>
+            <div id="content">
+                <iframe src="./main.html" frameborder="0" name="iframe"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- 引入 JQ -->
+    <script src="./jquery-2.1.4.min.js"></script>
+<script>
+    // $('.img').each 選到同一組東西(集合)進行跌代，對圖片做事情。
+    $('.img').each(function(index, img){
+        // 這裡的 img 指的是遍歷上面每一個 img 的元素、兩個 function 代表兩個事件函式(function 1.滑鼠移動上去、fun 2.移開動作)
+        // 觸發兩個事件函式: 分別是滑鼠移入與移出時的動作。
+        $(img).hover(function(){
+            // 對元素做換圖、.attr設定屬性('src',`./images/0501b.gif`) - 抽換:數字1,英文字母 b 抽換 r
+            // img 可以用 this(當下的元素)、this-bom、dom 指的不同?
+            // imd 也可以用 this 代替，但是不能用箭頭函式( this不會指向原本的物件，而會指向外層 ) 在 vue2 常用 this
+
+            // 函式中的 $(img).attr('src', ...)、注意圖片的命名原則才可以用 index 做跌代
+            // 第一個函式用於當滑鼠移入時，它將圖片的 src 屬性設置為新的圖片路徑，即從 ./images/0501b.gif 到 ./images/0501r.gif。這裡的 index + 1 是為了根據圖片的索引動態生成新的圖片路徑。
+            // 第二個函式用於當滑鼠移出時，它將圖片的 src 屬性恢復為原始的圖片路徑，即從 ./images/0501r.gif 到 ./images/0501b.gif。
+            $(img).attr('src',`./images/050${index + 1}r.gif`)
+        },function(){
+            $(img).attr('src',`./images/050${index + 1}b.gif`)
+        })
+    })
+
+
+
+    // this 補充概念:
+    const person = {
+        name:'書曼',
+        // 原本的 function 寫法
+        sayName1: function(){
+            console.log(this.name)
+        },
+        // 箭頭函式: this 會往外層找
+        sayName2: () => {
+            console.log(this.name)
+        },
+        // Es6.一般函式寫法
+        sayName3(){
+            console.log(this.name)
+        }
+    }
+    person.sayName1()
+    person.sayName2() 
+    person.sayName3()
+
+</script>
+    
+    
+</body>
+</html>
