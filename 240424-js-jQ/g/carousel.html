@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #carousel{
+            /* 輪播圖看到的範圍 */
+            width: 500px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        #imgs{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 5張 */
+            width: 2500px;
+        }
+        #imgs > img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <div id="imgs">
+            <img src="https://picsum.photos/500/?random=1" alt="">
+            <img src="https://picsum.photos/500/?random=2" alt="">
+            <img src="https://picsum.photos/500/?random=3" alt="">
+            <img src="https://picsum.photos/500/?random=4" alt="">
+            <img src="https://picsum.photos/500/?random=5" alt="">
+        </div>
+    </div>
+    <input type="button" value="&lt;" id="btn-prev">
+    <input type="button" value="&gt;" id="btn-next">
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <script>
+        // 動畫套件: swiper 輪播圖動畫
+        // 判斷目前圖片索引是第幾張
+        let now = 0
+        $('#btn-next').click(function(){
+            // 索引0、1、2、3、4，下判斷讓索引不會翻出去
+            if(now + 1 <= 4){
+                now++
+            $('#imgs')
+            .stop(true,true)
+            .animate({left: now*500 -1 -25})
+            .animate({left:now*500 * -1})
+            }
+        })
+        $('#btn-prev').click(function(){
+            // 索引0、1、2、3、4，下判斷讓索引不會翻出去
+            if(now - 1 >= 0){
+                now--
+            $('#imgs')
+            .stop(true,true)
+            .animate({left:now*500*- 1 +25})
+            .animate({left:now*500 * -1})
+            }
+        })
+    </script>
+
+    
+</body>
+</html>

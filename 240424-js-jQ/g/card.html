@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imgs{
+            height: 200px;
+            overflow: hidden;
+        }
+        #imgs>img{
+            margin-top: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+        <div id="imgs">
+            <img src="https://picsum.photos/200/?random=1" alt="">
+            <img src="https://picsum.photos/200/?random=2" alt="">
+            <img src="https://picsum.photos/200/?random=3" alt="">
+            <img src="https://picsum.photos/200/?random=4" alt="">
+            <img src="https://picsum.photos/200/?random=5" alt="">
+        </div>
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 滑鼠事件
+        // .mouseenter() 滑鼠進入 .on('mouseenter') 滑鼠進入
+        // .mouseout() 滑鼠離開 .on('mouseout') 滑鼠離開
+        // .hover(滑鼠進入,滑鼠離開)
+
+        // 第一個函數處理滑鼠進入事件，第二個函數處理滑鼠離開事件。
+        // 在第一個函數中，滑鼠進入時，它使用 stop() 方法來停止所有正在進行的動畫效果，以免出現動畫堆疊的問題。然後，它使用 animate() 方法來對當前圖像（$(this)）及其前後相鄰的圖像進行動畫操作，使它們的 marginTop 屬性（即上邊距）從原來的值變為指定的值（在這個例子中是 0 或 50）。這樣的動畫效果可能是使圖像浮動或移動到指定的位置。
+        // 在第二個函數中，滑鼠離開時，它同樣使用 stop() 方法來停止所有正在進行的動畫效果，然後將圖像的 marginTop 屬性恢復為初始值（在這個例子中是 100）。
+        $('#imgs > img').hover(function(){
+            $(this).stop().animate({marginTop:0})
+            $(this).prev().stop().animate({marginTop: 50})
+            $(this).next().stop().animate({marginTop: 50})
+            $(this)
+        },function () {
+            $(this).stop().animate({marginTop:100})
+            $(this).prev().stop().animate({marginTop: 100})
+            $(this).next().stop().animate({marginTop: 100})
+        })
+    </script>
+    
+</body>
+</html>
